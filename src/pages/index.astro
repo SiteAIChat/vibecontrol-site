@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center py-24">
       <img src="/images/logo-light.png" alt="TaskAI" class="mx-auto h-20 md:h-28 mb-10" />
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-brand-blue to-brand-teal bg-clip-text text-transparent leading-tight">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-white via-brand-blue to-brand-teal bg-clip-text text-transparent leading-tight">
         Stop juggling AI tools.<br />Start assigning work.
       </h1>
       <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
@@ -36,6 +36,7 @@ import Layout from '../layouts/Layout.astro';
         </button>
       </form>
       <p id="hero-thanks" class="hidden mt-4 text-brand-teal font-medium">🎉 You're on the list! We'll be in touch soon.</p>
+      <p id="hero-error" class="hidden mt-4 text-brand-coral font-medium">Something went wrong. Please try again.</p>
     </div>
   </section>
 
@@ -135,6 +136,7 @@ import Layout from '../layouts/Layout.astro';
           </button>
         </form>
         <p id="cta-thanks" class="hidden mt-4 text-brand-teal font-medium">🎉 You're on the list! We'll be in touch soon.</p>
+        <p id="cta-error" class="hidden mt-4 text-brand-coral font-medium">Something went wrong. Please try again.</p>
         <p class="mt-4 text-gray-500 text-sm">Free to start. No credit card required.</p>
       </div>
     </div>
@@ -150,11 +152,40 @@ import Layout from '../layouts/Layout.astro';
 
   <script>
     document.querySelectorAll('#hero-form, #cta-form').forEach(form => {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const thanks = form.parentElement?.querySelector('[id$="-thanks"]') || form.nextElementSibling;
-        form.classList.add('hidden');
-        if (thanks) thanks.classList.remove('hidden');
+
+        const container = form.parentElement;
+        const thanks = container?.querySelector('[id$="-thanks"]');
+        const error = container?.querySelector('[id$="-error"]');
+        const btn = form.querySelector('button[type="submit"]');
+        const email = form.querySelector('input[name="email"]').value;
+        const source = form.querySelector('input[name="source"]')?.value;
+
+        // Reset error state
+        if (error) error.classList.add('hidden');
+
+        // Loading state
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        try {
+          const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source }),
+          });
+
+          if (!res.ok) throw new Error('Request failed');
+
+          form.classList.add('hidden');
+          if (thanks) thanks.classList.remove('hidden');
+        } catch {
+          if (error) error.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
       });
     });
   </script>
