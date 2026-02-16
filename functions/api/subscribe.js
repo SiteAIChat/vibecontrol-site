@@ -1,7 +1,7 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  const GROUNDHOGG_URL = env.GROUNDHOGG_URL; // e.g. https://auto.mation.cc/taskai
+  const GROUNDHOGG_URL = env.GROUNDHOGG_URL; // e.g. https://auto.mation.cc/vibecontrol
   const GH_PUBLIC_KEY = env.GH_PUBLIC_KEY;
   const GH_TOKEN = env.GH_TOKEN;
 
@@ -31,7 +31,7 @@ export async function onRequestPost(context) {
     );
   }
 
-  const tags = ["taskai-early-access"];
+  const tags = ["vibecontrol-early-access"];
   if (source) {
     tags.push(source);
   }
@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
           optin_status: 2,
           tags,
           meta: {
-            source: source || "taskai-landing",
+            source: source || "vibecontrol-landing",
           },
         }),
       }
