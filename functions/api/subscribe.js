@@ -1,34 +1,33 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  const GROUNDHOGG_URL = env.GROUNDHOGG_URL; // e.g. https://auto.mation.cc/vibecontrol
+  const GROUNDHOGG_URL = env.GROUNDHOGG_URL;
   const GH_PUBLIC_KEY = env.GH_PUBLIC_KEY;
   const GH_TOKEN = env.GH_TOKEN;
 
+  // Helper to return JSON responses safely
+  function jsonResponse(data, status = 200) {
+    return new Response(JSON.stringify(data), {
+      status,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
   if (!GROUNDHOGG_URL || !GH_PUBLIC_KEY || !GH_TOKEN) {
-    return Response.json(
-      { error: "Server misconfigured" },
-      { status: 500 }
-    );
+    return jsonResponse({ error: "Server misconfigured" }, 500);
   }
 
   let body;
   try {
     body = await request.json();
-  } catch {
-    return Response.json(
-      { error: "Invalid request body" },
-      { status: 400 }
-    );
+  } catch (e) {
+    return jsonResponse({ error: "Invalid request body" }, 400);
   }
 
   const { email, first_name, last_name, source, interests } = body;
 
   if (!email || typeof email !== "string" || !email.includes("@")) {
-    return Response.json(
-      { error: "Valid email is required" },
-      { status: 400 }
-    );
+    return jsonResponse({ error: "Valid email is required" }, 400);
   }
 
   const tags = ["vibecontrol-early-access"];
@@ -36,8 +35,7 @@ export async function onRequestPost(context) {
     tags.push(source);
   }
 
-  // Append validated interest tags
-  const validInterests = [
+  var validInterests = [
     "interest-task-board",
     "interest-self-hosted",
     "interest-persistent-memory",
@@ -46,131 +44,127 @@ export async function onRequestPost(context) {
     "interest-multi-agent",
   ];
   if (Array.isArray(interests)) {
-    for (const tag of interests) {
-      if (validInterests.includes(tag)) {
-        tags.push(tag);
+    for (var i = 0; i < interests.length; i++) {
+      if (validInterests.indexOf(interests[i]) !== -1) {
+        tags.push(interests[i]);
       }
     }
   }
 
-  const ghHeaders = {
+  var ghHeaders = {
     "Content-Type": "application/json",
-    "gh-token": GH_TOKEN,
-    "gh-public-key": GH_PUBLIC_KEY,
+    "Gh-Token": GH_TOKEN,
+    "Gh-Public-Key": GH_PUBLIC_KEY,
   };
 
-  const ghBase = `${GROUNDHOGG_URL}/wp-json/gh/v4/contacts`;
+  var ghBase = GROUNDHOGG_URL + "/wp-json/gh/v4/contacts";
 
-  const contactPayload = {
+  var contactPayload = {
     data: {
-      email,
+      email: email,
       first_name: first_name || "",
       last_name: last_name || "",
       optin_status: 2,
     },
-    tags,
+    tags: tags,
     meta: {
       source: source || "vibecontrol-landing",
     },
   };
 
-  // DEBUG: Collect diagnostic info for each step
-  const debug = { steps: [] };
+  var debug = [];
 
   try {
-    // Step 1: Check if contact already exists
-    const lookupRes = await fetch(
-      `${ghBase}?id_or_email=${encodeURIComponent(email)}&by_user_id=false`,
-      { method: "GET", headers: ghHeaders }
-    );
+    // Step 1: Look up contact by email
+    var lookupUrl = ghBase + "?id_or_email=" + encodeURIComponent(email) + "&by_user_id=false";
+    var lookupRes = await fetch(lookupUrl, {
+      method: "GET",
+      headers: ghHeaders,
+    });
+    var lookupText = await lookupRes.text();
 
-    const lookupBody = await lookupRes.text();
-    debug.steps.push({
+    debug.push({
       step: "lookup",
       status: lookupRes.status,
-      ok: lookupRes.ok,
-      body: lookupBody.slice(0, 2000),
+      body: lookupText.substring(0, 1500),
     });
 
-    let lookupData;
-    try { lookupData = JSON.parse(lookupBody); } catch { lookupData = null; }
+    var existingId = null;
 
-    if (lookupRes.ok && lookupData) {
-      const contacts = lookupData.contacts || lookupData.items || {};
-      const contactIds = Object.keys(contacts);
-
-      debug.steps.push({
-        step: "lookup_parsed",
-        keys_tried: ["contacts", "items"],
-        found_keys: Object.keys(lookupData),
-        contact_ids: contactIds,
-      });
-
-      if (contactIds.length > 0) {
-        // Contact exists — update via PATCH
-        const contactId = contactIds[0];
-        const updateRes = await fetch(
-          `${ghBase}/${contactId}`,
-          {
-            method: "PATCH",
-            headers: ghHeaders,
-            body: JSON.stringify(contactPayload),
+    if (lookupRes.ok) {
+      try {
+        var lookupData = JSON.parse(lookupText);
+        // V4 may return { items: [...] } or { contacts: { id: {...} } }
+        if (lookupData.items && Array.isArray(lookupData.items) && lookupData.items.length > 0) {
+          existingId = lookupData.items[0].ID || lookupData.items[0].id;
+        } else if (lookupData.contacts) {
+          var ids = Object.keys(lookupData.contacts);
+          if (ids.length > 0) {
+            existingId = ids[0];
           }
-        );
-
-        const updateBody = await updateRes.text();
-        debug.steps.push({
-          step: "update",
-          url: `${ghBase}/${contactId}`,
-          status: updateRes.status,
-          ok: updateRes.ok,
-          body: updateBody.slice(0, 2000),
-          payload_sent: contactPayload,
-        });
-
-        if (updateRes.ok) {
-          return Response.json({ success: true, id: contactId, debug });
+        } else if (lookupData.contact) {
+          existingId = lookupData.contact.ID || lookupData.contact.id;
         }
-
-        return Response.json(
-          { error: "Failed to update existing contact", debug },
-          { status: 502 }
-        );
+        debug.push({ step: "lookup_parsed", existingId: existingId, topKeys: Object.keys(lookupData) });
+      } catch (parseErr) {
+        debug.push({ step: "lookup_parse_error", message: parseErr.message });
       }
     }
 
-    // Step 2: Contact doesn't exist — create new
-    const createRes = await fetch(ghBase, {
+    if (existingId) {
+      // Step 2a: Contact exists — update via PATCH
+      var updateUrl = ghBase + "/" + existingId;
+      var updateRes = await fetch(updateUrl, {
+        method: "PATCH",
+        headers: ghHeaders,
+        body: JSON.stringify(contactPayload),
+      });
+      var updateText = await updateRes.text();
+
+      debug.push({
+        step: "update",
+        url: updateUrl,
+        status: updateRes.status,
+        body: updateText.substring(0, 1500),
+      });
+
+      if (updateRes.ok) {
+        return jsonResponse({ success: true, id: existingId, debug: debug });
+      }
+
+      return jsonResponse({ error: "Failed to update contact", debug: debug }, 502);
+    }
+
+    // Step 2b: Contact doesn't exist — create
+    var createRes = await fetch(ghBase, {
       method: "POST",
       headers: ghHeaders,
       body: JSON.stringify(contactPayload),
     });
+    var createText = await createRes.text();
 
-    const createBody = await createRes.text();
-    debug.steps.push({
+    debug.push({
       step: "create",
       status: createRes.status,
-      ok: createRes.ok,
-      body: createBody.slice(0, 2000),
-      payload_sent: contactPayload,
+      body: createText.substring(0, 1500),
     });
 
     if (createRes.ok) {
-      let createData;
-      try { createData = JSON.parse(createBody); } catch { createData = null; }
-      const contactId = createData?.contact?.ID || createData?.item?.ID;
-      return Response.json({ success: true, id: contactId, debug });
+      var contactId = null;
+      try {
+        var createData = JSON.parse(createText);
+        contactId = (createData.contact && createData.contact.ID) ||
+                    (createData.item && createData.item.ID) ||
+                    null;
+      } catch (e) {
+        // ignore parse errors
+      }
+      return jsonResponse({ success: true, id: contactId, debug: debug });
     }
 
-    return Response.json(
-      { error: "Failed to create contact", debug },
-      { status: 502 }
-    );
+    return jsonResponse({ error: "Failed to create contact", debug: debug }, 502);
   } catch (err) {
-    debug.steps.push({ step: "exception", message: err.message, stack: err.stack });
-    return Response.json(
-      { error: "Service unavailable", debug },
-      { status: 502 }
-    );
+    debug.push({ step: "exception", message: err.message });
+    return jsonResponse({ error: "Service unavailable", debug: debug }, 502);
   }
 }
