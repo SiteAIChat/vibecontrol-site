@@ -74,19 +74,37 @@ export async function onRequestPost(context) {
     },
   };
 
+  // DEBUG: Collect diagnostic info for each step
+  const debug = { steps: [] };
+
   try {
-    // Check if contact already exists
+    // Step 1: Check if contact already exists
     const lookupRes = await fetch(
       `${ghBase}?id_or_email=${encodeURIComponent(email)}&by_user_id=false`,
       { method: "GET", headers: ghHeaders }
     );
 
-    if (lookupRes.ok) {
-      const lookupData = await lookupRes.json();
+    const lookupBody = await lookupRes.text();
+    debug.steps.push({
+      step: "lookup",
+      status: lookupRes.status,
+      ok: lookupRes.ok,
+      body: lookupBody.slice(0, 2000),
+    });
 
-      // Extract contact ID from the response — contacts are keyed by ID
+    let lookupData;
+    try { lookupData = JSON.parse(lookupBody); } catch { lookupData = null; }
+
+    if (lookupRes.ok && lookupData) {
       const contacts = lookupData.contacts || lookupData.items || {};
       const contactIds = Object.keys(contacts);
+
+      debug.steps.push({
+        step: "lookup_parsed",
+        keys_tried: ["contacts", "items"],
+        found_keys: Object.keys(lookupData),
+        contact_ids: contactIds,
+      });
 
       if (contactIds.length > 0) {
         // Contact exists — update via PATCH
@@ -100,43 +118,58 @@ export async function onRequestPost(context) {
           }
         );
 
+        const updateBody = await updateRes.text();
+        debug.steps.push({
+          step: "update",
+          url: `${ghBase}/${contactId}`,
+          status: updateRes.status,
+          ok: updateRes.ok,
+          body: updateBody.slice(0, 2000),
+          payload_sent: contactPayload,
+        });
+
         if (updateRes.ok) {
-          const data = await updateRes.json();
-          return Response.json({ success: true, id: contactId });
+          return Response.json({ success: true, id: contactId, debug });
         }
 
-        const err = await updateRes.text();
-        console.error("Groundhogg V4 update failed:", updateRes.status, err);
         return Response.json(
-          { error: "Failed to subscribe" },
+          { error: "Failed to update existing contact", debug },
           { status: 502 }
         );
       }
     }
 
-    // Contact doesn't exist (or lookup failed) — create new
+    // Step 2: Contact doesn't exist — create new
     const createRes = await fetch(ghBase, {
       method: "POST",
       headers: ghHeaders,
       body: JSON.stringify(contactPayload),
     });
 
+    const createBody = await createRes.text();
+    debug.steps.push({
+      step: "create",
+      status: createRes.status,
+      ok: createRes.ok,
+      body: createBody.slice(0, 2000),
+      payload_sent: contactPayload,
+    });
+
     if (createRes.ok) {
-      const data = await createRes.json();
-      const contactId = data.contact?.ID || data.item?.ID;
-      return Response.json({ success: true, id: contactId });
+      let createData;
+      try { createData = JSON.parse(createBody); } catch { createData = null; }
+      const contactId = createData?.contact?.ID || createData?.item?.ID;
+      return Response.json({ success: true, id: contactId, debug });
     }
 
-    const err = await createRes.text();
-    console.error("Groundhogg V4 create failed:", createRes.status, err);
     return Response.json(
-      { error: "Failed to subscribe" },
+      { error: "Failed to create contact", debug },
       { status: 502 }
     );
   } catch (err) {
-    console.error("Groundhogg request failed:", err);
+    debug.steps.push({ step: "exception", message: err.message, stack: err.stack });
     return Response.json(
-      { error: "Service unavailable" },
+      { error: "Service unavailable", debug },
       { status: 502 }
     );
   }
