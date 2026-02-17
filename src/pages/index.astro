@@ -1,7 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {
+  ClipboardList,
+  Cpu,
+  Brain,
+  Monitor,
+  Users,
+  Bot,
+  Smartphone,
+  WifiOff,
+  Zap,
+  Shield,
+  MessageSquare,
+  LayoutDashboard,
+  AlertTriangle,
+  HelpCircle,
+  Check,
+  X,
+  ArrowRight,
+} from 'lucide-react';
 ---
-<Layout title="VibeControl — Stop juggling AI tools. Start assigning work.">
+<Layout title="VibeControl — AI Agents That Execute, Managed Like Real Work">
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Glow orbs -->
@@ -12,112 +31,386 @@ import Layout from '../layouts/Layout.astro';
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center py-24">
       <img src="/images/logo-light.png" alt="VibeControl" class="mx-auto h-[7.5rem] md:h-[10.5rem] mb-10" />
       <h1 class="text-4xl md:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-white via-brand-blue to-brand-teal bg-clip-text text-transparent leading-tight">
-        Stop juggling AI tools.<br />Start assigning work.
+        AI that does things.<br />But managed.
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-        VibeControl is the first workspace where you manage tasks, chat with AI, and collaborate with your team — all in one place. Think of it as a project manager that actually does the work.
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4">
+        You loved the promise of OpenClaw — AI agents that actually execute, running on your machine, with your keys. Now imagine that with a real task board, team collaboration, persistent memory, and security that won't keep you up at night.
+      </p>
+      <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+        VibeControl is the work platform where AI agents and human workers share the same workflow. Assign, track, execute, and ship — without duct-taping together chat apps and hoping nothing breaks.
       </p>
 
-      <!-- Email form -->
-      <form id="hero-form" action="#" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="hidden" name="source" value="vibecontrol-landing" />
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@example.com"
-          class="flex-1 px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
-        />
-        <button
-          type="submit"
-          class="px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
-        >
-          Get Early Access
-        </button>
-      </form>
-      <p id="hero-thanks" class="hidden mt-4 text-brand-teal font-medium">🎉 You're on the list! We'll be in touch soon.</p>
-      <p id="hero-error" class="hidden mt-4 text-brand-coral font-medium">Something went wrong. Please try again.</p>
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+        <a href="#pricing" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">
+          Start Building Free <ArrowRight className="w-4 h-4" />
+        </a>
+        <a href="#how-it-works" class="px-8 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">
+          See How It Works
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
+  <!-- THE MOMENT -->
   <section class="relative py-24 px-6">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent"></div>
-    <div class="relative max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Sound familiar?</h2>
+    <div class="relative max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">OpenClaw proved the demand. Now you need the platform.</h2>
+
+      <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+        <p>
+          The explosion of OpenClaw showed the world what we already knew: developers don't want AI that just talks. They want AI that executes — on their machines, with their API keys, against real codebases and real infrastructure.
+        </p>
+        <p>
+          That instinct is right. But here's what the hype cycle glossed over:
+        </p>
+        <p class="text-gray-400">
+          OpenClaw is a personal assistant piped through WhatsApp. There's no task board. No team features. No structured workflow. No real UI. Its own maintainer warned that if you can't navigate a command line, it's too dangerous to use. Security researchers found critical vulnerabilities within weeks. And now its creator has left for OpenAI, leaving the project's future to a foundation that doesn't exist yet.
+        </p>
+        <p class="text-white font-semibold text-xl">
+          The desire for AI that does real work isn't going away. But it needs a real home.
+        </p>
+        <p>
+          VibeControl is that home. Same execution power — agents running real CLIs on your machine, with your keys, against your files. But wrapped in a structured task management system, with team collaboration, role-based access, a proper UI, and persistent memory that actually compounds over time.
+        </p>
+        <p class="text-gray-400">
+          Not a chat thread in WhatsApp. A platform built for professional work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT VIBECONTROL ACTUALLY IS -->
+  <section class="relative py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">A task board that executes. A team that includes AI.</h2>
+
+      <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+        <p>
+          VibeControl is a work orchestration platform where AI agents and human workers are interchangeable. You create tasks, assign them to an AI agent or a person, and track everything in one place.
+        </p>
+        <p>
+          The difference from everything else: your AI agents don't live in a chat app hoping you remember to check on them. They live on a task board with statuses, priorities, deadlines, and accountability — the same board your human team uses.
+        </p>
+        <p>
+          And when an agent picks up a task, it doesn't just generate text. It spawns Claude Code, Gemini CLI, Codex CLI, or any CLI you configure — on your actual machine, with full file system access, shell commands, and real tool use. Then it reports back in the same thread where you assigned the work.
+        </p>
+        <p class="text-white font-semibold text-xl">
+          One platform. Any worker. Real execution. Real management.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE THREE THINGS THAT MATTER -->
+  <section class="relative py-24 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What OpenClaw got right — and what it's missing.</h2>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <p class="text-lg font-medium text-white mb-3 italic">"I have 12 ChatGPT tabs open and none of them remember what I said yesterday."</p>
-          <p class="text-gray-400 leading-relaxed">You're copying context between tools, repeating yourself to AI, and losing track of what was decided where.</p>
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center mb-5">
+            <Monitor className="w-6 h-6 text-brand-blue" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Execution on your machine — but managed.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> People want AI agents running locally, with their own API keys, against their own files. Not sandboxed playgrounds.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> The same self-hosted execution, but wrapped in a structured task system. You create a task with context, priority, and acceptance criteria. The agent executes against your runtime. You review the output. Approve or iterate. Every step tracked.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <p class="text-lg font-medium text-white mb-3 italic">"My AI can write a blog post, but I still have to manage every step myself."</p>
-          <p class="text-gray-400 leading-relaxed">AI is powerful in isolation — but without task management, you're still the bottleneck organizing all the pieces.</p>
+
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-teal/20 flex items-center justify-center mb-5">
+            <Brain className="w-6 h-6 text-brand-teal" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Persistent memory — but shared.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> Memory that persists across conversations is transformative. You tell an agent your preferences once, and it remembers.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Memory isn't just for one agent in one chat thread. It's a structured, vectorized knowledge system that spans agents, tasks, and team members. Reassign a task? The memory transfers. Onboard someone new? Context is instant.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <p class="text-lg font-medium text-white mb-3 italic">"Half my team uses AI. The other half doesn't. Nothing connects."</p>
-          <p class="text-gray-400 leading-relaxed">Your workflow is split between humans and AI tools with no shared workspace. Handoffs are messy, context gets lost.</p>
+
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-orange/20 flex items-center justify-center mb-5">
+            <Users className="w-6 h-6 text-brand-orange" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Model flexibility — but with team workflow.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> Model-agnostic is the right call. People want to use Claude, GPT, Gemini, DeepSeek, or local models via Ollama.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Same BYOK, same model flexibility — but inside a platform designed for teams. Build a team of specialized agents — a coding agent on Claude, a research agent on Gemini, a writing agent on GPT — each assigned to different tasks on the same board.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- THE GAP -->
   <section class="relative py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">One workspace. AI and humans. Real work getting done.</h2>
-      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">VibeControl brings your tasks, your team, and your AI agents into one place — so you can focus on the work that matters.</p>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent"></div>
+    <div class="relative max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">The OpenClaw problem nobody's talking about.</h2>
+      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">OpenClaw captured imaginations. But the people actually trying to use it for real work keep hitting the same walls:</p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { icon: '📋', title: 'Task boards that actually work', desc: 'Kanban boards, priorities, deadlines, subtasks. Assign work to an AI agent or a team member — same board, same workflow.' },
-          { icon: '💬', title: 'Chat that\'s connected to your work', desc: 'Every task has a conversation. Ask your AI agent a question, give feedback, iterate — all in context. No more "let me find that thread."' },
-          { icon: '🧠', title: 'AI that remembers', desc: 'Your agents build knowledge over time. They remember your preferences, past decisions, and project context — so you\'re not starting from scratch every conversation.' },
-          { icon: '👥', title: 'Human + AI, side by side', desc: 'Assign a research task to AI. Hand the results to your copywriter. They collaborate in the same workspace. No separate tools, no lost context.' },
-          { icon: '📱', title: 'Works where you do', desc: 'Web app, iPhone, Android. Create tasks by voice, check in on progress during your commute, approve AI work from your phone.' },
-          { icon: '🔐', title: 'Your data stays yours', desc: 'AI runs on your infrastructure with your API keys. Nothing passes through servers you don\'t control. Full privacy, full ownership.' },
-        ].map(({ icon, title, desc }) => (
-          <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-            <div class="text-4xl mb-4">{icon}</div>
-            <h3 class="text-xl font-semibold mb-2">{title}</h3>
-            <p class="text-gray-400 leading-relaxed">{desc}</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <ClipboardList className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No task management.</h3>
           </div>
-        ))}
+          <p class="text-gray-400 text-sm">You talk to an agent through WhatsApp or Discord. There's no task board, no priorities, no statuses, no deadlines. You can't see at a glance what's in progress, what's blocked, or what's done.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <Users className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No team features.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">OpenClaw is built for one person, one agent. There's no way to invite team members, no role-based access, no shared visibility into what agents are doing.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <LayoutDashboard className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No structured UI.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Everything happens in messaging apps. You can't drag tasks across a Kanban board in WhatsApp. You can't see a dashboard of agent activity in Telegram.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <Shield className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">Serious security concerns.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">A critical RCE vulnerability. Prompt injection attacks. Data exfiltration from third-party skills. When an agent has full access to your machine, the attack surface matters — a lot.</p>
+        </div>
+
+        <div class="md:col-span-2 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <HelpCircle className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">Uncertain future.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">The creator just joined OpenAI. The project is moving to a foundation. The roadmap is unclear. Building your workflow on top of it is a bet with no guaranteed payoff.</p>
+        </div>
       </div>
+
+      <p class="text-center text-xl font-bold mt-12 bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">VibeControl solves all five.</p>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="relative py-24 px-6">
+  <section id="how-it-works" class="relative py-24 px-6">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
     <div class="relative max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Three steps to a smarter workflow</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">From "do this" to "done" — with structure.</h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="space-y-8">
         {[
-          { step: '1', title: 'Create a task', desc: 'Describe what you need — "Write a proposal for the Henderson account" or "Research competitors in the Austin market." Quick text, voice note, or detailed brief.' },
-          { step: '2', title: 'Assign it', desc: 'Route it to an AI agent for instant work, a team member for the human touch, or both. VibeControl doesn\'t care who does the work — it cares that it gets done.' },
-          { step: '3', title: 'Review and ship', desc: 'AI delivers drafts, research, code, or analysis. You review, give feedback in the task chat, and iterate until it\'s right. Then move on to what\'s next.' },
+          { step: '1', title: 'Create a task.', desc: 'Not a chat message — a real task. Title, description, priority, context, attached files. Just like any project management tool you\'ve used, except this one can also execute.' },
+          { step: '2', title: 'Assign it.', desc: 'Pick an AI agent, a team member, or a freelancer from the same interface. The platform doesn\'t care who does the work. It cares that the work gets tracked and completed.' },
+          { step: '3', title: 'Agents execute on your machine.', desc: 'The assigned agent picks up the task, spawns the configured CLI (Claude Code, Gemini CLI, Codex CLI, or custom), and executes against your local runtime. File system access, shell commands, real tool use — not a sandbox.' },
+          { step: '4', title: 'Review in context.', desc: 'The agent reports back in the task\'s chat thread — same place you assigned the work. Review the output, approve it, or send it back with feedback. Full audit trail, full visibility.' },
+          { step: '5', title: 'Knowledge compounds.', desc: 'Every completed task feeds the memory system. Your agents get smarter about your codebase, your preferences, and your team\'s decisions. The more work they do, the less you have to explain.' },
         ].map(({ step, title, desc }) => (
-          <div class="text-center">
-            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-brand-blue to-brand-teal flex items-center justify-center text-xl font-bold shadow-lg shadow-brand-blue/25">
+          <div class="flex gap-6 items-start">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-gradient-to-br from-brand-blue to-brand-teal flex items-center justify-center text-lg font-bold shadow-lg shadow-brand-blue/25">
               {step}
             </div>
-            <h3 class="text-xl font-semibold mb-2">{title}</h3>
-            <p class="text-gray-400">{desc}</p>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">{title}</h3>
+              <p class="text-gray-400">{desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- EARLY ACCESS CTA -->
-  <section class="py-24 px-6">
+  <!-- KEY FEATURES -->
+  <section class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything OpenClaw promised. Everything it's missing.</h2>
+      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">The complete platform for AI agent execution and team collaboration.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <ClipboardList className="w-8 h-8 text-brand-blue mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Unified Task Board</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Kanban-style task management where AI agents and human workers share the same board. Statuses, priorities, deadlines, tags — with AI execution built in.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Cpu className="w-8 h-8 text-brand-teal mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Self-Hosted Runtime</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Install the lightweight runtime on your machine, VPS, or any server you control. Agents execute locally — your files, your commands, your API keys. Nothing passes through our servers.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Brain className="w-8 h-8 text-brand-orange mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Persistent Memory</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Vectorized, searchable, long-term memory that persists across conversations, agents, and team members. Automatically recalled when relevant. Transfers when tasks get reassigned.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Zap className="w-8 h-8 text-brand-coral mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Multi-CLI, Multi-Model</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Run Claude Code, Gemini CLI, Codex CLI, or custom CLIs. Use Claude, GPT, Gemini, DeepSeek, or local models via Ollama. Switch models per agent or per task.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Users className="w-8 h-8 text-brand-blue mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Team Collaboration</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Invite team members and freelancers. Four access levels: Owner, Admin, Member, Guest. Everyone — human and AI — sees the same task board and chat threads.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Bot className="w-8 h-8 text-brand-teal mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Multi-Agent Teams</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Create specialized agents for different work types. A backend agent on Claude. A research agent on Gemini. A writing agent on GPT. Assign the right agent to the right task.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <Smartphone className="w-8 h-8 text-brand-orange mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Mobile App</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Full iOS and Android app. Create tasks by voice, check on agent progress, approve completed work, triage your board — from your phone.</p>
+        </div>
+
+        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
+          <WifiOff className="w-8 h-8 text-brand-coral mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Offline Resilience</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Runtimes disconnect. It happens. VibeControl queues pending tasks automatically and resumes execution the moment connectivity returns. No lost work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="relative py-24 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">VibeControl vs. the landscape.</h2>
+
+      <div class="overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-white/5">
+              <th class="text-left p-4 font-semibold text-gray-300 min-w-[200px]"></th>
+              <th class="p-4 font-semibold text-brand-blue min-w-[120px]">VibeControl</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">OpenClaw</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">ChatGPT / Claude.ai</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Cursor</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Linear + AI</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">CrewAI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            {[
+              { feature: 'Task management & tracking', vals: [true, false, false, false, true, false] },
+              { feature: 'AI execution on your machine', vals: [true, true, false, 'IDE only', false, true] },
+              { feature: 'Persistent agent memory', vals: [true, true, false, false, false, false] },
+              { feature: 'Structured UI (not just chat)', vals: [true, false, true, true, true, false] },
+              { feature: 'Human + AI workers unified', vals: [true, false, false, false, true, false] },
+              { feature: 'Team collaboration & RBAC', vals: [true, false, false, false, true, false] },
+              { feature: 'Self-hosted runtime', vals: [true, true, false, false, false, true] },
+              { feature: 'Bring your own keys', vals: [true, true, false, true, false, true] },
+              { feature: 'Mobile app', vals: [true, 'Via chat apps', true, false, true, false] },
+              { feature: 'Vetted security model', vals: [true, 'warn', true, true, true, 'Varies'] },
+            ].map(({ feature, vals }) => (
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-4 text-gray-300 font-medium">{feature}</td>
+                {vals.map((val) => (
+                  <td class="p-4 text-center">
+                    {val === true ? (
+                      <Check className="w-5 h-5 text-brand-teal mx-auto" />
+                    ) : val === false ? (
+                      <X className="w-5 h-5 text-gray-600 mx-auto" />
+                    ) : val === 'warn' ? (
+                      <AlertTriangle className="w-5 h-5 text-brand-orange mx-auto" />
+                    ) : (
+                      <span class="text-gray-500 text-xs">{val}</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Start free. Scale when you're ready.</h2>
+      <p class="text-gray-400 text-center mb-16">You bring the API keys. We handle the orchestration.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Free -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Free</h3>
+          <p class="text-3xl font-bold mb-2">$0<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-gray-400 text-sm mb-6">Get your hands on it. See how it works.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 1 runtime</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 agents</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 25 tasks</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Full chat & task management</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Persistent agent memory</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Get Started Free</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-brand-blue/40 backdrop-blur-md flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-blue rounded-full text-xs font-semibold">Popular</div>
+          <h3 class="text-xl font-bold mb-1">Pro</h3>
+          <p class="text-3xl font-bold mb-2">$20<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-gray-400 text-sm mb-6">For power users running real workloads.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 3 runtimes</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited agents</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited tasks</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Free</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">Start Pro Trial</a>
+        </div>
+
+        <!-- Team -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Team</h3>
+          <p class="text-3xl font-bold mb-1">$35<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-xs text-gray-500 mb-2">2 seats included + $15/additional member</p>
+          <p class="text-gray-400 text-sm mb-6">For teams mixing AI and human workers.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 team members included</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited runtimes</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Guest invites</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Role-based access control</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Pro</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Start Team Trial</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Enterprise</h3>
+          <p class="text-3xl font-bold mb-2">Custom</p>
+          <p class="text-gray-400 text-sm mb-6">For organizations with compliance and scale requirements.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Self-hosted control plane</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> SSO</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> SLA</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Dedicated support</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Custom integrations</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta" class="py-24 px-6">
     <div class="max-w-2xl mx-auto text-center">
       <div class="p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to put AI to work?</h2>
-        <p class="text-gray-400 mb-8">Join the waitlist for early access. We're onboarding teams now — first come, first served.</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">You've seen what AI agents can do. Now manage them like real work.</h2>
+        <p class="text-gray-400 mb-8">The era of AI that actually executes is here — OpenClaw proved it. But execution without management is chaos. VibeControl gives your AI agents a real workflow: tasks, tracking, teams, memory, and security. Free to start.</p>
 
         <form id="cta-form" action="#" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
           <input type="hidden" name="source" value="vibecontrol-landing" />
@@ -130,12 +423,12 @@ import Layout from '../layouts/Layout.astro';
           />
           <button
             type="submit"
-            class="px-8 py-3 rounded-xl bg-gradient-to-r from-brand-orange to-brand-coral font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-coral/25"
+            class="px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
           >
-            Join the Waitlist
+            Start Building Free
           </button>
         </form>
-        <p id="cta-thanks" class="hidden mt-4 text-brand-teal font-medium">🎉 You're on the list! We'll be in touch soon.</p>
+        <p id="cta-thanks" class="hidden mt-4 text-brand-teal font-medium">You're on the list! We'll be in touch soon.</p>
         <p id="cta-error" class="hidden mt-4 text-brand-coral font-medium">Something went wrong. Please try again.</p>
         <p class="mt-4 text-gray-500 text-sm">Free to start. No credit card required.</p>
       </div>
@@ -151,7 +444,7 @@ import Layout from '../layouts/Layout.astro';
   </footer>
 
   <script>
-    document.querySelectorAll('#hero-form, #cta-form').forEach(form => {
+    document.querySelectorAll('#cta-form').forEach(form => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
