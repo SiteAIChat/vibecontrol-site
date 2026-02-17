@@ -416,18 +416,71 @@ import {
         <h2 class="text-3xl md:text-4xl font-bold mb-4">You've seen what AI agents can do. Now manage them like real work.</h2>
         <p class="text-gray-400 mb-8">The era of AI that actually executes is here — OpenClaw proved it. But execution without management is chaos. VibeControl gives your AI agents a real workflow: tasks, tracking, teams, memory, and security. We're launching soon — get on the list.</p>
 
-        <form id="cta-form" action="#" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <form id="cta-form" action="#" class="flex flex-col gap-4 max-w-lg mx-auto text-left">
           <input type="hidden" name="source" value="vibecontrol-landing" />
+
+          <!-- Name fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input
+              type="text"
+              name="first_name"
+              required
+              placeholder="First name"
+              class="px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
+            />
+            <input
+              type="text"
+              name="last_name"
+              required
+              placeholder="Last name"
+              class="px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
+            />
+          </div>
+
+          <!-- Email -->
           <input
             type="email"
             name="email"
             required
             placeholder="you@example.com"
-            class="flex-1 px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
+            class="w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
           />
+
+          <!-- Interest multi-select -->
+          <fieldset>
+            <legend class="text-sm text-gray-300 mb-3 font-medium">What are you most excited about?</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-task-board" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Unified Task Board</span>
+              </label>
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-self-hosted" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Self-Hosted Runtime</span>
+              </label>
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-persistent-memory" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Persistent Memory</span>
+              </label>
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-multi-model" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Multi-CLI, Multi-Model</span>
+              </label>
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-team-collab" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Team Collaboration</span>
+              </label>
+              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
+                <input type="checkbox" name="interests" value="interest-multi-agent" class="accent-brand-teal w-4 h-4 shrink-0" />
+                <span class="text-sm text-gray-300">Multi-Agent Teams</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Submit -->
           <button
             type="submit"
-            class="px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+            class="w-full px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
           >
             Get Early Access
           </button>
@@ -456,8 +509,15 @@ import {
         const thanks = container?.querySelector('[id$="-thanks"]');
         const error = container?.querySelector('[id$="-error"]');
         const btn = form.querySelector('button[type="submit"]');
+
+        // Collect fields
+        const first_name = form.querySelector('input[name="first_name"]').value.trim();
+        const last_name = form.querySelector('input[name="last_name"]').value.trim();
         const email = form.querySelector('input[name="email"]').value;
         const source = form.querySelector('input[name="source"]')?.value;
+        const interests = Array.from(
+          form.querySelectorAll('input[name="interests"]:checked')
+        ).map(cb => cb.value);
 
         // Reset error state
         if (error) error.classList.add('hidden');
@@ -471,7 +531,7 @@ import {
           const res = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, source }),
+            body: JSON.stringify({ email, first_name, last_name, source, interests }),
           });
 
           if (!res.ok) throw new Error('Request failed');

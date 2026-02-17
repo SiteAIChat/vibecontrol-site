@@ -22,7 +22,7 @@ export async function onRequestPost(context) {
     );
   }
 
-  const { email, source } = body;
+  const { email, first_name, last_name, source, interests } = body;
 
   if (!email || typeof email !== "string" || !email.includes("@")) {
     return Response.json(
@@ -34,6 +34,23 @@ export async function onRequestPost(context) {
   const tags = ["vibecontrol-early-access"];
   if (source) {
     tags.push(source);
+  }
+
+  // Append validated interest tags
+  const validInterests = [
+    "interest-task-board",
+    "interest-self-hosted",
+    "interest-persistent-memory",
+    "interest-multi-model",
+    "interest-team-collab",
+    "interest-multi-agent",
+  ];
+  if (Array.isArray(interests)) {
+    for (const tag of interests) {
+      if (validInterests.includes(tag)) {
+        tags.push(tag);
+      }
+    }
   }
 
   try {
@@ -48,6 +65,8 @@ export async function onRequestPost(context) {
         },
         body: JSON.stringify({
           email,
+          first_name: first_name || "",
+          last_name: last_name || "",
           optin_status: 2,
           tags,
           meta: {
