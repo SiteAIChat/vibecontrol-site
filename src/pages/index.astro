@@ -22,6 +22,13 @@ import {
   LayoutDashboard,
   HelpCircle,
   AlertTriangle,
+  Trophy,
+  ChevronRight,
+  Plus,
+  UserPlus,
+  Cog,
+  SearchCheck,
+  ThumbsUp,
 } from 'lucide-react';
 ---
 <Layout title="VibeControl — Your AI agents can do the work. VibeControl makes it manageable.">
@@ -88,13 +95,34 @@ import {
       <h3 class="text-2xl md:text-3xl font-bold text-center mt-16 mb-3">VibeControl is the missing layer.</h3>
       <p class="text-lg md:text-xl text-gray-300 text-center mb-10">A clean place to run your AI (and human) team together.</p>
 
-      <div class="space-y-4 text-gray-300 text-lg leading-relaxed text-center">
-        <p>Create tasks. Assign them to an AI agent (or a person).</p>
-        <p>Agents do the work. You review it. Approve it. Move on.</p>
-        <p class="text-white font-semibold text-xl pt-4">
-          It feels like running a business — not managing a science experiment.
-        </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+          <Plus className="w-4 h-4 text-brand-blue" /> Create Task
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+          <UserPlus className="w-4 h-4 text-brand-teal" /> Assign It
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+          <Cog className="w-4 h-4 text-brand-orange" /> Work Gets Done
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+          <SearchCheck className="w-4 h-4 text-brand-blue" /> Review It
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+          <ThumbsUp className="w-4 h-4 text-brand-teal" /> Approve It
+        </div>
+        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-blue/20 to-brand-teal/20 border border-brand-teal/30 text-white text-sm font-semibold">
+          <Trophy className="w-4 h-4 text-brand-teal" /> Move On
+        </div>
       </div>
+      <p class="text-white font-semibold text-xl text-center">
+        It feels like running a business — not managing a science experiment.
+      </p>
     </div>
   </section>
 
