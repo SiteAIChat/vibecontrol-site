@@ -5,7 +5,6 @@ export async function onRequestPost(context) {
   const GH_PUBLIC_KEY = env.GH_PUBLIC_KEY;
   const GH_TOKEN = env.GH_TOKEN;
 
-  // Helper to return JSON responses safely
   function jsonResponse(data, status = 200) {
     return new Response(JSON.stringify(data), {
       status,
@@ -72,99 +71,75 @@ export async function onRequestPost(context) {
     },
   };
 
-  var debug = [];
-
   try {
-    // Step 1: Look up contact by email
-    var lookupUrl = ghBase + "?id_or_email=" + encodeURIComponent(email) + "&by_user_id=false";
-    var lookupRes = await fetch(lookupUrl, {
-      method: "GET",
-      headers: ghHeaders,
-    });
-    var lookupText = await lookupRes.text();
-
-    debug.push({
-      step: "lookup",
-      status: lookupRes.status,
-      body: lookupText.substring(0, 1500),
-    });
-
-    var existingId = null;
-
-    if (lookupRes.ok) {
-      try {
-        var lookupData = JSON.parse(lookupText);
-        // V4 may return { items: [...] } or { contacts: { id: {...} } }
-        if (lookupData.items && Array.isArray(lookupData.items) && lookupData.items.length > 0) {
-          existingId = lookupData.items[0].ID || lookupData.items[0].id;
-        } else if (lookupData.contacts) {
-          var ids = Object.keys(lookupData.contacts);
-          if (ids.length > 0) {
-            existingId = ids[0];
-          }
-        } else if (lookupData.contact) {
-          existingId = lookupData.contact.ID || lookupData.contact.id;
-        }
-        debug.push({ step: "lookup_parsed", existingId: existingId, topKeys: Object.keys(lookupData) });
-      } catch (parseErr) {
-        debug.push({ step: "lookup_parse_error", message: parseErr.message });
-      }
-    }
-
-    if (existingId) {
-      // Step 2a: Contact exists — update via PATCH
-      var updateUrl = ghBase + "/" + existingId;
-      var updateRes = await fetch(updateUrl, {
-        method: "PATCH",
-        headers: ghHeaders,
-        body: JSON.stringify(contactPayload),
-      });
-      var updateText = await updateRes.text();
-
-      debug.push({
-        step: "update",
-        url: updateUrl,
-        status: updateRes.status,
-        body: updateText.substring(0, 1500),
-      });
-
-      if (updateRes.ok) {
-        return jsonResponse({ success: true, id: existingId, debug: debug });
-      }
-
-      return jsonResponse({ error: "Failed to update contact", debug: debug }, 502);
-    }
-
-    // Step 2b: Contact doesn't exist — create
+    // Step 1: Try to create the contact
     var createRes = await fetch(ghBase, {
       method: "POST",
       headers: ghHeaders,
       body: JSON.stringify(contactPayload),
     });
-    var createText = await createRes.text();
-
-    debug.push({
-      step: "create",
-      status: createRes.status,
-      body: createText.substring(0, 1500),
-    });
 
     if (createRes.ok) {
-      var contactId = null;
-      try {
-        var createData = JSON.parse(createText);
-        contactId = (createData.contact && createData.contact.ID) ||
-                    (createData.item && createData.item.ID) ||
-                    null;
-      } catch (e) {
-        // ignore parse errors
-      }
-      return jsonResponse({ success: true, id: contactId, debug: debug });
+      var createData = await createRes.json();
+      var contactId = (createData.contact && createData.contact.ID) ||
+                      (createData.item && createData.item.ID) ||
+                      null;
+      return jsonResponse({ success: true, id: contactId });
     }
 
-    return jsonResponse({ error: "Failed to create contact", debug: debug }, 502);
+    // Step 2: Create failed (likely contact exists) — look up by email
+    var lookupUrl = ghBase + "/" + encodeURIComponent(email);
+    var lookupRes = await fetch(lookupUrl, {
+      method: "GET",
+      headers: ghHeaders,
+    });
+
+    if (!lookupRes.ok) {
+      return jsonResponse({ error: "Failed to subscribe" }, 502);
+    }
+
+    var lookupData = await lookupRes.json();
+
+    // Extract the contact ID from the response
+    var existingId = null;
+    if (lookupData.contact) {
+      existingId = lookupData.contact.ID || lookupData.contact.id;
+    } else if (lookupData.item) {
+      existingId = lookupData.item.ID || lookupData.item.id;
+    } else if (lookupData.ID) {
+      existingId = lookupData.ID;
+    }
+
+    if (!existingId) {
+      return jsonResponse({ error: "Failed to subscribe" }, 502);
+    }
+
+    // Step 3: Update the existing contact with tags and data
+    var updateUrl = ghBase + "/" + existingId;
+    var updateRes = await fetch(updateUrl, {
+      method: "PATCH",
+      headers: ghHeaders,
+      body: JSON.stringify(contactPayload),
+    });
+
+    if (updateRes.ok) {
+      return jsonResponse({ success: true, id: existingId });
+    }
+
+    // If PATCH fails, try PUT as fallback
+    var putRes = await fetch(updateUrl, {
+      method: "PUT",
+      headers: ghHeaders,
+      body: JSON.stringify(contactPayload),
+    });
+
+    if (putRes.ok) {
+      return jsonResponse({ success: true, id: existingId });
+    }
+
+    return jsonResponse({ error: "Failed to update contact" }, 502);
   } catch (err) {
-    debug.push({ step: "exception", message: err.message });
-    return jsonResponse({ error: "Service unavailable", debug: debug }, 502);
+    console.error("Groundhogg request failed:", err);
+    return jsonResponse({ error: "Service unavailable" }, 502);
   }
 }
