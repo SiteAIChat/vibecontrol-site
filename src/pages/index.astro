@@ -11,11 +11,17 @@ import {
   CheckCircle,
   ArrowRight,
   Check,
+  X,
   Code,
   Megaphone,
   FolderCog,
   Rocket,
   ListTodo,
+  Monitor,
+  Shield,
+  LayoutDashboard,
+  HelpCircle,
+  AlertTriangle,
 } from 'lucide-react';
 ---
 <Layout title="VibeControl — Your AI agents can do the work. VibeControl makes it manageable.">
@@ -146,6 +152,95 @@ import {
     </div>
   </section>
 
+  <!-- THE THREE THINGS THAT MATTER -->
+  <section class="relative py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What OpenClaw got right — and what it's missing.</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center mb-5">
+            <Monitor className="w-6 h-6 text-brand-blue" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Execution on your machine — but managed.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> People want AI agents running locally, with their own API keys, against their own files. Not sandboxed playgrounds.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> The same self-hosted execution, but wrapped in a structured task system. You create a task with context, priority, and acceptance criteria. The agent executes against your runtime. You review the output. Approve or iterate. Every step tracked.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-teal/20 flex items-center justify-center mb-5">
+            <Brain className="w-6 h-6 text-brand-teal" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Persistent memory — but shared.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> Memory that persists across conversations is transformative. You tell an agent your preferences once, and it remembers.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Memory isn't just for one agent in one chat thread. It's a structured, vectorized knowledge system that spans agents, tasks, and team members. Reassign a task? The memory transfers. Onboard someone new? Context is instant.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="w-12 h-12 rounded-xl bg-brand-orange/20 flex items-center justify-center mb-5">
+            <Users className="w-6 h-6 text-brand-orange" />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Model flexibility — but with team workflow.</h3>
+          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What OpenClaw proved:</strong> Model-agnostic is the right call. People want to use Claude, GPT, Gemini, DeepSeek, or local models via Ollama.</p>
+          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Same BYOK, same model flexibility — but inside a platform designed for teams. Build a team of specialized agents — a coding agent on Claude, a research agent on Gemini, a writing agent on GPT — each assigned to different tasks on the same board.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="relative py-24 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent"></div>
+    <div class="relative max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">The OpenClaw problem nobody's talking about.</h2>
+      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">OpenClaw captured imaginations. But the people actually trying to use it for real work keep hitting the same walls:</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <ClipboardList className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No task management.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">You talk to an agent through WhatsApp or Discord. There's no task board, no priorities, no statuses, no deadlines. You can't see at a glance what's in progress, what's blocked, or what's done.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <Users className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No team features.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">OpenClaw is built for one person, one agent. There's no way to invite team members, no role-based access, no shared visibility into what agents are doing.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <LayoutDashboard className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">No structured UI.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Everything happens in messaging apps. You can't drag tasks across a Kanban board in WhatsApp. You can't see a dashboard of agent activity in Telegram.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <Shield className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">Serious security concerns.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">A critical RCE vulnerability. Prompt injection attacks. Data exfiltration from third-party skills. When an agent has full access to your machine, the attack surface matters — a lot.</p>
+        </div>
+
+        <div class="md:col-span-2 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <div class="flex items-center gap-3 mb-3">
+            <HelpCircle className="w-5 h-5 text-brand-coral shrink-0" />
+            <h3 class="text-lg font-semibold">Uncertain future.</h3>
+          </div>
+          <p class="text-gray-400 text-sm">The creator just joined OpenAI. The project is moving to a foundation. The roadmap is unclear. Building your workflow on top of it is a bet with no guaranteed payoff.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-xl font-bold mt-12 bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">VibeControl solves all five.</p>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section id="how-it-works" class="relative py-24 px-6">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
@@ -266,6 +361,61 @@ import {
     </div>
   </section>
 
+  <!-- COMPARISON TABLE -->
+  <section class="relative py-24 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">VibeControl vs. the landscape.</h2>
+
+      <div class="overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-white/5">
+              <th class="text-left p-4 font-semibold text-gray-300 min-w-[200px]"></th>
+              <th class="p-4 font-semibold text-brand-blue min-w-[120px]">VibeControl</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">OpenClaw</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">ChatGPT / Claude.ai</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Cursor</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Linear + AI</th>
+              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">CrewAI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            {[
+              { feature: 'Task management & tracking', vals: [true, false, false, false, true, false] },
+              { feature: 'AI execution on your machine', vals: [true, true, false, 'IDE only', false, true] },
+              { feature: 'Persistent agent memory', vals: [true, true, false, false, false, false] },
+              { feature: 'Structured UI (not just chat)', vals: [true, false, true, true, true, false] },
+              { feature: 'Human + AI workers unified', vals: [true, false, false, false, true, false] },
+              { feature: 'Team collaboration & RBAC', vals: [true, false, false, false, true, false] },
+              { feature: 'Self-hosted runtime', vals: [true, true, false, false, false, true] },
+              { feature: 'Bring your own keys', vals: [true, true, false, true, false, true] },
+              { feature: 'Mobile app', vals: [true, 'Via chat apps', true, false, true, false] },
+              { feature: 'Vetted security model', vals: [true, 'warn', true, true, true, 'Varies'] },
+            ].map(({ feature, vals }) => (
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-4 text-gray-300 font-medium">{feature}</td>
+                {vals.map((val) => (
+                  <td class="p-4 text-center">
+                    {val === true ? (
+                      <Check className="w-5 h-5 text-brand-teal mx-auto" />
+                    ) : val === false ? (
+                      <X className="w-5 h-5 text-gray-600 mx-auto" />
+                    ) : val === 'warn' ? (
+                      <AlertTriangle className="w-5 h-5 text-brand-orange mx-auto" />
+                    ) : (
+                      <span class="text-gray-500 text-xs">{val}</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- POSITIONING -->
   <section class="py-24 px-6">
     <div class="max-w-3xl mx-auto text-center">
@@ -275,19 +425,75 @@ import {
     </div>
   </section>
 
-  <!-- PRICING TEASER -->
+  <!-- PRICING -->
   <section id="pricing" class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
-    <div class="relative max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Start simple. Scale up when you're ready.</h2>
-      <div class="space-y-3 text-lg text-gray-300 mb-10">
-        <p>Solo builder friendly.</p>
-        <p>Team-ready when you grow.</p>
-        <p>Built for human + AI collaboration from day one.</p>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Start simple. Scale up when you're ready.</h2>
+      <p class="text-gray-400 text-center mb-16">Solo builder friendly. Team-ready when you grow. Built for human + AI collaboration from day one.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Free -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Free</h3>
+          <p class="text-3xl font-bold mb-2">$0<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-gray-400 text-sm mb-6">Get your hands on it. See how it works.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 1 runtime</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 agents</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 25 tasks</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Full chat & task management</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Persistent agent memory</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Get Early Access</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-brand-blue/40 backdrop-blur-md flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-blue rounded-full text-xs font-semibold">Popular</div>
+          <h3 class="text-xl font-bold mb-1">Pro</h3>
+          <p class="text-3xl font-bold mb-2">$20<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-gray-400 text-sm mb-6">For power users running real workloads.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 3 runtimes</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited agents</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited tasks</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Free</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">Get Early Access</a>
+        </div>
+
+        <!-- Team -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Team</h3>
+          <p class="text-3xl font-bold mb-1">$35<span class="text-sm text-gray-400 font-normal">/month</span></p>
+          <p class="text-xs text-gray-500 mb-2">2 seats included + $15/additional member</p>
+          <p class="text-gray-400 text-sm mb-6">For teams mixing AI and human workers.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 team members included</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited runtimes</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Guest invites</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Role-based access control</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Pro</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Get Early Access</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
+          <h3 class="text-xl font-bold mb-1">Enterprise</h3>
+          <p class="text-3xl font-bold mb-2">Custom</p>
+          <p class="text-gray-400 text-sm mb-6">For organizations with compliance and scale requirements.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Self-hosted control plane</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> SSO</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> SLA</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Dedicated support</li>
+            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Custom integrations</li>
+          </ul>
+          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Talk to Us</a>
+        </div>
       </div>
-      <a href="#cta" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">
-        Get Early Access <ArrowRight className="w-4 h-4" />
-      </a>
+      <p class="text-center text-gray-400 text-sm mt-8">All tiers will be available at launch. Sign up now to lock in early access.</p>
     </div>
   </section>
 
