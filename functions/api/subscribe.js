@@ -53,40 +53,65 @@ export async function onRequestPost(context) {
     }
   }
 
+  const ghHeaders = {
+    "Content-Type": "application/json",
+    "gh-token": GH_TOKEN,
+    "gh-public-key": GH_PUBLIC_KEY,
+  };
+
+  const contactData = {
+    email,
+    first_name: first_name || "",
+    last_name: last_name || "",
+    optin_status: 2,
+    tags,
+    meta: {
+      source: source || "vibecontrol-landing",
+    },
+  };
+
   try {
-    const res = await fetch(
+    // Try creating the contact first
+    const createRes = await fetch(
       `${GROUNDHOGG_URL}/wp-json/gh/v3/contacts`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "gh-token": GH_TOKEN,
-          "gh-public-key": GH_PUBLIC_KEY,
-        },
+        headers: ghHeaders,
+        body: JSON.stringify(contactData),
+      }
+    );
+
+    if (createRes.ok) {
+      const data = await createRes.json();
+      return Response.json({ success: true, id: data.contact?.ID });
+    }
+
+    // If create failed (e.g. contact already exists), try updating instead
+    console.error("Groundhogg create failed:", createRes.status, await createRes.clone().text());
+
+    const updateRes = await fetch(
+      `${GROUNDHOGG_URL}/wp-json/gh/v3/contacts`,
+      {
+        method: "PATCH",
+        headers: ghHeaders,
         body: JSON.stringify({
-          email,
-          first_name: first_name || "",
-          last_name: last_name || "",
-          optin_status: 2,
-          tags,
-          meta: {
-            source: source || "vibecontrol-landing",
-          },
+          id_or_email: email,
+          ...contactData,
         }),
       }
     );
 
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("Groundhogg API error:", res.status, err);
-      return Response.json(
-        { error: "Failed to subscribe" },
-        { status: 502 }
-      );
+    if (updateRes.ok) {
+      const data = await updateRes.json();
+      return Response.json({ success: true, id: data.contact?.ID });
     }
 
-    const data = await res.json();
-    return Response.json({ success: true, id: data.contact?.ID });
+    const err = await updateRes.text();
+    console.error("Groundhogg update also failed:", updateRes.status, err);
+    return Response.json(
+      { error: "Failed to subscribe" },
+      { status: 502 }
+    );
   } catch (err) {
     console.error("Groundhogg request failed:", err);
     return Response.json(
