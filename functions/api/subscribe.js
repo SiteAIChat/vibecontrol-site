@@ -1,5 +1,30 @@
+const ALLOWED_ORIGINS = [
+  "https://vibecontrol.app",
+  "https://www.vibecontrol.app",
+  "https://getvibecontrol.com",
+  "https://www.getvibecontrol.com",
+];
+
+function corsHeaders(origin) {
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    headers["Access-Control-Allow-Origin"] = origin;
+  }
+  return headers;
+}
+
+export async function onRequestOptions(context) {
+  const origin = context.request.headers.get("Origin") || "";
+  return new Response(null, { status: 204, headers: corsHeaders(origin) });
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const origin = request.headers.get("Origin") || "";
 
   const GROUNDHOGG_URL = env.GROUNDHOGG_URL;
   const GH_PUBLIC_KEY = env.GH_PUBLIC_KEY;
@@ -8,7 +33,7 @@ export async function onRequestPost(context) {
   function jsonResponse(data, status = 200) {
     return new Response(JSON.stringify(data), {
       status,
-      headers: { "Content-Type": "application/json" },
+      headers: corsHeaders(origin),
     });
   }
 
