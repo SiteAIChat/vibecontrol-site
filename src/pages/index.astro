@@ -1,567 +1,759 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {
-  ClipboardList,
-  Cpu,
-  Brain,
-  Monitor,
-  Users,
-  Bot,
-  Smartphone,
-  WifiOff,
-  Zap,
-  Shield,
-  LayoutDashboard,
-  AlertTriangle,
-  Check,
-  X,
   ArrowRight,
-  Trophy,
-  ChevronRight,
-  Plus,
-  UserPlus,
-  Cog,
-  SearchCheck,
-  ThumbsUp,
+  Check,
+  Inbox,
+  PhoneCall,
+  HeartHandshake,
+  PenLine,
+  BarChart3,
+  ClipboardList,
+  Brain,
+  Cloud,
+  Eye,
+  ShieldCheck,
+  Scale,
+  Sparkles,
+  Building2,
+  Briefcase,
+  GraduationCap,
+  Rocket,
+  ClipboardCheck,
+  ChevronDown,
+  Lock,
+  CheckCircle2,
 } from 'lucide-react';
+
+const BLUEPRINT_URL = 'https://roleforgeai.com';
+const CTA_LABEL = 'Start with the $47 Blueprint';
 ---
-<Layout title="VibeControl — Your AI agents can do the work. VibeControl makes it manageable.">
-  <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Glow orbs -->
-    <div class="absolute top-20 left-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-[120px]"></div>
-    <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-brand-teal/20 rounded-full blur-[120px]"></div>
-    <div class="absolute top-1/2 right-1/3 w-64 h-64 bg-brand-orange/15 rounded-full blur-[100px]"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center py-24">
-      <img src="/images/logo-light.png" alt="VibeControl" class="mx-auto h-[7.5rem] md:h-[10.5rem] mb-10" />
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-white via-brand-blue to-brand-teal bg-clip-text text-transparent leading-tight">
-        Your AI agents can do the work.<br />VibeControl makes it manageable.
-      </h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4">
-        AI agents can do real work now — not just chat. VibeControl turns that power into a simple workspace where you can assign tasks to agents (or people), review what gets done, and keep everything organized as you build.
-      </p>
-      <p class="text-base text-brand-teal mb-10">
-        Launching Soon. Sign up for early access and be first in line.
-      </p>
-
-      <!-- CTA buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <a href="#cta" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">
-          Get Early Access <ArrowRight className="w-4 h-4" />
+<Layout
+  title="VibeControl — Your AI workforce, running your business"
+  description="Hire an AI office manager, sales assistant, or customer support rep for your small business. Starts with a $47 Blueprint that maps your AI workforce and builds your team."
+>
+  <!-- =========================
+       NAV (top, minimal)
+       ========================= -->
+  <header
+    id="site-nav"
+    class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+    data-state="top"
+  >
+    <div class="bg-gray-950/70 backdrop-blur-md border-b border-white/5 supports-[backdrop-filter]:bg-gray-950/60">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
+        <a href="#top" class="flex items-center gap-2 shrink-0">
+          <img src="/images/logo-light.png" alt="VibeControl" class="h-8 w-auto" />
+          <span class="sr-only">VibeControl</span>
         </a>
-        <a href="#how-it-works" class="px-8 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">
-          See How It Works
+        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+          <a href="#pricing" class="hover:text-white transition">Pricing</a>
+          <a href="#founder" class="hover:text-white transition">About</a>
+          <a href="https://vibecontrol.app/login" class="hover:text-white transition">Login</a>
+        </nav>
+        <a
+          href={BLUEPRINT_URL}
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-sm font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/20"
+        >
+          {CTA_LABEL}
+          <ArrowRight className="w-4 h-4" />
         </a>
-      </div>
-
-      <!-- Trust badges -->
-      <p class="text-lg text-gray-300 mb-6">Built for builders who want a team of AI workers — without the chaos.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        {['AI Subscription Friendly', 'Team roles', 'Review & approvals', 'Activity history'].map((badge) => (
-          <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-400">{badge}</span>
-        ))}
+        <a
+          href={BLUEPRINT_URL}
+          class="sm:hidden inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-xs font-semibold text-white"
+        >
+          $47 Blueprint
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- THE MOMENT -->
-  <section class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent"></div>
-    <div class="relative max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Autonomous AI Agents</h2>
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">VibeControl makes them usable.</h2>
+  <main id="top" class="pt-16">
+    <!-- =========================
+         SECTION 1 — HERO
+         ========================= -->
+    <section class="relative overflow-hidden">
+      <!-- ambient glow -->
+      <div class="absolute top-10 left-1/4 w-[28rem] h-[28rem] bg-brand-blue/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-brand-teal/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+      <div class="absolute top-1/3 right-1/3 w-72 h-72 bg-brand-orange/10 rounded-full blur-[120px]" aria-hidden="true"></div>
 
-      <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
-        <p>
-          AI agents that can actually <em>do</em> things are here. But once you move past a simple experiment to real multi-agent workflows, it gets messy fast.
+      <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
+          A Build3r product · Run by Dustin Randle
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.05]">
+          Your business doesn't need
+          <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">
+            more software.
+          </span>
+          <span class="text-gray-200">It needs more workers.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          VibeControl gives you an AI workforce that actually runs the work —
+          answers your emails, follows up with leads, keeps your CRM clean,
+          writes your reports. For less than a part-time VA.
         </p>
-        <ul class="grid grid-cols-2 gap-4 text-gray-300">
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> Who's working on what?</li>
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> What's done vs. stuck?</li>
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> Where do the results live?</li>
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> How do you review before it ships?</li>
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> How do you share it with a team?</li>
-          <li class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10"><span class="text-brand-coral text-lg">&#x2022;</span> Who approved what — and when?</li>
-        </ul>
-      </div>
 
-      <h3 class="text-2xl md:text-3xl font-bold text-center mt-16 mb-3">VibeControl is the missing layer.</h3>
-      <p class="text-lg md:text-xl text-gray-300 text-center mb-10">A clean place to run your AI (and human) team together.</p>
+        <div class="flex flex-col items-center gap-3">
+          <a
+            href={BLUEPRINT_URL}
+            class="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
+          >
+            {CTA_LABEL}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+          </a>
+          <p class="text-sm text-gray-400 max-w-md">
+            A $47 guided session that maps your AI workforce and shows you the
+            workers your business should hire first.
+          </p>
+        </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
-          <Plus className="w-4 h-4 text-brand-blue" /> Create Task
-        </div>
-        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
-          <UserPlus className="w-4 h-4 text-brand-teal" /> Assign It
-        </div>
-        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
-          <Cog className="w-4 h-4 text-brand-orange" /> Work Gets Done
-        </div>
-        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
-          <SearchCheck className="w-4 h-4 text-brand-blue" /> Review It
-        </div>
-        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
-          <ThumbsUp className="w-4 h-4 text-brand-teal" /> Approve It
-        </div>
-        <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-        <div class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-blue/20 to-brand-teal/20 border border-brand-teal/30 text-white text-sm font-semibold">
-          <Trophy className="w-4 h-4 text-brand-teal" /> Move On
+        <!-- micro-trust row -->
+        <div class="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Secure Stripe checkout</span>
+          <span class="hidden sm:inline">·</span>
+          <span class="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5" /> 14-day Value Promise</span>
+          <span class="hidden sm:inline">·</span>
+          <span class="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" /> Yours to keep</span>
         </div>
       </div>
-      <p class="text-white font-semibold text-xl text-center">
-        It feels like running a business — not managing a science experiment.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- THE THREE THINGS THAT MATTER -->
-  <section class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
-    <div class="relative max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What today's AI tools get right — and what they're missing.</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center mb-5">
-            <Monitor className="w-6 h-6 text-brand-blue" />
+    <!-- =========================
+         SECTION 2 — JTBD COMPARISON
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-2xl mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">What's different about VibeControl</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            You've already tried AI. It still ended up back on your plate.
+          </h2>
+          <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+            <p>
+              ChatGPT for drafting things. Maybe an AI feature inside your CRM.
+              Maybe an automation tool. They help — but the work still ends up
+              back on your plate.
+            </p>
+            <p>
+              Every AI tool you've used so far has been built to
+              <em class="text-gray-100 not-italic font-medium">help you think</em>
+              about work. VibeControl is built to
+              <em class="text-white not-italic font-semibold">do the work</em>.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Execution on your machine — but managed.</h3>
-          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What works today:</strong> People want AI agents running locally, with their own API keys, against their own files. Not sandboxed playgrounds.</p>
-          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> The same self-hosted execution, but wrapped in a structured task system. You create a task with context, priority, and acceptance criteria. The agent executes against your runtime. You review the output. Approve or iterate. Every step tracked.</p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="w-12 h-12 rounded-xl bg-brand-teal/20 flex items-center justify-center mb-5">
-            <Brain className="w-6 h-6 text-brand-teal" />
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Persistent memory — but shared.</h3>
-          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What works today:</strong> Memory that persists across conversations is transformative. You tell an agent your preferences once, and it remembers.</p>
-          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Memory isn't just for one agent in one chat thread. It's a structured, vectorized knowledge system that spans agents, tasks, and team members. Reassign a task? The memory transfers. Onboard someone new? Context is instant.</p>
-        </div>
-
-        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/20 flex items-center justify-center mb-5">
-            <Users className="w-6 h-6 text-brand-orange" />
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Model flexibility — but with team workflow.</h3>
-          <p class="text-gray-400 text-sm mb-4"><strong class="text-gray-300">What works today:</strong> Bring your own keys is the right call. People want to use the best models with their own API keys, not be locked into a single provider.</p>
-          <p class="text-gray-400 text-sm"><strong class="text-gray-300">What VibeControl adds:</strong> Same BYOK philosophy — but inside a platform designed for teams. Build a team of specialized agents — a coding agent on Claude Code, a task agent on Codex — each assigned to different tasks on the same board.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE GAP -->
-  <section class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent"></div>
-    <div class="relative max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">The problem with today's AI agent tools.</h2>
-      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">AI agents are powerful. But the tools around them weren't built for real work. People keep hitting the same walls:</p>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="flex items-center gap-3 mb-3">
-            <ClipboardList className="w-5 h-5 text-brand-coral shrink-0" />
-            <h3 class="text-lg font-semibold">No task management.</h3>
-          </div>
-          <p class="text-gray-400 text-sm">Most AI tools are just chat. There's no task board, no priorities, no statuses, no deadlines. You can't see at a glance what's in progress, what's blocked, or what's done.</p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="flex items-center gap-3 mb-3">
-            <Users className="w-5 h-5 text-brand-coral shrink-0" />
-            <h3 class="text-lg font-semibold">No team features.</h3>
-          </div>
-          <p class="text-gray-400 text-sm">Most agent tools are built for one person, one agent. There's no way to invite team members, no role-based access, no shared visibility into what agents are doing.</p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="flex items-center gap-3 mb-3">
-            <LayoutDashboard className="w-5 h-5 text-brand-coral shrink-0" />
-            <h3 class="text-lg font-semibold">No structured UI.</h3>
-          </div>
-          <p class="text-gray-400 text-sm">Everything happens in chat windows or terminals. You can't drag tasks across a Kanban board. You can't see a dashboard of agent activity at a glance.</p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-          <div class="flex items-center gap-3 mb-3">
-            <Shield className="w-5 h-5 text-brand-coral shrink-0" />
-            <h3 class="text-lg font-semibold">Security is an afterthought.</h3>
-          </div>
-          <p class="text-gray-400 text-sm">When an agent has access to your machine, the attack surface matters. VibeControl is built security-first: RLS on every table, rate limiting, CSP headers, and sandboxed tool execution.</p>
+        <div class="space-y-3">
+          {[
+            { left: 'ChatGPT', leftDoes: 'gives you advice.', right: 'VibeControl', rightDoes: 'does the work.', sub: 'One drafts emails you still have to send. The other answers them.' },
+            { left: 'Zapier', leftDoes: 'connects your apps.', right: 'VibeControl', rightDoes: 'runs your business.', sub: 'One moves data between tools. The other makes decisions and takes action.' },
+            { left: 'Your CRM', leftDoes: 'stores your customers.', right: 'VibeControl', rightDoes: 'talks to them.', sub: 'One is a database. The other is a sales assistant who never forgets to follow up.' },
+            { left: 'Your project tool', leftDoes: 'tracks tasks.', right: 'VibeControl', rightDoes: 'completes them.', sub: 'One is a list. The other is a team.' },
+            { left: 'A virtual assistant', leftDoes: 'costs $2,000+ a month.', right: 'VibeControl', rightDoes: 'costs $97.', sub: 'One needs to be hired, trained, managed, and paid. The other shows up already knowing your business.' },
+          ].map((row) => (
+            <div class="group rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all overflow-hidden">
+              <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="p-6 md:p-7">
+                  <p class="text-gray-400 text-base">
+                    <span class="font-semibold text-gray-300">{row.left}</span>
+                    {' '}{row.leftDoes}
+                  </p>
+                </div>
+                <div class="p-6 md:p-7 bg-gradient-to-br from-brand-blue/[0.06] to-brand-teal/[0.06]">
+                  <p class="text-white text-base">
+                    <span class="font-bold bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">{row.right}</span>
+                    {' '}<span class="font-semibold">{row.rightDoes}</span>
+                  </p>
+                </div>
+              </div>
+              <p class="px-6 md:px-7 pb-5 pt-1 text-sm italic text-gray-500">{row.sub}</p>
+            </div>
+          ))}
         </div>
       </div>
+    </section>
 
-      <p class="text-center text-xl font-bold mt-12 bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">VibeControl solves all four.</p>
-    </div>
-  </section>
+    <!-- =========================
+         SECTION 3 — WHAT'S ACTUALLY IN IT
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6 overflow-hidden">
+      <div class="absolute top-1/2 -translate-y-1/2 -left-40 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]" aria-hidden="true"></div>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
-    <div class="relative max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">From "do this" to "done" — with structure.</h2>
+      <div class="relative max-w-6xl mx-auto">
+        <div class="max-w-3xl mb-16 text-center mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Your AI workforce, working</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Assign work the way you'd assign it to a person.
+            <span class="text-gray-400">The work gets done.</span>
+          </h2>
+        </div>
 
-      <div class="space-y-8">
-        {[
-          { step: '1', title: 'Create a task.', desc: 'Not a chat message — a real task. Title, description, priority, context, attached files. Just like any project management tool you\'ve used, except this one can also execute.' },
-          { step: '2', title: 'Assign it.', desc: 'Pick an AI agent or a team member from the same interface. The platform doesn\'t care who does the work. It cares that the work gets tracked and completed.' },
-          { step: '3', title: 'Agents execute on your machine.', desc: 'The assigned agent picks up the task, spawns the configured CLI (Claude Code, Codex CLI, or custom), and executes against your local runtime. File system access, shell commands, real tool use — not a sandbox.' },
-          { step: '4', title: 'Review in context.', desc: 'The agent reports back in the task\'s chat thread — same place you assigned the work. Review the output, approve it, or send it back with feedback. Full audit trail, full visibility.' },
-          { step: '5', title: 'Knowledge compounds.', desc: 'Every completed task feeds the memory system. Your agents get smarter about your codebase, your preferences, and your team\'s decisions. The more work they do, the less you have to explain.' },
-        ].map(({ step, title, desc }) => (
-          <div class="flex gap-6 items-start">
-            <div class="w-12 h-12 shrink-0 rounded-full bg-gradient-to-br from-brand-blue to-brand-teal flex items-center justify-center text-lg font-bold shadow-lg shadow-brand-blue/25">
-              {step}
+        <!-- Roles -->
+        <p class="text-center text-gray-300 text-lg mb-10 font-medium">Hire workers for the jobs that fill your day.</p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-20">
+          {[
+            { icon: Inbox, color: 'brand-blue', role: 'AI Office Manager', desc: 'Reads your inbox, books your meetings, and flags what needs you.' },
+            { icon: PhoneCall, color: 'brand-teal', role: 'AI Sales Assistant', desc: 'Follows up with every lead, books calls, and updates your CRM.' },
+            { icon: HeartHandshake, color: 'brand-orange', role: 'AI Customer Support', desc: 'Handles routine questions and routes the complex ones to you.' },
+            { icon: PenLine, color: 'brand-coral', role: 'AI Content Writer', desc: 'Drafts your emails, newsletters, and follow-up sequences in your voice.' },
+            { icon: BarChart3, color: 'brand-blue', role: 'AI Reports Analyst', desc: 'Pulls your numbers and writes the summary — Monday before you log on.' },
+          ].map(({ icon: Icon, color, role, desc }) => (
+            <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.06] transition group">
+              <div class={`w-10 h-10 rounded-xl bg-${color}/15 flex items-center justify-center mb-4 group-hover:scale-105 transition`}>
+                <Icon className={`w-5 h-5 text-${color}`} />
+              </div>
+              <h3 class="font-semibold text-white mb-2 leading-snug">{role}</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Capability blocks -->
+        <div class="grid md:grid-cols-2 gap-5">
+          {[
+            { icon: ClipboardList, color: 'brand-blue', title: 'Each worker has a job description.', body: 'What they do, what they don’t, how much judgment they’re trusted with. Built specifically for your business — not generic templates.' },
+            { icon: Brain, color: 'brand-teal', title: 'They remember.', body: 'Your workers learn your customers, your decisions, your way of doing things. The longer they work for you, the better they get. Hire a new VA and your AI team brings them up to speed.' },
+            { icon: Cloud, color: 'brand-orange', title: 'They work while you sleep.', body: 'VibeControl runs in the cloud, on our infrastructure. Nothing to install. Your AI team keeps working whether your computer is open or not.' },
+            { icon: Eye, color: 'brand-coral', title: 'You see everything they’re doing.', body: 'Open the app from your phone or laptop and you see exactly what your AI team has handled, what’s in progress, and what’s waiting for you.' },
+            { icon: ShieldCheck, color: 'brand-blue', title: 'Nothing happens you didn’t authorize.', body: 'You decide what each worker is allowed to do on their own and what needs your approval. Email drafts can wait for review. Customer responses can send automatically. You set the rules.' },
+            { icon: Scale, color: 'brand-teal', title: 'You stay in charge of the judgment calls.', body: 'AI workers handle routine work end-to-end. Pricing, strategy, hard customer conversations — those stay with you. Always.' },
+          ].map(({ icon: Icon, color, title, body }) => (
+            <div class="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md hover:border-white/20 transition">
+              <div class="flex items-start gap-4">
+                <div class={`w-11 h-11 shrink-0 rounded-xl bg-${color}/15 flex items-center justify-center`}>
+                  <Icon className={`w-5 h-5 text-${color}`} />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-white mb-2 leading-snug">{title}</h3>
+                  <p class="text-gray-400 leading-relaxed">{body}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Product placeholder -->
+        <figure class="mt-16 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.02] p-2 backdrop-blur-md">
+          <div class="aspect-[16/9] rounded-2xl bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 border border-white/5 flex items-center justify-center overflow-hidden relative">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(74,144,217,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,217,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+            <div class="relative text-center px-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-400 mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                Live dashboard preview
+              </div>
+              <p class="text-gray-300 max-w-md mx-auto">
+                Your AI team's work — what they handled, what's in progress, what's waiting on you. All in one place.
+              </p>
+            </div>
+          </div>
+          <figcaption class="text-center text-xs text-gray-500 pt-3 pb-1">
+            The VibeControl dashboard. Your AI team's work, visible.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================
+         SECTION 4 — HOW YOU GET STARTED
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">How you get started</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            One door in. <span class="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">The Blueprint.</span>
+          </h2>
+          <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            The fastest way to find out what VibeControl can do for your business
+            is through Roleforge — a $47 guided session that maps the AI workforce
+            your business actually needs.
+          </p>
+        </div>
+
+        <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-white/10 p-8 md:p-12 backdrop-blur-md">
+          <p class="text-gray-300 leading-relaxed mb-8">
+            You sit down with an AI consultant. It asks about your business.
+            Your customers. Your daily fires. It builds a picture of how your
+            business runs. Then it does two things:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5 mb-10">
+            <div class="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue font-bold">1</div>
+                <h3 class="font-semibold text-white">Gives you the Blueprint.</h3>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                A plan showing every AI worker your business should hire, ranked by impact. <span class="text-gray-200 font-medium">Yours to keep.</span>
+              </p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-teal/20 flex items-center justify-center text-brand-teal font-bold">2</div>
+                <h3 class="font-semibold text-white">Builds your team.</h3>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                The recommended workers are configured for your business, ready to deploy into VibeControl when you choose to.
+              </p>
+            </div>
+          </div>
+
+          <p class="text-gray-400 leading-relaxed mb-8">
+            After your Blueprint, you choose how to put your AI team to work.
+            Run them inside VibeControl ($97/mo) or take what you learned and
+            implement it yourself elsewhere.
+            <span class="text-gray-200">Most owners try the platform. Some don't. Either way the Blueprint is yours.</span>
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href={BLUEPRINT_URL}
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+            >
+              {CTA_LABEL}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <p class="text-sm text-gray-500">Takes about an hour. Yours to keep, regardless.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SECTION 5 — PRICING
+         ========================= -->
+    <section id="pricing" class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Pricing</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">What it costs.</h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Everyone starts the same way: a <span class="text-white font-semibold">$47 Roleforge Blueprint</span> that maps your AI workforce. From there, run your team inside VibeControl.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <!-- Standard -->
+          <div class="relative p-8 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md flex flex-col">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Standard</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="text-5xl font-bold text-white">$97</span>
+              <span class="text-gray-400">/mo</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-6">Solo operator running an AI team.</p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span><span class="text-white font-medium">Unlimited</span> AI workers</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>1 team member</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Credits for a typical month of solo usage</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Memory &amp; playbooks</span></li>
+            </ul>
+            <a
+              href={BLUEPRINT_URL}
+              class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition"
+            >
+              {CTA_LABEL}
+            </a>
+          </div>
+
+          <!-- Team -->
+          <div class="relative p-8 rounded-2xl bg-gradient-to-br from-brand-blue/10 via-white/[0.04] to-brand-teal/10 border border-brand-teal/30 backdrop-blur-md flex flex-col">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-brand-blue to-brand-teal rounded-full text-xs font-semibold text-white shadow-lg shadow-brand-blue/30">
+              For small teams
+            </div>
+            <h3 class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-1">Team</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="text-5xl font-bold text-white">$297</span>
+              <span class="text-gray-400">/mo</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-6">Humans + AI workers on the same board.</p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span><span class="text-white font-medium">Unlimited</span> AI workers</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Up to 10 team members</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Credits for a typical month of small-team usage</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Shared team workspace</span></li>
+              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app, memory &amp; playbooks</span></li>
+            </ul>
+            <a
+              href={BLUEPRINT_URL}
+              class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+            >
+              {CTA_LABEL}
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-8">
+          $47 one-time for the Blueprint. Choose your plan when you're ready to deploy. Cancel anytime.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SECTION 6 — FOUNDER
+         ========================= -->
+    <section id="founder" class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.02] border border-white/10 p-8 md:p-12 backdrop-blur-md">
+          <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 items-start">
+            <!-- Founder photo -->
+            <div class="mx-auto md:mx-0">
+              <div class="w-40 h-40 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-brand-blue/30 via-brand-teal/20 to-brand-orange/20 border border-white/10 flex items-center justify-center overflow-hidden">
+                <div class="text-center px-3">
+                  <div class="w-16 h-16 rounded-full bg-white/10 border border-white/20 mx-auto mb-2 flex items-center justify-center text-2xl font-bold text-white">DR</div>
+                  <p class="text-xs text-gray-400">Founder photo</p>
+                </div>
+              </div>
             </div>
             <div>
-              <h3 class="text-xl font-semibold mb-2">{title}</h3>
-              <p class="text-gray-400">{desc}</p>
+              <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-2">A founder note</p>
+              <h2 class="text-2xl md:text-3xl font-bold mb-5 leading-tight">
+                Built by someone who's been cleaning up after small business software for 18 years.
+              </h2>
+              <div class="space-y-4 text-gray-300 leading-relaxed">
+                <p>I'm Dustin. I built VibeControl.</p>
+                <p>
+                  I've spent 18 years running an IT services company for small
+                  businesses. Most of what I've done is fix things owners were
+                  sold that didn't work — software promises, productivity hacks,
+                  more recently AI tools. The cycle repeats.
+                </p>
+                <p>
+                  VibeControl is what I wish I'd had to recommend to my clients
+                  for the last decade. AI workers that actually do the work.
+                  Hired, trained, ready to go.
+                </p>
+                <p class="text-gray-400 text-sm border-l-2 border-white/10 pl-4">
+                  I also run an AI agency (Build3r) for the small number of
+                  businesses that want this set up for them personally. Everyone
+                  else uses VibeControl directly. That's the deal.
+                </p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- KEY FEATURES -->
-  <section class="relative py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything you need to run AI agents like real work.</h2>
-      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">The complete platform for AI agent execution and team collaboration.</p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <ClipboardList className="w-8 h-8 text-brand-blue mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Unified Task Board</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Kanban-style task management where AI agents and human workers share the same board. Statuses, priorities, deadlines, tags — with AI execution built in.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Cpu className="w-8 h-8 text-brand-teal mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Self-Hosted Runtime</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Install the lightweight runtime on your machine, VPS, or any server you control. Agents execute locally — your files, your commands, your API keys.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Brain className="w-8 h-8 text-brand-orange mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Persistent Memory</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Vectorized, searchable, long-term memory that persists across conversations, agents, and team members. Automatically recalled when relevant. Transfers when tasks get reassigned.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Zap className="w-8 h-8 text-brand-coral mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Multi-CLI, Multi-Model</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Agents execute through Claude Code, Codex CLI, or your own custom CLI. Bring your own API keys, pick the right tool for each agent or task.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Users className="w-8 h-8 text-brand-blue mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Team Collaboration</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Invite team members with four access levels: Owner, Admin, Member, Guest. Everyone — human and AI — sees the same task board and chat threads.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Bot className="w-8 h-8 text-brand-teal mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Multi-Agent Teams</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Create specialized agents for different work types. A backend agent on Claude Code. A task runner on Codex. Assign the right agent to the right task.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <Smartphone className="w-8 h-8 text-brand-orange mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Mobile App <span class="text-xs font-normal text-brand-teal">(Coming Soon)</span></h3>
-          <p class="text-gray-400 text-sm leading-relaxed">iOS and Android app. Create tasks, check on agent progress, approve completed work, and triage your board — from your phone.</p>
-        </div>
-
-        <div class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300">
-          <WifiOff className="w-8 h-8 text-brand-coral mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Offline Resilience</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Runtimes disconnect. It happens. VibeControl queues pending tasks automatically and resumes execution the moment connectivity returns. No lost work.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMPARISON TABLE -->
-  <section class="relative py-24 px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
-    <div class="relative max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">VibeControl vs. the landscape.</h2>
+    <!-- =========================
+         SECTION 7 — PROOF
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Proof</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">What this looks like in real businesses.</h2>
+        </div>
 
-      <div class="overflow-x-auto rounded-2xl border border-white/10">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="bg-white/5">
-              <th class="text-left p-4 font-semibold text-gray-300 min-w-[200px]"></th>
-              <th class="p-4 font-semibold text-brand-blue min-w-[120px]">VibeControl</th>
-              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">OpenClaw</th>
-              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">ChatGPT / Claude.ai</th>
-              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Cursor</th>
-              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">Linear + AI</th>
-              <th class="p-4 font-semibold text-gray-400 min-w-[120px]">CrewAI</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-white/5">
-            {[
-              { feature: 'Task management & tracking', vals: [true, false, false, false, true, false] },
-              { feature: 'AI execution on your machine', vals: [true, true, false, 'IDE only', false, true] },
-              { feature: 'Persistent agent memory', vals: [true, true, false, false, false, false] },
-              { feature: 'Structured UI (not just chat)', vals: [true, false, true, true, true, false] },
-              { feature: 'Human + AI workers unified', vals: [true, false, false, false, true, false] },
-              { feature: 'Team collaboration & RBAC', vals: [true, false, false, false, true, false] },
-              { feature: 'Self-hosted runtime', vals: [true, true, false, false, false, true] },
-              { feature: 'Bring your own keys', vals: [true, true, false, true, false, true] },
-              { feature: 'Mobile app', vals: ['Coming Soon', 'Via chat apps', true, false, true, false] },
-              { feature: 'Vetted security model', vals: [true, 'warn', true, true, true, 'Varies'] },
-            ].map(({ feature, vals }) => (
-              <tr class="hover:bg-white/5 transition">
-                <td class="p-4 text-gray-300 font-medium">{feature}</td>
-                {vals.map((val) => (
-                  <td class="p-4 text-center">
-                    {val === true ? (
-                      <Check className="w-5 h-5 text-brand-teal mx-auto" />
-                    ) : val === false ? (
-                      <X className="w-5 h-5 text-gray-600 mx-auto" />
-                    ) : val === 'warn' ? (
-                      <AlertTriangle className="w-5 h-5 text-brand-orange mx-auto" />
-                    ) : (
-                      <span class="text-gray-500 text-xs">{val}</span>
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              label: 'Agency · ~12 people',
+              quote: 'We use VibeControl to run our own agency. Client communications, project status updates, internal reporting, follow-ups across every active engagement. Two people on our team were spending hours each week on coordination work before this. Now they don’t.',
+              attribution: 'Build3r — the founder’s own agency',
+            },
+            {
+              label: 'Online course creator',
+              quote: 'I was personally answering every student question, drafting every weekly email, writing every promotional sequence. Now an AI customer support worker handles student questions, an AI writer drafts my emails, and an AI office manager flags the ones I actually need to read. I got hours of my week back.',
+              attribution: 'Course creator, business niche',
+            },
+            {
+              label: 'Small organization · leadership traveling',
+              quote: 'Our pastors are on the road most weeks. The organization still has to run. Before VibeControl, our small volunteer team was overwhelmed every time leadership traveled. Now an AI workforce handles communication, manages event responses, drafts weekly updates, and flags what needs a human.',
+              attribution: 'Operations lead, faith-based nonprofit',
+            },
+          ].map((c) => (
+            <figure class="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md flex flex-col">
+              <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-4">{c.label}</p>
+              <blockquote class="text-gray-300 leading-relaxed text-[15px] flex-1">
+                <span class="text-brand-blue text-2xl leading-none mr-1">&ldquo;</span>{c.quote}
+              </blockquote>
+              <figcaption class="text-xs text-gray-500 mt-5 pt-5 border-t border-white/5">— {c.attribution}</figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="relative py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Simple pricing. Launching Soon.</h2>
-      <p class="text-gray-400 text-center mb-16">You bring the API keys. We handle the orchestration. Here's what it'll cost.</p>
-
-      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <!-- Free -->
-        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
-          <h3 class="text-xl font-bold mb-1">Free</h3>
-          <p class="text-3xl font-bold mb-2">$0<span class="text-sm text-gray-400 font-normal">/month</span></p>
-          <p class="text-gray-400 text-sm mb-6">Get your hands on it. See how it works.</p>
-          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 1 runtime</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 agents</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 100 tasks</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 1 SiteAI site (branded, no custom domain)</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Full chat & task management</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Persistent agent memory</li>
-          </ul>
-          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Get Early Access</a>
-        </div>
-
-        <!-- Pro -->
-        <div class="p-8 rounded-2xl bg-white/5 border border-brand-blue/40 backdrop-blur-md flex flex-col relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-blue rounded-full text-xs font-semibold">Popular</div>
-          <h3 class="text-xl font-bold mb-1">Pro</h3>
-          <p class="text-3xl font-bold mb-2">$30<span class="text-sm text-gray-400 font-normal">/month</span></p>
-          <p class="text-gray-400 text-sm mb-6">For power users running real workloads.</p>
-          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 3 runtimes</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited agents</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Unlimited tasks</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 1 SiteAI site (custom domain)</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Free</li>
-          </ul>
-          <a href="#cta" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">Get Early Access</a>
-        </div>
-
-        <!-- Team -->
-        <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col">
-          <h3 class="text-xl font-bold mb-1">Team</h3>
-          <p class="text-3xl font-bold mb-1">$50<span class="text-sm text-gray-400 font-normal">/month</span></p>
-          <p class="text-xs text-gray-500 mb-2">2 seats included + $20/additional seat</p>
-          <p class="text-gray-400 text-sm mb-6">For teams mixing AI and human workers.</p>
-          <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 team members included</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 6 runtimes (3 per seat)</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> 2 SiteAI sites (custom domain)</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Role-based access control</li>
-            <li class="flex items-center gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0" /> Everything in Pro</li>
-          </ul>
-          <a href="#cta" class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition">Get Early Access</a>
-        </div>
-
-      </div>
-      <p class="text-center text-gray-400 text-sm mt-8">All plans available at launch. Sign up now to lock in early access.</p>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="cta" class="py-24 px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <div class="p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">You've seen what AI agents can do. Now manage them like real work.</h2>
-        <p class="text-gray-400 mb-8">The era of AI that actually executes is here. But execution without management is chaos. VibeControl gives your AI agents a real workflow: tasks, tracking, teams, memory, and security. We launch March 25 — get on the list.</p>
-
-        <form id="cta-form" action="#" class="flex flex-col gap-4 max-w-lg mx-auto text-left">
-          <input type="hidden" name="source" value="vibecontrol-landing" />
-
-          <!-- Name fields -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input
-              type="text"
-              name="first_name"
-              required
-              placeholder="First name"
-              class="px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
-            />
-            <input
-              type="text"
-              name="last_name"
-              required
-              placeholder="Last name"
-              class="px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
-            />
-          </div>
-
-          <!-- Email -->
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="you@example.com"
-            class="w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/60 transition"
-          />
-
-          <!-- Interest multi-select -->
-          <fieldset>
-            <legend class="text-sm text-gray-300 mb-3 font-medium">What are you most excited about?</legend>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-task-board" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Unified Task Board</span>
-              </label>
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-self-hosted" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Self-Hosted Runtime</span>
-              </label>
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-persistent-memory" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Persistent Memory</span>
-              </label>
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-multi-model" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Multi-CLI, Multi-Model</span>
-              </label>
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-team-collab" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Team Collaboration</span>
-              </label>
-              <label class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition">
-                <input type="checkbox" name="interests" value="interest-multi-agent" class="accent-brand-teal w-4 h-4 shrink-0" />
-                <span class="text-sm text-gray-300">Multi-Agent Teams</span>
-              </label>
+    <!-- =========================
+         SECTION 8 — THE PROMISE
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-teal/10 via-white/[0.03] to-brand-blue/10 border border-brand-teal/20 p-8 md:p-12 backdrop-blur-md">
+          <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-teal/10 rounded-full blur-[100px]" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-6">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-teal" />
+              14-Day Value Promise
             </div>
-          </fieldset>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            class="w-full px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
-          >
-            Get Early Access
-          </button>
-        </form>
-        <div id="cta-thanks" class="hidden mt-6">
-          <p class="text-brand-teal font-medium mb-4">You're on the list!</p>
-          <p class="text-gray-300 mb-6">Want to get a head start? Create your free account now and you'll have full access the moment we launch.</p>
-          <a href="https://vibecontrol.app/signup" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25">
-            Create a Free Account <ArrowRight className="w-4 h-4" />
-          </a>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              How we stand behind the $47.
+            </h2>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                Roleforge is $47. You walk out with a Blueprint, your AI workers
+                configured and ready, and clear next steps for putting them to work.
+              </p>
+              <p>
+                If during your 14 days with the Blueprint you don't feel you got
+                the clarity and value we promised, tell us. We'll work with you to
+                make it right — extend your access, set up a working session, help
+                you build what you came for.
+              </p>
+              <p class="text-white font-semibold text-lg">
+                We'd rather make it right than send you away.
+              </p>
+            </div>
+          </div>
         </div>
-        <p id="cta-error" class="hidden mt-4 text-brand-coral font-medium">Something went wrong. Please try again.</p>
-        <p id="cta-hint" class="mt-4 text-gray-500 text-sm">We'll notify you the moment we launch. No spam, just access.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-10 px-6">
-    <div class="max-w-4xl mx-auto flex flex-col items-center gap-6 text-gray-500 text-sm">
-      <div class="flex items-center gap-4">
-        <a href="https://youtube.com/@dustinrandle" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition text-gray-400 hover:text-white">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" /><path d="M9.545 15.568V8.432L15.818 12z" fill="#fff" /></svg>
-          YouTube
-        </a>
-        <a href="https://x.com/TheDustinRandle" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition text-gray-400 hover:text-white">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-          X
-        </a>
-        <a href="https://tiktok.com/@thedustinrandle" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition text-gray-400 hover:text-white">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" /></svg>
-          TikTok
-        </a>
+    <!-- =========================
+         SECTION 9 — WHO THIS IS FOR
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Who this is for</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">See yourself in here?</h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            VibeControl works for businesses where most of the work is
+            communication, coordination, follow-up, and content — the work AI
+            workers can actually do.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+          {[
+            { icon: Building2, color: 'brand-blue', label: 'Agencies', desc: 'Managing client work across multiple engagements.' },
+            { icon: Briefcase, color: 'brand-teal', label: 'Consultants', desc: 'Drafting proposals, summarizing calls, researching clients.' },
+            { icon: GraduationCap, color: 'brand-orange', label: 'Coaches & creators', desc: 'Answering students, drafting emails, repurposing content.' },
+            { icon: Rocket, color: 'brand-coral', label: 'Solo founders', desc: 'Organizing ideas, writing outreach, documenting processes.' },
+            { icon: ClipboardCheck, color: 'brand-blue', label: 'Operations-heavy', desc: 'Processing intake, drafting SOPs, routing tasks.' },
+          ].map(({ icon: Icon, color, label, desc }) => (
+            <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition text-center">
+              <div class={`w-11 h-11 rounded-xl bg-${color}/15 flex items-center justify-center mx-auto mb-4`}>
+                <Icon className={`w-5 h-5 text-${color}`} />
+              </div>
+              <h3 class="font-semibold text-white text-sm mb-2">{label}</h3>
+              <p class="text-xs text-gray-400 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-8 max-w-3xl mx-auto">
+          <p class="text-gray-300 leading-relaxed mb-3">
+            If your business is mostly people doing the same kinds of work over
+            and over — answering, drafting, following up, coordinating —
+            <span class="text-white font-semibold"> VibeControl will help.</span>
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            If your business is heavily physical (inventory, fulfillment, on-site
+            services), AI workers help less directly. We're being upfront about
+            that.
+          </p>
+        </div>
       </div>
-      <div class="flex items-center justify-between w-full">
-        <p>&copy; {new Date().getFullYear()} BUILD3R LLC. All rights reserved.</p>
-        <a href="https://build3r.io" class="hover:opacity-80 transition"><img src="/images/build3r-logo-white.png" alt="BUILD3R" class="h-6" /></a>
+    </section>
+
+    <!-- =========================
+         SECTION 10 — FAQ
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Common questions</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">Answers, before you ask.</h2>
+        </div>
+
+        <div class="space-y-3">
+          {[
+            { q: 'How does this work, exactly?', a: 'You pay $47 for the Roleforge Blueprint. You have a guided conversation with an AI consultant about your business. It produces a written plan and builds your AI team inside VibeControl, ready to deploy. From there you choose to run them inside the platform ($97/mo Standard or $297/mo Team) or take what you learned and implement it yourself.' },
+            { q: 'Do I have to install anything?', a: 'No. VibeControl runs in the cloud. You log in from a browser or our mobile app. Your AI workers run on our infrastructure — they keep working whether your laptop is open or not.' },
+            { q: 'What AI does it use under the hood?', a: 'We use leading AI models and route work to the right one for the job. You don’t manage any of that. No API keys to set up, no subscriptions to other AI services required.' },
+            { q: 'What if my Blueprint suggests workers I don’t actually want?', a: 'You’re in control. The Blueprint is a recommendation, not a command. You decide which workers to deploy and which to skip. You can also assign your own jobs to workers anytime.' },
+            { q: 'Can I try the platform before committing to a monthly plan?', a: 'Yes — most owners do. After your Blueprint, you can activate a trial of the Standard plan with starter credits. Details are presented after you complete your Blueprint purchase.' },
+            { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your account settings before your billing date to avoid the next charge. We don’t lock you in with annual contracts.' },
+            { q: 'Is there a Team plan or just Standard?', a: 'Both. Standard ($97/mo) is for solo operators. Team ($297/mo) is for small businesses with humans and AI workers on the same board. You can upgrade from Standard to Team anytime from your account.' },
+            { q: 'What if I need help setting this up?', a: 'Most owners don’t. The Blueprint builds your team for you. But if you want hands-on help, our AI agency (Build3r) offers done-with-you implementation for businesses that need it. Contact us through your account after signing up.' },
+            { q: 'Who’s behind this?', a: 'Built by Dustin Randle, who’s run a small business IT services company since 2008. Not a venture-funded startup chasing valuation — a profitable business with skin in the game.' },
+          ].map((item) => (
+            <details class="group rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition overflow-hidden">
+              <summary class="flex items-center justify-between gap-6 px-6 py-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-white text-base md:text-[17px] leading-snug">{item.q}</h3>
+                <div class="w-8 h-8 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-open:bg-brand-teal/20 group-open:border-brand-teal/40 transition">
+                  <ChevronDown className="w-4 h-4 text-gray-400 group-open:rotate-180 group-open:text-brand-teal transition" />
+                </div>
+              </summary>
+              <div class="px-6 pb-6 -mt-1">
+                <p class="text-gray-400 leading-relaxed">{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
+
+    <!-- =========================
+         SECTION 11 — FINAL CTA
+         ========================= -->
+    <section class="relative py-24 sm:py-32 px-6 overflow-hidden">
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[40rem] h-[40rem] bg-brand-blue/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[36rem] h-[36rem] bg-brand-teal/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          Ready to find out what an AI workforce would do for your business?
+        </h2>
+        <p class="text-lg text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          The $47 Blueprint takes about an hour of your time. You walk out with
+          a plan, a working AI team, and clear next steps for putting them to work.
+        </p>
+
+        <a
+          href={BLUEPRINT_URL}
+          class="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-2xl shadow-brand-blue/30 text-lg"
+        >
+          {CTA_LABEL}
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+        </a>
+
+        <p class="text-sm text-gray-500 mt-6 max-w-md mx-auto">
+          $47 one-time. Secure Stripe checkout. 14-day Value Promise: if it
+          doesn't deliver, we'll work with you to make it right.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         SECTION 12 — FOOTER
+         ========================= -->
+    <footer class="border-t border-white/10 py-14 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 mb-10">
+          <div>
+            <img src="/images/logo-light.png" alt="VibeControl" class="h-8 w-auto mb-4" />
+            <p class="text-gray-400 text-sm max-w-xs leading-relaxed">
+              Your AI workforce, running your business.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Product</p>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+              <li><a href="https://vibecontrol.app/login" class="text-gray-400 hover:text-white transition">Login</a></li>
+              <li><a href={BLUEPRINT_URL} class="text-gray-400 hover:text-white transition">$47 Blueprint</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Company</p>
+            <ul class="space-y-3 text-sm">
+              <li><a href="#founder" class="text-gray-400 hover:text-white transition">About</a></li>
+              <li><a href="https://build3r.io" class="text-gray-400 hover:text-white transition">Build3r (Agency)</a></li>
+              <li><a href="/terms" class="text-gray-400 hover:text-white transition">Terms &amp; Privacy</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Support</p>
+            <ul class="space-y-3 text-sm">
+              <li><a href="/help" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+              <li><a href="mailto:hello@getvibecontrol.com" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-500">
+          <p>&copy; {new Date().getFullYear()} BUILD3R LLC. All rights reserved. A Build3r product · Built by Dustin Randle and team.</p>
+          <div class="flex items-center gap-4">
+            <a href="https://youtube.com/@dustinrandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="YouTube">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" /><path d="M9.545 15.568V8.432L15.818 12z" fill="#0a0a0a" /></svg>
+            </a>
+            <a href="https://x.com/TheDustinRandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="X">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+            </a>
+            <a href="https://tiktok.com/@thedustinrandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="TikTok">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" /></svg>
+            </a>
+            <a href="https://build3r.io" class="ml-2" aria-label="Build3r">
+              <img src="/images/build3r-logo-white.png" alt="BUILD3R" class="h-5 opacity-60 hover:opacity-100 transition" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sticky bottom CTA bar — slides up after scrolling past hero on mobile -->
+  <div
+    id="sticky-cta"
+    class="md:hidden fixed bottom-0 inset-x-0 z-40 translate-y-full transition-transform duration-300 px-4 pb-4"
+  >
+    <a
+      href={BLUEPRINT_URL}
+      class="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white shadow-2xl shadow-brand-blue/40"
+    >
+      {CTA_LABEL}
+      <ArrowRight className="w-4 h-4" />
+    </a>
+  </div>
 
   <script>
-    document.querySelectorAll('#cta-form').forEach(form => {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // Nav background intensifies on scroll. Mobile sticky CTA slides in past hero.
+    const nav = document.getElementById('site-nav');
+    const stickyCta = document.getElementById('sticky-cta');
+    const HERO_THRESHOLD = 600;
 
-        const container = form.parentElement;
-        const thanks = container?.querySelector('[id$="-thanks"]');
-        const error = container?.querySelector('[id$="-error"]');
-        const btn = form.querySelector('button[type="submit"]');
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      if (nav) {
+        nav.dataset.state = y > 40 ? 'scrolled' : 'top';
+        nav.classList.toggle('shadow-lg', y > 40);
+        nav.classList.toggle('shadow-black/20', y > 40);
+      }
+      if (stickyCta) {
+        const show = y > HERO_THRESHOLD;
+        stickyCta.classList.toggle('translate-y-full', !show);
+        stickyCta.classList.toggle('translate-y-0', show);
+      }
+      ticking = false;
+    }
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+    onScroll();
 
-        // Collect fields
-        const first_name = form.querySelector('input[name="first_name"]').value.trim();
-        const last_name = form.querySelector('input[name="last_name"]').value.trim();
-        const email = form.querySelector('input[name="email"]').value;
-        const source = form.querySelector('input[name="source"]')?.value;
-        const interests = Array.from(
-          form.querySelectorAll('input[name="interests"]:checked')
-        ).map(cb => cb.value);
-
-        // Reset error state
-        if (error) error.classList.add('hidden');
-
-        // Loading state
-        const originalText = btn.textContent;
-        btn.disabled = true;
-        btn.textContent = 'Submitting...';
-
-        try {
-          const res = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, first_name, last_name, source, interests }),
-          });
-
-          if (!res.ok) throw new Error('Request failed');
-
-          form.classList.add('hidden');
-          if (thanks) thanks.classList.remove('hidden');
-          const hint = container?.querySelector('#cta-hint');
-          if (hint) hint.classList.add('hidden');
-        } catch {
-          if (error) error.classList.remove('hidden');
-          btn.disabled = false;
-          btn.textContent = originalText;
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
   </script>
+
+  <style>
+    details > summary::-webkit-details-marker { display: none; }
+    html { scroll-behavior: smooth; }
+  </style>
 </Layout>
