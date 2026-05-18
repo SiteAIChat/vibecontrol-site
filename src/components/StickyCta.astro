@@ -1,0 +1,48 @@
+---
+import { ArrowRight } from 'lucide-react';
+import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
+
+interface Props {
+  href?: string;
+}
+
+const { href = BLUEPRINT_URL } = Astro.props;
+---
+<div
+  id="sticky-cta"
+  class="md:hidden fixed bottom-0 inset-x-0 z-40 translate-y-full transition-transform duration-300 px-4 pb-4"
+>
+  <a
+    href={href}
+    class="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white shadow-2xl shadow-brand-blue/40"
+  >
+    {CTA_LABEL}
+    <ArrowRight className="w-4 h-4" />
+  </a>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-cta');
+  const HERO_THRESHOLD = 600;
+  if (stickyCta) {
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      const show = y > HERO_THRESHOLD;
+      stickyCta.classList.toggle('translate-y-full', !show);
+      stickyCta.classList.toggle('translate-y-0', show);
+      ticking = false;
+    }
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+    onScroll();
+  }
+</script>
