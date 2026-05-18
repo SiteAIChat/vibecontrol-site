@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import StickyCta from '../components/StickyCta.astro';
+import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -25,48 +29,12 @@ import {
   Lock,
   CheckCircle2,
 } from 'lucide-react';
-
-const BLUEPRINT_URL = '#get-on-the-list';
-const CTA_LABEL = 'Start with the $47 Blueprint';
 ---
 <Layout
   title="VibeControl — Your AI workforce, running your business"
   description="Hire an AI office manager, sales assistant, or customer support rep for your small business. Starts with a $47 Blueprint that maps your AI workforce and builds your team."
 >
-  <!-- =========================
-       NAV (top, minimal)
-       ========================= -->
-  <header
-    id="site-nav"
-    class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
-    data-state="top"
-  >
-    <div class="bg-gray-950/70 backdrop-blur-md border-b border-white/5 supports-[backdrop-filter]:bg-gray-950/60">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
-        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-          <a href="#pricing" class="hover:text-white transition">Pricing</a>
-          <a href="#founder" class="hover:text-white transition">About</a>
-          <a href="https://vibecontrol.app/login" class="hover:text-white transition">Login</a>
-        </nav>
-        <div class="md:hidden">
-          <a href="#top" class="sr-only">VibeControl</a>
-        </div>
-        <a
-          href={BLUEPRINT_URL}
-          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-sm font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/20"
-        >
-          {CTA_LABEL}
-          <ArrowRight className="w-4 h-4" />
-        </a>
-        <a
-          href={BLUEPRINT_URL}
-          class="sm:hidden inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-xs font-semibold text-white"
-        >
-          $47 Blueprint
-        </a>
-      </div>
-    </div>
-  </header>
+  <SiteNav />
 
   <main id="top" class="pt-16">
     <!-- =========================
@@ -775,108 +743,12 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
       </div>
     </section>
 
-    <!-- =========================
-         SECTION 12 — FOOTER
-         ========================= -->
-    <footer class="border-t border-white/10 py-14 px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 mb-10 items-start">
-          <div>
-            <img src="/images/logo-light.png" alt="VibeControl" class="w-full max-w-[16rem] h-auto" />
-          </div>
-          <div>
-            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Product</p>
-            <ul class="space-y-3 text-sm">
-              <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
-              <li><a href="https://vibecontrol.app/login" class="text-gray-400 hover:text-white transition">Login</a></li>
-              <li><a href={BLUEPRINT_URL} class="text-gray-400 hover:text-white transition">$47 Blueprint</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Company</p>
-            <ul class="space-y-3 text-sm">
-              <li><a href="#founder" class="text-gray-400 hover:text-white transition">About</a></li>
-              <li><a href="https://build3r.io" class="text-gray-400 hover:text-white transition">Build3r (Agency)</a></li>
-              <li><a href="/terms" class="text-gray-400 hover:text-white transition">Terms &amp; Privacy</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Support</p>
-            <ul class="space-y-3 text-sm">
-              <li><a href="/help" class="text-gray-400 hover:text-white transition">Help Center</a></li>
-              <li><a href="mailto:hello@getvibecontrol.com" class="text-gray-400 hover:text-white transition">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} BUILD3R LLC. All rights reserved. A Build3r product · Built by Dustin Randle and team.</p>
-          <div class="flex items-center gap-4">
-            <a href="https://youtube.com/@dustinrandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="YouTube">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" /><path d="M9.545 15.568V8.432L15.818 12z" fill="#0a0a0a" /></svg>
-            </a>
-            <a href="https://x.com/TheDustinRandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="X">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-            </a>
-            <a href="https://tiktok.com/@thedustinrandle" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="TikTok">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" /></svg>
-            </a>
-            <a href="https://build3r.io" class="ml-2" aria-label="Build3r">
-              <img src="/images/build3r-logo-white.png" alt="BUILD3R" class="h-5 opacity-60 hover:opacity-100 transition" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <SiteFooter />
   </main>
 
-  <!-- Sticky bottom CTA bar — slides up after scrolling past hero on mobile -->
-  <div
-    id="sticky-cta"
-    class="md:hidden fixed bottom-0 inset-x-0 z-40 translate-y-full transition-transform duration-300 px-4 pb-4"
-  >
-    <a
-      href={BLUEPRINT_URL}
-      class="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white shadow-2xl shadow-brand-blue/40"
-    >
-      {CTA_LABEL}
-      <ArrowRight className="w-4 h-4" />
-    </a>
-  </div>
+  <StickyCta />
 
   <script>
-    // Nav background intensifies on scroll. Mobile sticky CTA slides in past hero.
-    const nav = document.getElementById('site-nav');
-    const stickyCta = document.getElementById('sticky-cta');
-    const HERO_THRESHOLD = 600;
-
-    let ticking = false;
-    function onScroll() {
-      const y = window.scrollY;
-      if (nav) {
-        nav.dataset.state = y > 40 ? 'scrolled' : 'top';
-        nav.classList.toggle('shadow-lg', y > 40);
-        nav.classList.toggle('shadow-black/20', y > 40);
-      }
-      if (stickyCta) {
-        const show = y > HERO_THRESHOLD;
-        stickyCta.classList.toggle('translate-y-full', !show);
-        stickyCta.classList.toggle('translate-y-0', show);
-      }
-      ticking = false;
-    }
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (!ticking) {
-          window.requestAnimationFrame(onScroll);
-          ticking = true;
-        }
-      },
-      { passive: true },
-    );
-    onScroll();
-
     // Smooth scroll for in-page anchors
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', (e) => {
