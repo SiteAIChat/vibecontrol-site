@@ -26,7 +26,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 
-const BLUEPRINT_URL = 'https://roleforgeai.com';
+const BLUEPRINT_URL = '#get-on-the-list';
 const CTA_LABEL = 'Start with the $47 Blueprint';
 ---
 <Layout
@@ -81,6 +81,8 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
       <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32 text-center">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 mb-8">
           <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
+          <span class="text-brand-teal font-semibold">Launching Soon</span>
+          <span class="text-gray-600">·</span>
           For business owners asking where to start with AI
         </div>
 
@@ -109,16 +111,17 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
           <p class="text-sm text-gray-400 max-w-md">
             A $47 guided session that maps your AI workforce and shows you the
             workers your business should hire first.
+            <span class="block mt-1 text-gray-500">Launching soon — claim your spot on the list.</span>
           </p>
         </div>
 
         <!-- micro-trust row -->
         <div class="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-gray-500">
-          <span class="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Secure Stripe checkout</span>
+          <span class="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> No credit card to join the list</span>
           <span class="hidden sm:inline">·</span>
-          <span class="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5" /> 14-day Value Promise</span>
+          <span class="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5" /> 14-day Value Promise at launch</span>
           <span class="hidden sm:inline">·</span>
-          <span class="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" /> Yours to keep</span>
+          <span class="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" /> First-in-line pricing</span>
         </div>
       </div>
     </section>
@@ -355,7 +358,7 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
               {CTA_LABEL}
               <ArrowRight className="w-4 h-4" />
             </a>
-            <p class="text-sm text-gray-500">Takes about an hour. Yours to keep, regardless.</p>
+            <p class="text-sm text-gray-500">Launching soon. Join the list and you'll be invited first.</p>
           </div>
         </div>
       </div>
@@ -426,7 +429,7 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
         </div>
 
         <p class="text-center text-sm text-gray-500 mt-8">
-          $47 one-time for the Blueprint. Choose your plan when you're ready to deploy. Cancel anytime.
+          $47 one-time for the Blueprint at launch. Choose your plan when you're ready to deploy. Cancel anytime.
         </p>
       </div>
     </section>
@@ -639,33 +642,136 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
     </section>
 
     <!-- =========================
-         SECTION 11 — FINAL CTA
+         SECTION 11 — EARLY ACCESS FORM
          ========================= -->
-    <section class="relative py-24 sm:py-32 px-6 overflow-hidden">
-      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[40rem] h-[40rem] bg-brand-blue/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+    <section id="get-on-the-list" class="relative py-24 sm:py-32 px-6 overflow-hidden scroll-mt-20">
+      <!-- ambient glow -->
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[42rem] h-[42rem] bg-brand-blue/15 rounded-full blur-[150px]" aria-hidden="true"></div>
       <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[36rem] h-[36rem] bg-brand-teal/15 rounded-full blur-[150px]" aria-hidden="true"></div>
 
-      <div class="relative max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-          Ready to find out what an AI workforce would do for your business?
-        </h2>
-        <p class="text-lg text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
-          The $47 Blueprint takes about an hour of your time. You walk out with
-          a plan, a working AI team, and clear next steps for putting them to work.
-        </p>
+      <div class="relative max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-xs sm:text-sm text-brand-teal font-semibold mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
+            Launching Soon · Early Access
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-5 leading-tight">
+            Be first in line for the
+            <span class="block bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">$47 Blueprint.</span>
+          </h2>
+          <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            We're opening Blueprint access soon. Drop your details and you'll be
+            invited before public launch — plus locked in at the launch price.
+          </p>
+        </div>
 
-        <a
-          href={BLUEPRINT_URL}
-          class="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-2xl shadow-brand-blue/30 text-lg"
-        >
-          {CTA_LABEL}
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
-        </a>
+        <div class="rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 backdrop-blur-md p-6 sm:p-10">
+          <form id="cta-form" action="#" class="space-y-5">
+            <input type="hidden" name="source" value="vibecontrol-landing" />
 
-        <p class="text-sm text-gray-500 mt-6 max-w-md mx-auto">
-          $47 one-time. Secure Stripe checkout. 14-day Value Promise: if it
-          doesn't deliver, we'll work with you to make it right.
-        </p>
+            <!-- Name fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">First name</span>
+                <input
+                  type="text"
+                  name="first_name"
+                  required
+                  autocomplete="given-name"
+                  placeholder="Dustin"
+                  class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+                />
+              </label>
+              <label class="block">
+                <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Last name</span>
+                <input
+                  type="text"
+                  name="last_name"
+                  required
+                  autocomplete="family-name"
+                  placeholder="Randle"
+                  class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+                />
+              </label>
+            </div>
+
+            <!-- Email -->
+            <label class="block">
+              <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Work email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@yourbusiness.com"
+                class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+              />
+            </label>
+
+            <!-- Interests -->
+            <fieldset>
+              <legend class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                Which AI worker would you hire first? <span class="text-gray-600 normal-case font-normal tracking-normal">(optional)</span>
+              </legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  { value: 'interest-office-manager', icon: Inbox, color: 'brand-blue', label: 'Office Manager' },
+                  { value: 'interest-sales-assistant', icon: PhoneCall, color: 'brand-teal', label: 'Sales Assistant' },
+                  { value: 'interest-customer-support', icon: HeartHandshake, color: 'brand-orange', label: 'Customer Support' },
+                  { value: 'interest-content-writer', icon: PenLine, color: 'brand-coral', label: 'Content Writer' },
+                  { value: 'interest-reports-analyst', icon: BarChart3, color: 'brand-blue', label: 'Reports Analyst' },
+                  { value: 'interest-not-sure', icon: Sparkles, color: 'brand-teal', label: 'Not sure — show me' },
+                ].map(({ value, icon: Icon, color, label }) => (
+                  <label class="group/check flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] hover:border-white/20 has-[:checked]:bg-brand-teal/10 has-[:checked]:border-brand-teal/40 cursor-pointer transition">
+                    <input type="checkbox" name="interests" value={value} class="accent-brand-teal w-4 h-4 shrink-0" />
+                    <Icon className={`w-4 h-4 text-${color} shrink-0`} />
+                    <span class="text-sm text-gray-200">{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="group w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30 text-base"
+            >
+              Get on the list for the $47 Blueprint
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+            </button>
+
+            <p class="text-xs text-gray-500 text-center max-w-md mx-auto leading-relaxed">
+              No spam. We'll email you the moment Blueprint access opens —
+              and you'll be locked in at the $47 launch price with the 14-day Value Promise.
+            </p>
+          </form>
+
+          <!-- Thanks state -->
+          <div id="cta-thanks" class="hidden text-center py-6">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-brand-teal/15 border border-brand-teal/40 flex items-center justify-center">
+              <Check className="w-7 h-7 text-brand-teal" />
+            </div>
+            <h3 class="text-2xl font-bold mb-3">You're on the list.</h3>
+            <p class="text-gray-300 mb-2 max-w-md mx-auto leading-relaxed">
+              We'll email you the moment the $47 Blueprint opens — you'll be invited first.
+            </p>
+            <p class="text-sm text-gray-500 mb-8 max-w-md mx-auto">
+              Want a head start? Create a free VibeControl account now and you'll have full access the moment we launch.
+            </p>
+            <a
+              href="https://vibecontrol.app/signup"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition"
+            >
+              Create a free account
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <!-- Error state -->
+          <p id="cta-error" class="hidden mt-4 text-sm text-brand-coral text-center font-medium">
+            Something went wrong. Please try again, or email <a href="mailto:hello@getvibecontrol.com" class="underline hover:text-white">hello@getvibecontrol.com</a>.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -783,6 +889,50 @@ const CTA_LABEL = 'Start with the $47 Blueprint';
         }
       });
     });
+
+    // Form submission → /api/subscribe
+    const form = document.getElementById('cta-form');
+    const thanks = document.getElementById('cta-thanks');
+    const errorEl = document.getElementById('cta-error');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalLabel = btn ? btn.innerHTML : '';
+
+        const first_name = form.querySelector('input[name="first_name"]').value.trim();
+        const last_name = form.querySelector('input[name="last_name"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const source = form.querySelector('input[name="source"]').value;
+        const interests = Array.from(
+          form.querySelectorAll('input[name="interests"]:checked'),
+        ).map((cb) => cb.value);
+
+        if (errorEl) errorEl.classList.add('hidden');
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = 'Adding you to the list…';
+        }
+
+        try {
+          const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, first_name, last_name, source, interests }),
+          });
+          if (!res.ok) throw new Error('Request failed');
+          form.classList.add('hidden');
+          if (thanks) thanks.classList.remove('hidden');
+        } catch (err) {
+          if (errorEl) errorEl.classList.remove('hidden');
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = originalLabel;
+          }
+        }
+      });
+    }
   </script>
 
   <style>

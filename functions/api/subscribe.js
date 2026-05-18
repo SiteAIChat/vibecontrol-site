@@ -60,12 +60,12 @@ export async function onRequestPost(context) {
   }
 
   var validInterests = [
-    "interest-task-board",
-    "interest-self-hosted",
-    "interest-persistent-memory",
-    "interest-multi-model",
-    "interest-team-collab",
-    "interest-multi-agent",
+    "interest-office-manager",
+    "interest-sales-assistant",
+    "interest-customer-support",
+    "interest-content-writer",
+    "interest-reports-analyst",
+    "interest-not-sure",
   ];
   if (Array.isArray(interests)) {
     for (var i = 0; i < interests.length; i++) {
