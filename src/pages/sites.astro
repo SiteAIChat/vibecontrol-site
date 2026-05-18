@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import StickyCta from '../components/StickyCta.astro';
+import { blueprintUrlForSource, CTA_LABEL } from '../lib/cta';
+import { ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react';
+
+const CTA_HREF = blueprintUrlForSource('sites');
+
+const showroom = [
+  {
+    eyebrow: 'Agency landing page',
+    title: 'A landing page for an agency offering AI consulting',
+    placeholderLabel: 'Screenshot placeholder — agency landing page',
+    annotation:
+      'Built in 90 minutes from a brief conversation. Updated 14 times since launch, all by conversation.',
+  },
+  {
+    eyebrow: 'Course portal',
+    title: 'A members-only course portal for an online educator',
+    placeholderLabel: 'Screenshot placeholder — course portal',
+    annotation:
+      `Designed and built around the educator’s specific course catalog. New courses added by conversation, not by re-templating.`,
+  },
+  {
+    eyebrow: 'Event RSVP page',
+    title: 'An event RSVP and weekly update page for a small organization',
+    placeholderLabel: 'Screenshot placeholder — event RSVP page',
+    annotation:
+      'Set up in an afternoon. The AI worker rebuilds the page each week with the new event details.',
+  },
+];
+
+const steps = [
+  {
+    n: 1,
+    color: 'brand-blue',
+    title: 'Tell your AI worker what you need.',
+    body:
+      `A landing page for a campaign. A signup form for a workshop. A member portal for your course. A storefront for a digital product. Describe it in plain English. The way you'd describe it to a freelancer — except shorter, because the AI doesn't need a project brief, it needs a goal.`,
+  },
+  {
+    n: 2,
+    color: 'brand-teal',
+    title: 'It builds the surface and shows you.',
+    body:
+      'Not a wireframe. Not a mockup. The actual working surface — copy, layout, design, forms wired up, integrations connected to the rest of your business. Built around the context your AI workforce already has about your business (because your Roleforge Blueprint defined that context once, and every worker reads from it).',
+  },
+  {
+    n: 3,
+    color: 'brand-orange',
+    title: 'You review, refine, and ship.',
+    body:
+      `Like or don't like the headline? Say so. The page updates. Want a different layout? Ask. Want to A/B test two versions? It sets that up too. When you're ready, you ship. The page is yours, on your domain, hosted on VibeControl infrastructure.`,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Is this a website builder?',
+    a:
+      `Not in the way you mean. A website builder is a tool you use. VibeControl Sites is something your AI workforce uses. You don't learn the tool — your AI worker already knows it. You describe what you want; the worker builds it.`,
+  },
+  {
+    q: 'Where do the sites actually live?',
+    a:
+      `On VibeControl's infrastructure, served from sites.vibecontrol.app or your own custom domain (your call). Fast, secure, no servers for you to manage.`,
+  },
+  {
+    q: 'Can I bring my own domain?',
+    a:
+      'Yes. Point your domain at VibeControl and your sites serve from there. SSL handled automatically.',
+  },
+  {
+    q: 'Can I edit the HTML / CSS directly?',
+    a:
+      `You can, if you want to — but most owners don't. Editing by conversation is faster than editing by code for the kind of changes most businesses actually make.`,
+  },
+  {
+    q: 'What about SEO?',
+    a:
+      'Standard SEO fundamentals — clean HTML, semantic structure, fast load times, proper meta tags — are how the AI worker builds by default. For more advanced SEO work, your AI worker handles the changes you describe.',
+  },
+  {
+    q: 'Is this just for landing pages, or full websites?',
+    a:
+      `Both. Landing pages, marketing sites, member portals, course platforms, simple storefronts, lead forms, event pages. If it's a customer-facing surface that lives on the web, your AI workforce can build it.`,
+  },
+  {
+    q: 'What if my business needs something genuinely custom?',
+    a:
+      `The Virtual CTO offering (through Build3r) handles custom implementations for businesses that need them. Most businesses don't. For the small percentage that do, that path exists.`,
+  },
+];
+---
+<Layout
+  title="AI builds your website — VibeControl Sites"
+  description="Your AI workforce builds and runs your customer-facing surfaces. Landing pages, member portals, forms, storefronts. Part of VibeControl. Start with a $47 Blueprint."
+  canonical="https://getvibecontrol.com/sites"
+>
+  <SiteNav />
+
+  <main id="top" class="pt-16">
+    <!-- SECTION 1 — HERO -->
+    <section class="relative overflow-hidden">
+      <div class="absolute top-10 left-1/4 w-[28rem] h-[28rem] bg-brand-blue/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-brand-teal/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-28 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+          <span class="text-brand-teal font-semibold">Sites</span>
+          <span class="text-gray-600">·</span>
+          A capability of your AI workforce
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+          Your website. Your landing pages. Your forms.
+          <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">
+            Built by your AI workforce.
+          </span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          VibeControl includes an AI worker that builds your customer-facing
+          surfaces — and rebuilds them whenever your business changes. No
+          designer queue. No "let me brief my agency." You ask, it ships.
+        </p>
+
+        <div class="flex flex-col items-center gap-3">
+          <a
+            href={CTA_HREF}
+            class="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
+          >
+            {CTA_LABEL}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+          </a>
+          <p class="text-sm text-gray-400 max-w-md">
+            The Blueprint maps the AI workforce your business needs — including
+            the workers that build and run your sites.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — THE SHIFT -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">The shift</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+          A website used to be a project. Now it's a conversation.
+        </h2>
+        <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+          <p>You know how this normally goes.</p>
+          <p>
+            You need a new landing page for a campaign. You write a brief. You
+            wait for the designer. They send a draft. You revise it. They
+            revise it back. Two weeks later, the page goes live — and by then
+            the campaign is half over.
+          </p>
+          <p>
+            Or you do it yourself in Webflow / Framer / your CMS of choice. You
+            spend a Saturday wrestling with templates, fonts, breakpoints. The
+            page ships. You hate the headline by Tuesday. You don't change it
+            because changing it would take another Saturday.
+          </p>
+          <p>That's how the web has worked for fifteen years. Every page is a project.</p>
+          <p class="text-white font-medium">It doesn't have to be.</p>
+          <p>
+            When your business runs on VibeControl, your AI workforce includes
+            a worker whose job is your customer-facing surfaces. Tell it what
+            you need. It builds the page. You review it, suggest changes, and
+            ship. Want a different headline next week? Tell it. The page is
+            updated by the time you finish your coffee.
+          </p>
+          <p class="text-gray-400 italic">The work isn't gone. It's just no longer your work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — WHAT GETS BUILT (showroom) -->
+    <section class="relative py-24 sm:py-28 px-6 overflow-hidden">
+      <div class="absolute top-1/2 -translate-y-1/2 -left-40 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto">
+        <div class="max-w-3xl mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">What gets built</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Real surfaces, built by AI workers, running in real businesses.
+          </h2>
+        </div>
+
+        <div class="space-y-12">
+          {showroom.map((item) => (
+            <article class="rounded-3xl bg-white/[0.03] border border-white/10 p-6 md:p-8 backdrop-blur-md">
+              <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-3">{item.eyebrow}</p>
+              <h3 class="text-xl md:text-2xl font-semibold text-white mb-6 leading-snug">{item.title}</h3>
+
+              <div class="relative aspect-[16/10] rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 overflow-hidden">
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(74,144,217,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,217,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                    {item.placeholderLabel}
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-sm text-gray-400 italic mt-5 leading-relaxed">{item.annotation}</p>
+            </article>
+          ))}
+        </div>
+
+        <p class="text-gray-300 text-lg leading-relaxed mt-14 max-w-3xl">
+          These aren't mockups. They're running surfaces, on real domains, used
+          by real customers.
+          <span class="text-white font-semibold">Nobody hired a designer to build them.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — HOW IT ACTUALLY WORKS -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-3xl mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">How it works</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Three steps. No code, no templates, no designer queue.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-10">
+          {steps.map((step) => (
+            <div class={`p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md`}>
+              <div class={`w-10 h-10 rounded-xl bg-${step.color}/20 flex items-center justify-center text-${step.color} font-bold mb-4`}>
+                {step.n}
+              </div>
+              <h3 class="text-lg font-semibold text-white mb-3 leading-snug">{step.title}</h3>
+              <p class="text-gray-400 leading-relaxed text-sm">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-gray-500 leading-relaxed max-w-3xl">
+          What you don't do: pick a template, choose fonts, hire a designer,
+          write a brief, file a ticket, wait for revisions, fight with
+          breakpoints, hire someone to fight with breakpoints for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — WHY THIS MATTERS -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-white/10 p-8 md:p-12 backdrop-blur-md">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Why this matters</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+            This isn't about cheaper websites. It's about how the business runs.
+          </h2>
+          <div class="space-y-5 text-gray-300 leading-relaxed">
+            <p>
+              Most AI tools you've seen pitched at small businesses are point
+              solutions. An AI to write your blog post. An AI to draft your
+              emails. An AI to summarize your meetings. They help around the
+              edges and leave the structure of the business untouched.
+            </p>
+            <p>
+              VibeControl is different because it doesn't add an AI tool to
+              your stack — it gives your business an AI workforce that
+              <em class="text-white not-italic font-semibold">does the work the stack used to require</em>.
+            </p>
+            <p class="text-white font-medium">
+              Your business needs a website? You don't buy Webflow and hire a designer. You ask your AI workforce.
+            </p>
+            <p class="text-white font-medium">
+              Your business needs to follow up with leads? You don't buy a CRM and hire a sales VA. You ask your AI workforce.
+            </p>
+            <p class="text-white font-medium">
+              Your business needs to answer customer questions? You don't buy a support tool and hire a support rep. You ask your AI workforce.
+            </p>
+            <p>
+              The work still happens. It just doesn't require a stack of
+              separate tools and the time to coordinate between them. That's
+              the shift.
+            </p>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href={CTA_HREF}
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+            >
+              {CTA_LABEL}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <p class="text-sm text-gray-500">
+              The Blueprint identifies which workers your business should hire first — and shows you what they'll build for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — FAQ -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Common questions about Sites</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            A short FAQ — the rest is on the main pricing and FAQ pages.
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map((item) => (
+            <details class="group rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition overflow-hidden">
+              <summary class="flex items-center justify-between gap-6 px-6 py-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-white text-base md:text-[17px] leading-snug">{item.q}</h3>
+                <div class="w-8 h-8 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-open:bg-brand-teal/20 group-open:border-brand-teal/40 transition">
+                  <ChevronDown className="w-4 h-4 text-gray-400 group-open:rotate-180 group-open:text-brand-teal transition" />
+                </div>
+              </summary>
+              <div class="px-6 pb-6 -mt-1">
+                <p class="text-gray-400 leading-relaxed">{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — FINAL CTA -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-teal/10 via-white/[0.03] to-brand-blue/10 border border-brand-teal/20 p-8 md:p-12 backdrop-blur-md">
+          <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-teal/10 rounded-full blur-[100px]" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-6">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-teal" />
+              14-Day Value Promise
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-5 leading-tight">
+              Find out which workers your business should hire first.
+            </h2>
+            <p class="text-gray-300 leading-relaxed mb-8">
+              Sites is one of several capabilities your AI workforce can run
+              for you. The $47 Roleforge Blueprint maps the workers your
+              specific business needs — including which surfaces are worth
+              building first, and what your AI team should run next.
+            </p>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a
+                href={CTA_HREF}
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+              >
+                {CTA_LABEL}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <p class="text-sm text-gray-500">
+                $47 one-time. 14-day Value Promise: if it doesn't deliver, we'll work with you to make it right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </main>
+
+  <StickyCta href={CTA_HREF} />
+</Layout>
