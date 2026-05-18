@@ -1,0 +1,60 @@
+---
+import { ArrowRight } from 'lucide-react';
+import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
+---
+<header
+  id="site-nav"
+  class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+  data-state="top"
+>
+  <div class="bg-gray-950/70 backdrop-blur-md border-b border-white/5 supports-[backdrop-filter]:bg-gray-950/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="/#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="/#founder" class="hover:text-white transition">About</a>
+        <a href="https://vibecontrol.app/login" class="hover:text-white transition">Login</a>
+      </nav>
+      <div class="md:hidden">
+        <a href="#top" class="sr-only">VibeControl</a>
+      </div>
+      <a
+        href={BLUEPRINT_URL}
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-sm font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/20"
+      >
+        {CTA_LABEL}
+        <ArrowRight className="w-4 h-4" />
+      </a>
+      <a
+        href={BLUEPRINT_URL}
+        class="sm:hidden inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-xs font-semibold text-white"
+      >
+        $47 Blueprint
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  if (nav) {
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      nav.dataset.state = y > 40 ? 'scrolled' : 'top';
+      nav.classList.toggle('shadow-lg', y > 40);
+      nav.classList.toggle('shadow-black/20', y > 40);
+      ticking = false;
+    }
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+    onScroll();
+  }
+</script>
