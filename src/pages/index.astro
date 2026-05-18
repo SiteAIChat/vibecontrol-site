@@ -762,6 +762,13 @@ import {
       });
     });
 
+    // Override hidden source input from ?source= URL param if present
+    const sourceParam = new URLSearchParams(window.location.search).get('source');
+    if (sourceParam) {
+      const sourceInput = document.querySelector('#cta-form input[name="source"]');
+      if (sourceInput) sourceInput.value = sourceParam;
+    }
+
     // Form submission → /api/subscribe
     const form = document.getElementById('cta-form');
     const thanks = document.getElementById('cta-thanks');
