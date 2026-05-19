@@ -759,7 +759,13 @@ import {
       if (sourceInput) sourceInput.value = sourceParam;
     }
 
-    // Form submission → /api/subscribe
+    // Form submission → SiteAI Forms gateway
+    // Submissions flow: edge.vibecontrol.app/submit → forms-worker → server dispatch →
+    //   crm_contacts + crm_workspace_contacts (VibeControl workspace) automatically.
+    const FORMS_GATEWAY_URL = 'https://edge.vibecontrol.app';
+    const SITEAI_SITE_ID = '732a4664-405b-46e8-8f83-0bf2bd55a1b4';
+    const FORM_KEY = 'early-access';
+
     const form = document.getElementById('cta-form');
     const thanks = document.getElementById('cta-thanks');
     const errorEl = document.getElementById('cta-error');
@@ -784,12 +790,34 @@ import {
           btn.innerHTML = 'Adding you to the list…';
         }
 
+        const url = new URL(window.location.href);
+        const utm = {
+          source: url.searchParams.get('utm_source') || undefined,
+          medium: url.searchParams.get('utm_medium') || undefined,
+          campaign: url.searchParams.get('utm_campaign') || undefined,
+          term: url.searchParams.get('utm_term') || undefined,
+          content: url.searchParams.get('utm_content') || undefined,
+        };
+
+        const idempotencyKey =
+          (window.crypto && typeof window.crypto.randomUUID === 'function')
+            ? window.crypto.randomUUID()
+            : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
         try {
-          const res = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, first_name, last_name, source, interests }),
-          });
+          const res = await fetch(
+            `${FORMS_GATEWAY_URL}/submit/${SITEAI_SITE_ID}/${FORM_KEY}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                data: { email, first_name, last_name, source, interests },
+                idempotency_key: idempotencyKey,
+                referrer: document.referrer || undefined,
+                utm,
+              }),
+            },
+          );
           if (!res.ok) throw new Error('Request failed');
           form.classList.add('hidden');
           if (thanks) thanks.classList.remove('hidden');
