@@ -1,0 +1,392 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import StickyCta from '../components/StickyCta.astro';
+import { blueprintUrlForSource, CTA_LABEL } from '../lib/cta';
+import { ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react';
+
+const CTA_HREF = blueprintUrlForSource('crm');
+
+const showroom = [
+  {
+    eyebrow: 'Agency client management',
+    title: 'An agency tracking 30+ active client relationships',
+    placeholderLabel: 'Screenshot placeholder — contact view with auto-logged activity',
+    annotation:
+      `Every email, call note, and meeting summary logged automatically. The AI worker writes the follow-up the moment it’s due.`,
+  },
+  {
+    eyebrow: 'Course creator student lifecycle',
+    title: 'An online course creator managing 800+ students through a multi-week curriculum',
+    placeholderLabel: 'Screenshot placeholder — automated student journey',
+    annotation:
+      `The AI worker watches every student’s progress and writes the right email at the right moment. The educator hasn’t drafted a single one.`,
+  },
+  {
+    eyebrow: 'Member communication',
+    title: 'A small organization keeping a community of 200 members engaged',
+    placeholderLabel: 'Screenshot placeholder — segmented audience + active campaigns',
+    annotation:
+      `The leadership writes a brief; the AI worker handles segmentation, sending, and the follow-up for non-openers.`,
+  },
+];
+
+const pillars = [
+  {
+    n: 1,
+    color: 'brand-blue',
+    title: 'Records stay current without you maintaining them.',
+    body:
+      `Every email exchange, call note, meeting summary, customer reply — automatically logged on the right contact. Activity history that actually reflects what happened, not the partial story you remembered to type in. Deal stages update based on what’s actually happening, not what someone last clicked.`,
+  },
+  {
+    n: 2,
+    color: 'brand-teal',
+    title: 'Follow-ups happen on time, every time.',
+    body:
+      `The AI worker watches every relationship for the moment a follow-up is owed — the lead from two weeks ago, the customer who went quiet, the proposal that’s been sitting unread for four days. It drafts the follow-up, in your voice, ready for your approval or set to send automatically depending on the trust level you’ve assigned.`,
+  },
+  {
+    n: 3,
+    color: 'brand-orange',
+    title: 'The right message goes to the right person at the right time.',
+    body:
+      `Campaigns, journeys, lifecycle communication — the AI worker handles the segmentation, the timing, and the personalization. You describe what you want to communicate; it handles who receives it, when, and what specifically gets said to each segment.`,
+  },
+];
+
+const faqs = [
+  {
+    q: 'I already have a CRM. Do I have to switch?',
+    a:
+      `Most owners don’t, and that’s fine. The AI worker can read from and write to most existing CRMs (HubSpot, Pipedrive, Salesforce, Notion, Google Sheets, etc.) — you keep your existing system as the system of record, and the AI worker handles the work around it. If you decide you’d rather consolidate inside VibeControl, you can migrate. Your call.`,
+  },
+  {
+    q: 'What email service does it send through?',
+    a:
+      `You bring your own — Gmail, Google Workspace, Outlook, or a dedicated transactional provider for high-volume sending. The AI worker drafts and schedules; the actual sending uses your existing email setup. Your sender reputation stays with you.`,
+  },
+  {
+    q: 'Will it send emails without my approval?',
+    a:
+      `You decide. For each kind of communication, you set the trust level: send automatically, draft for review, or always wait for your sign-off. New trust gets earned over time the same way you’d earn trust with a new VA — start in shadow mode, graduate to autonomy.`,
+  },
+  {
+    q: 'How does it handle privacy and consent?',
+    a:
+      `Standard subscriber consent, unsubscribe handling, and basic preference management are built in. The AI worker respects whatever consent state your contacts are in. We don’t pretend to be a full compliance platform — for regulated industries with complex consent requirements (healthcare, financial services), the Virtual CTO path handles those carefully.`,
+  },
+  {
+    q: 'What about deals, pipeline, and sales-team workflows?',
+    a:
+      `Pipeline stages, deal management, and sales-team activity are supported. The AI worker logs activity against deals, surfaces stalled opportunities, and handles the follow-up work that keeps a pipeline moving. For teams with formal sales processes, the Team plan includes shared visibility across humans and AI workers.`,
+  },
+  {
+    q: 'Can I run campaigns and newsletters from here?',
+    a:
+      `Yes. Broadcasts, drip sequences, lifecycle journeys, and segmented sends are all part of what the AI worker handles. You describe the audience and the goal; it handles the rest.`,
+  },
+  {
+    q: 'What if my business is mostly transactional and doesn’t need a CRM?',
+    a:
+      `Then CRM might not be a priority capability for your AI workforce. The Roleforge Blueprint will tell you that. We’d rather you not buy something you don’t need.`,
+  },
+];
+---
+<Layout
+  title="AI runs your CRM — VibeControl CRM"
+  description="An AI worker that runs your customer relationships — logs activity, follows up, sends the right email at the right time, keeps records actually current. Part of VibeControl. Start with a $47 Blueprint."
+  canonical="https://getvibecontrol.com/crm"
+>
+  <SiteNav />
+
+  <main id="top" class="pt-16">
+    <!-- SECTION 1 — HERO -->
+    <section class="relative overflow-hidden">
+      <div class="absolute top-10 left-1/4 w-[28rem] h-[28rem] bg-brand-blue/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-brand-teal/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-28 text-center">
+        <img
+          src="/images/logos/vibecontrol-crm-dark-600x150.svg"
+          alt="VibeControl CRM"
+          class="mx-auto mb-8 h-auto w-full max-w-[20rem] sm:max-w-[24rem]"
+        />
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+          Your CRM only works if someone updates it.
+          <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">
+            What if that someone wasn’t you?
+          </span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          VibeControl includes an AI worker that runs your customer
+          relationships — logging activities, following up with leads, sending
+          the right email at the right time, keeping your records actually up
+          to date. Without you doing the maintenance.
+        </p>
+
+        <div class="flex flex-col items-center gap-3">
+          <a
+            href={CTA_HREF}
+            class="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
+          >
+            {CTA_LABEL}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+          </a>
+          <p class="text-sm text-gray-400 max-w-md">
+            The Blueprint maps the AI workforce your business needs — including
+            the worker that runs your CRM.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — THE SHIFT -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">The shift</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+          The CRM was never the problem. The work of running it was.
+        </h2>
+        <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+          <p>
+            You’ve already had a CRM. You probably have one right now. HubSpot,
+            Pipedrive, Salesforce, ActiveCampaign, a Notion database, a Google
+            Sheet with seventeen tabs. Maybe more than one — most owners are
+            running two or three half-populated systems.
+          </p>
+          <p>None of them are broken. They all do roughly what they’re supposed to do.</p>
+          <p>
+            The problem is the work <em class="text-white not-italic font-semibold">around</em> them.
+            The work that keeps them useful.
+          </p>
+          <p>
+            Every CRM in the world depends on someone keeping it current.
+            Logging the call. Adding the new lead. Marking the follow-up as
+            done. Updating the deal stage. Writing the note about what the
+            customer said. Sending the email two weeks later because you said
+            you would. The CRM is a database; the work is what makes the
+            database true.
+          </p>
+          <p class="text-white font-medium">
+            That work is <em class="not-italic">exactly</em> the work that gets
+            dropped first when an owner is busy. Which is always.
+          </p>
+          <p>
+            So your CRM slowly drifts out of sync with reality. Leads cool off
+            because nobody followed up. Customers churn because nobody noticed.
+            The system that was supposed to give you leverage becomes a guilt
+            machine — full of half-done records and “should have called them”
+            tasks.
+          </p>
+          <p class="text-gray-400 italic">
+            VibeControl includes an AI worker whose job is exactly this work.
+            Not “AI features” bolted onto a traditional CRM. A worker that runs
+            the maintenance, the follow-ups, and the communication — so the
+            database stays true without you keeping it true.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — WHAT GETS RUN (showroom) -->
+    <section class="relative py-24 sm:py-28 px-6 overflow-hidden">
+      <div class="absolute top-1/2 -translate-y-1/2 -left-40 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto">
+        <div class="max-w-3xl mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">What gets run</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Real workflows, run by AI workers, for real customer relationships.
+          </h2>
+        </div>
+
+        <div class="space-y-12">
+          {showroom.map((item) => (
+            <article class="rounded-3xl bg-white/[0.03] border border-white/10 p-6 md:p-8 backdrop-blur-md">
+              <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-3">{item.eyebrow}</p>
+              <h3 class="text-xl md:text-2xl font-semibold text-white mb-6 leading-snug">{item.title}</h3>
+
+              <div class="relative aspect-[16/10] rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 overflow-hidden">
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(74,144,217,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,217,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                    {item.placeholderLabel}
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-sm text-gray-400 italic mt-5 leading-relaxed">{item.annotation}</p>
+            </article>
+          ))}
+        </div>
+
+        <p class="text-gray-300 text-lg leading-relaxed mt-14 max-w-3xl">
+          These are real customer relationships, on real businesses. The AI
+          worker is the one doing the maintenance.
+          <span class="text-white font-semibold">The owners are doing the work that requires owners.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — HOW IT ACTUALLY WORKS -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-3xl mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">How it works</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Three things change when an AI worker runs your CRM.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-10">
+          {pillars.map((pillar) => (
+            <div class="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
+              <div class={`w-10 h-10 rounded-xl bg-${pillar.color}/20 flex items-center justify-center text-${pillar.color} font-bold mb-4`}>
+                {pillar.n}
+              </div>
+              <h3 class="text-lg font-semibold text-white mb-3 leading-snug">{pillar.title}</h3>
+              <p class="text-gray-400 leading-relaxed text-sm">{pillar.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-gray-500 leading-relaxed max-w-3xl">
+          What you don’t do: log activities manually, remember to follow up,
+          draft seventeen variations of the same email for different segments,
+          write nurture sequences from scratch, beg your team to “use the CRM.”
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — WHY THIS MATTERS -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-white/10 p-8 md:p-12 backdrop-blur-md">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Why this matters</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+            CRMs are a category. AI workers are a different kind of thing entirely.
+          </h2>
+          <div class="space-y-5 text-gray-300 leading-relaxed">
+            <p>
+              The CRM category has been refining itself for twenty-five years.
+              The category leaders are very good at being CRMs. That isn’t the
+              problem.
+            </p>
+            <p>
+              The problem is that the <em class="text-white not-italic font-semibold">category</em>
+              of “software that helps you manage relationships” has reached its
+              ceiling. The work of <em class="not-italic">running</em> a
+              relationship — the follow-ups, the notes, the personalization,
+              the timing, the consistency — has always required a human.
+              Software can store, organize, and remind. It can’t do the work.
+            </p>
+            <p class="text-white font-medium">
+              That ceiling is what’s actually breaking. AI workers do the work
+              that the category has always punted on.
+            </p>
+            <p>
+              The result isn’t “a better CRM.” It’s a different shape of thing
+              — a worker that runs the relationships, with the database
+              underneath as a record of what’s happening, not a thing that
+              needs to be kept current by hand.
+            </p>
+            <p>
+              It’s the same pattern as Sites. You don’t need a website tool
+              plus a designer to do the work; you need a worker who builds the
+              surfaces. You don’t need a CRM tool plus a human keeping it
+              current; you need a worker who runs the relationships. The
+              category collapses into <em class="text-white not-italic font-semibold">“your AI workforce does this.”</em>
+            </p>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href={CTA_HREF}
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+            >
+              {CTA_LABEL}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <p class="text-sm text-gray-500">
+              The Blueprint identifies which workers your business should hire first — and shows you what they’ll run for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — FAQ -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-14">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Common questions about CRM</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            A short FAQ — the rest is on the main pricing and FAQ pages.
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map((item) => (
+            <details class="group rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition overflow-hidden">
+              <summary class="flex items-center justify-between gap-6 px-6 py-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-white text-base md:text-[17px] leading-snug">{item.q}</h3>
+                <div class="w-8 h-8 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-open:bg-brand-teal/20 group-open:border-brand-teal/40 transition">
+                  <ChevronDown className="w-4 h-4 text-gray-400 group-open:rotate-180 group-open:text-brand-teal transition" />
+                </div>
+              </summary>
+              <div class="px-6 pb-6 -mt-1">
+                <p class="text-gray-400 leading-relaxed">{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — FINAL CTA -->
+    <section class="relative py-24 sm:py-28 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-teal/10 via-white/[0.03] to-brand-blue/10 border border-brand-teal/20 p-8 md:p-12 backdrop-blur-md">
+          <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-teal/10 rounded-full blur-[100px]" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-6">
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-teal" />
+              14-Day Value Promise
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-5 leading-tight">
+              Find out which workers your business should hire first.
+            </h2>
+            <p class="text-gray-300 leading-relaxed mb-8">
+              CRM is one of several capabilities your AI workforce can run for
+              you. The $47 Roleforge Blueprint maps the workers your specific
+              business needs — including whether your customer relationships
+              are the right place to start, and what your AI team should run
+              next.
+            </p>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a
+                href={CTA_HREF}
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+              >
+                {CTA_LABEL}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <p class="text-sm text-gray-500">
+                $47 one-time. 14-day Value Promise: if it doesn’t deliver, we’ll work with you to make it right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </main>
+
+  <StickyCta href={CTA_HREF} />
+</Layout>
