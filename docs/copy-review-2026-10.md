@@ -135,6 +135,9 @@ section then.
   customers only, when they're ready.
 - "VibeControl is new" replaces "just launched" (hero still says Launching
   Soon).
+- **Closing line:** That's why everyone starts with a $47 working interview.
+  Seeing real work should be easier than taking our word for it. (Reason why
+  the price is low; avoid "absurdly cheap".)
 
 ## Ideas parked for later sections
 
