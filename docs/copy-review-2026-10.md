@@ -27,6 +27,13 @@ customer copy.
 - **Small print:** Launching soon. Join the list to be first in.
 - **Layout:** drop headline from `md:text-7xl` to `md:text-6xl`.
 
+## Hero pill and trust row (live, 2026-10-01)
+
+- **Pill:** Built for owners asking where to start with AI (replaces
+  "Launching Soon"; no timing claim, so nothing needs changing on launch day).
+- **Trust row:** Free review first / Every homepage reviewed by a person /
+  Your files are yours to keep (replaces the waitlist promises).
+
 ## Section 2: What's different (locked, live)
 
 - **Header:** Most AI works for one person. / VibeControl works for your whole
