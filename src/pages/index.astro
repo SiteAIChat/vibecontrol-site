@@ -32,7 +32,7 @@ import {
 ---
 <Layout
   title="VibeControl — Your AI workforce, running your business"
-  description="Hire an AI employee who runs your inbox, follows up with leads, and answers customer questions — one employee, every job. Starts with a $47 AI Workforce Blueprint that maps her jobs."
+  description="Hire an AI employee who runs your inbox, follows up with leads, and answers customer questions — one employee, every job. Starts with a $47 AI Workforce Blueprint that maps out the work to hand off."
 >
   <SiteNav />
 
@@ -51,21 +51,21 @@ import {
           <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
           <span class="text-brand-teal font-semibold">Launching Soon</span>
           <span class="text-gray-600">·</span>
-          For business owners asking where to start with AI
+          For owners asking where to start with AI
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.05]">
-          Your business doesn't need
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05] text-balance">
+          An AI employee that knows your business —
           <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">
-            more software.
+            and works with everyone in it.
           </span>
-          <span class="text-gray-200">It needs an employee who runs it.</span>
         </h1>
 
         <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-          VibeControl gives you an AI employee who actually runs the work —
-          answers your emails, follows up with leads, keeps your CRM clean,
-          writes your reports. For less than a part-time VA.
+          It learns how your business runs — your customers, your process,
+          your way of doing things. Anyone on your team can hand it work in
+          plain English. Nothing technical to learn, and you decide what it
+          does on its own.
         </p>
 
         <div class="flex flex-col items-center gap-3">
@@ -73,13 +73,13 @@ import {
             href={BLUEPRINT_URL}
             class="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
           >
-            {CTA_LABEL}
+            See what I can hand off
             <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
           </a>
           <p class="text-sm text-gray-400 max-w-md">
-            A $47 guided session that maps her jobs and shows you where to
-            start first.
-            <span class="block mt-1 text-gray-500">Launching soon — claim your spot on the list.</span>
+            Start with the $47 AI Workforce Blueprint. We’ll map the jobs
+            VibeControl should handle first.
+            <span class="block mt-1 text-gray-500">Launching soon — join the list to be first in.</span>
           </p>
         </div>
 
@@ -201,16 +201,16 @@ import {
         </div>
 
         <!-- Roles -->
-        <p class="text-center text-gray-300 text-lg mb-3 font-medium">Give her the jobs that fill your day.</p>
+        <p class="text-center text-gray-300 text-lg mb-3 font-medium">Hand off the jobs that fill your day.</p>
         <p class="text-center text-gray-500 text-sm mb-10">Same AI employee. A different job title for each one.</p>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-20">
           {[
-            { icon: Inbox, color: 'brand-blue', role: 'Your AI office manager', desc: 'She reads your inbox, books your meetings, and flags what needs you.' },
-            { icon: PhoneCall, color: 'brand-teal', role: 'Your AI sales assistant', desc: 'She follows up with every lead, books calls, and updates your CRM.' },
-            { icon: HeartHandshake, color: 'brand-orange', role: 'Your AI customer support', desc: 'She handles routine questions and routes the complex ones to you.' },
-            { icon: PenLine, color: 'brand-coral', role: 'Your AI content writer', desc: 'She drafts your emails, newsletters, and follow-up sequences in your voice.' },
-            { icon: BarChart3, color: 'brand-blue', role: 'Your AI reports analyst', desc: 'She pulls your numbers and writes the summary — Monday before you log on.' },
+            { icon: Inbox, color: 'brand-blue', role: 'Your AI office manager', desc: 'Reads your inbox, books your meetings, and flags what needs you.' },
+            { icon: PhoneCall, color: 'brand-teal', role: 'Your AI sales assistant', desc: 'Follows up with every lead, books calls, and updates your CRM.' },
+            { icon: HeartHandshake, color: 'brand-orange', role: 'Your AI customer support', desc: 'Handles routine questions and routes the complex ones to you.' },
+            { icon: PenLine, color: 'brand-coral', role: 'Your AI content writer', desc: 'Drafts your emails, newsletters, and follow-up sequences in your voice.' },
+            { icon: BarChart3, color: 'brand-blue', role: 'Your AI reports analyst', desc: 'Pulls your numbers and writes the summary — Monday before you log on.' },
           ].map(({ icon: Icon, color, role, desc }) => (
             <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.06] transition group">
               <div class={`w-10 h-10 rounded-xl bg-${color}/15 flex items-center justify-center mb-4 group-hover:scale-105 transition`}>
@@ -225,12 +225,12 @@ import {
         <!-- Capability blocks -->
         <div class="grid md:grid-cols-2 gap-5">
           {[
-            { icon: ClipboardList, color: 'brand-blue', title: 'Every job has a job description.', body: 'What she does, what she doesn’t, how much judgment she’s trusted with. Built specifically for your business — not generic templates.' },
-            { icon: Brain, color: 'brand-teal', title: 'She remembers.', body: 'She learns your customers, your decisions, your way of doing things. The longer she works for you, the better she gets. Bring on a new VA and she brings them up to speed — she’s the one who knows how you do things.' },
-            { icon: Cloud, color: 'brand-orange', title: 'She works while you sleep.', body: 'VibeControl runs in the cloud, on our infrastructure. Nothing to install. She keeps working whether your computer is open or not.' },
-            { icon: Eye, color: 'brand-coral', title: 'You see everything she’s doing.', body: 'Open the app from your phone or laptop and you see exactly what she’s handled, what’s in progress, and what’s waiting for you.' },
-            { icon: ShieldCheck, color: 'brand-blue', title: 'Nothing happens you didn’t authorize.', body: 'You decide what she’s allowed to do on her own and what needs your approval. Email drafts can wait for review. Customer responses can send automatically. You set the rules.' },
-            { icon: Scale, color: 'brand-teal', title: 'You stay in charge of the judgment calls.', body: 'She handles routine work end-to-end. Pricing, strategy, hard customer conversations — those stay with you. Always.' },
+            { icon: ClipboardList, color: 'brand-blue', title: 'Every job has a job description.', body: 'What it does, what it doesn’t, how much judgment it’s trusted with. Built specifically for your business — not generic templates.' },
+            { icon: Brain, color: 'brand-teal', title: 'It remembers.', body: 'It learns your customers, your decisions, your way of doing things. The longer it works for you, the better it gets. Bring on a new VA and it brings them up to speed — it’s the one who knows how you do things.' },
+            { icon: Cloud, color: 'brand-orange', title: 'It works while you sleep.', body: 'VibeControl runs in the cloud, on our infrastructure. Nothing to install. It keeps working whether your computer is open or not.' },
+            { icon: Eye, color: 'brand-coral', title: 'You see everything it’s doing.', body: 'Open the app from your phone or laptop and you see exactly what it’s handled, what’s in progress, and what’s waiting for you.' },
+            { icon: ShieldCheck, color: 'brand-blue', title: 'Nothing happens you didn’t authorize.', body: 'You decide what it’s allowed to do on its own and what needs your approval. Email drafts can wait for review. Customer responses can send automatically. You set the rules.' },
+            { icon: Scale, color: 'brand-teal', title: 'You stay in charge of the judgment calls.', body: 'It handles routine work end-to-end. Pricing, strategy, hard customer conversations — those stay with you. Always.' },
           ].map(({ icon: Icon, color, title, body }) => (
             <div class="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md hover:border-white/20 transition">
               <div class="flex items-start gap-4">
@@ -256,12 +256,12 @@ import {
                 Live dashboard preview
               </div>
               <p class="text-gray-300 max-w-md mx-auto">
-                Her work — what she's handled, what's in progress, what's waiting on you. All in one place.
+                What’s handled, what’s in progress, what’s waiting on you. All in one place.
               </p>
             </div>
           </div>
           <figcaption class="text-center text-xs text-gray-500 pt-3 pb-1">
-            The VibeControl dashboard. Her work, visible.
+            The VibeControl dashboard. Every job, visible.
           </figcaption>
         </figure>
       </div>
@@ -308,11 +308,11 @@ import {
           <!-- Door 2: AI Workforce Blueprint -->
           <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-white/10 p-8 md:p-10 backdrop-blur-md flex flex-col">
             <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-3">Start with your business</p>
-            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Map every job she should take off your plate.</h3>
+            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Map every job you can take off your plate.</h3>
             <p class="text-gray-300 leading-relaxed mb-6 flex-1">
               The $47 AI Workforce Blueprint. A guided session with an AI
               consultant that asks about your business, your customers, your
-              daily fires — and maps her jobs, ranked by impact. Yours to keep.
+              daily fires — and maps the jobs to hand off, ranked by impact. Yours to keep.
             </p>
             <div class="flex flex-col items-start gap-3">
               <a
@@ -338,7 +338,7 @@ import {
           <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Pricing</p>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">What it costs.</h2>
           <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Everyone starts the same way: a <span class="text-white font-semibold">$47 AI Workforce Blueprint</span> that maps her jobs. From there, she runs inside VibeControl.
+            Everyone starts the same way: a <span class="text-white font-semibold">$47 AI Workforce Blueprint</span> that maps the jobs to hand off. From there, your AI employee runs inside VibeControl.
           </p>
         </div>
 
@@ -497,9 +497,9 @@ import {
             </h2>
             <div class="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                The Blueprint is $47. You walk out with a written plan, her
-                jobs configured and ready, and clear next steps for putting
-                her to work.
+                The Blueprint is $47. You walk out with a written plan, your AI
+                employee’s jobs configured and ready, and clear next steps for
+                putting it to work.
               </p>
               <p>
                 If during your 14 days with the Blueprint you don't feel you got
@@ -527,7 +527,7 @@ import {
           <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             VibeControl works for owner-operated businesses where the owner is
             the bottleneck — communication, coordination, follow-up, and
-            content are the work she can actually do.
+            content are the work it can actually do.
           </p>
         </div>
 
@@ -556,8 +556,8 @@ import {
             <span class="text-white font-semibold"> VibeControl will help.</span>
           </p>
           <p class="text-gray-500 text-sm leading-relaxed">
-            She has limits, and we'd rather tell you now: she can't mow your
-            lawn, run your job site, or pack a box. But she can make sure
+            It has limits, and we'd rather tell you now: it can't mow your
+            lawn, run your job site, or pack a box. But it can make sure
             every quote you send gets a yes or a no, every lead gets followed
             up, and every report gets written — whatever your business does.
           </p>
@@ -577,14 +577,14 @@ import {
 
         <div class="space-y-3">
           {[
-            { q: 'How does this work, exactly?', a: 'You pay $47 for the AI Workforce Blueprint. You have a guided conversation with an AI consultant about your business. It produces a written plan and sets up her jobs inside VibeControl, ready to activate. From there you choose to run her inside VibeControl ($97/mo Standard or $297/mo Team) or take what you learned and implement it yourself.' },
-            { q: 'Do I have to install anything?', a: 'No. VibeControl runs in the cloud. You log in from a browser or our mobile app. Your AI employee runs on our infrastructure — she keeps working whether your laptop is open or not.' },
+            { q: 'How does this work, exactly?', a: 'You pay $47 for the AI Workforce Blueprint. You have a guided conversation with an AI consultant about your business. It produces a written plan and sets up your AI employee’s jobs inside VibeControl, ready to activate. From there you choose to put it to work inside VibeControl ($97/mo Standard or $297/mo Team) or take what you learned and implement it yourself.' },
+            { q: 'Do I have to install anything?', a: 'No. VibeControl runs in the cloud. You log in from a browser or our mobile app. Your AI employee runs on our infrastructure — it keeps working whether your laptop is open or not.' },
             { q: 'What AI does it use under the hood?', a: 'We use leading AI models and route work to the right one for the job. You don’t manage any of that. No API keys to set up, no subscriptions to other AI services required.' },
-            { q: 'What if my Blueprint suggests jobs I don’t actually want?', a: 'You’re in control. The Blueprint is a recommendation, not a command. You decide which jobs to activate and which to skip. You can also assign her your own jobs anytime.' },
+            { q: 'What if my Blueprint suggests jobs I don’t actually want?', a: 'You’re in control. The Blueprint is a recommendation, not a command. You decide which jobs to activate and which to skip. You can also give it your own jobs anytime.' },
             { q: 'Can I try VibeControl before committing to a monthly plan?', a: 'Yes — most owners do. After your Blueprint, you can activate a trial of the Standard plan with starter credits. Details are presented after you complete your Blueprint purchase.' },
             { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your account settings before your billing date to avoid the next charge. We don’t lock you in with annual contracts.' },
             { q: 'Is there a Team plan or just Standard?', a: 'Both. Standard ($97/mo) is for solo operators. Team ($297/mo) is for small businesses that want their people and their AI employee on the same board. You can upgrade from Standard to Team anytime from your account.' },
-            { q: 'What if I need help setting this up?', a: 'Most owners don’t. The Blueprint sets up her jobs for you. But if you want hands-on help, that’s VibeControl Assist (from $247/mo) — we sit down with you and build it together. For the rare business with something genuinely custom, our agency Build3r takes on a limited number of one-off projects. Contact us through your account.' },
+            { q: 'What if I need help setting this up?', a: 'Most owners don’t. The Blueprint sets up the jobs for you. But if you want hands-on help, that’s VibeControl Assist (from $247/mo) — we sit down with you and build it together. For the rare business with something genuinely custom, our agency Build3r takes on a limited number of one-off projects. Contact us through your account.' },
             { q: 'Who’s behind this?', a: 'Built by Dustin Randle, who’s run a small business IT services company since 2008. Not a venture-funded startup chasing valuation — a profitable business with skin in the game.' },
           ].map((item) => (
             <details class="group rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition overflow-hidden">
@@ -673,7 +673,7 @@ import {
             <!-- Interests -->
             <fieldset>
               <legend class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                Which job should she start with first? <span class="text-gray-600 normal-case font-normal tracking-normal">(optional)</span>
+                Which job should it start with first? <span class="text-gray-600 normal-case font-normal tracking-normal">(optional)</span>
               </legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {[
