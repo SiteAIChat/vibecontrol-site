@@ -1,0 +1,6 @@
+# /sites and /crm are hidden while their copy is reworked. They live on the
+# capability-pages-preview branch. Temporary (302) so they can come back.
+/sites   /  302
+/sites/  /  302
+/crm     /  302
+/crm/    /  302

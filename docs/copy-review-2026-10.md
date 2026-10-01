@@ -203,8 +203,11 @@ help setting it up (Assist, no price; Build3r) / who's behind this.
   CRM gateway script). Restore when the Blueprint opens.
 - The section keeps id "get-on-the-list" so /sites and /crm Blueprint buttons
   still land somewhere sensible. Footer "The Blueprint" link removed.
-- **Still to do:** /sites and /crm copy and buttons sell the Blueprint; give
-  them their own review pass.
+- **/sites and /crm:** hidden on production 2026-10-01 (302 to the homepage
+  via public/_redirects). Full pages kept on branch capability-pages-preview.
+  Before they return: confirm whether the showroom examples are real customer
+  sites (homepage promises no invented proof), confirm the A/B testing claim,
+  and replace Blueprint CTAs with the working interview.
 
 ## Ideas parked for later sections
 
