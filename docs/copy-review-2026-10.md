@@ -42,6 +42,21 @@ customer copy.
 - **Dropped:** the VA-vs-$97 row. The page isn't arguing AI vs. a human hire.
 - **Skipped:** "business brain" (second metaphor next to "AI employee").
 
+## Section 3: The jobs it takes on (locked, live)
+
+- **Header:** Give VibeControl a job. / It already knows how your business works.
+- **Lead:** no separate AI per department; one AI employee across jobs, so
+  sales knows what support promised and the report includes both.
+- **Job cards:** plain job names (Office & operations, Sales, Customer support,
+  Content, Reporting), not "Your AI ___" titles, so it doesn't read as a
+  catalog of bots.
+- **Control subhead:** It works across your business. You decide how.
+- **Six blocks:** clear boundaries, remembers (brings new hires up to speed),
+  whole team works with it, who can ask for what (Team plan), judgment calls
+  stay with people, approved recurring work keeps moving.
+- **Removed:** the empty "Live dashboard preview" placeholder. Add a real
+  screenshot later.
+
 ## Ideas parked for later sections
 
 - **Consultant angle (Blueprint / pricing / founder):** the businesses getting
@@ -54,8 +69,8 @@ customer copy.
 
 ## Placements agreed for later sections
 
-- **Section 3 or Team card:** Your whole team gets an AI employee. Nobody has to
-  learn AI.
+- **Team pricing card (maybe):** Your whole team gets an AI employee. Nobody has
+  to learn AI.
 - **Final early-access section:** Run like a company twice your size.
 - **Form heading (message match with the hero button):** Find out what you can
   hand off.

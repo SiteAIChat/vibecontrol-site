@@ -16,7 +16,8 @@ import {
   ClipboardList,
   Brain,
   Cloud,
-  Eye,
+  Users,
+  UserCog,
   ShieldCheck,
   Scale,
   Sparkles,
@@ -200,45 +201,53 @@ import {
       <div class="absolute top-1/2 -translate-y-1/2 -left-40 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]" aria-hidden="true"></div>
 
       <div class="relative max-w-6xl mx-auto">
-        <div class="max-w-3xl mb-16 text-center mx-auto">
-          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Your AI workforce, working</p>
-          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Assign work the way you'd assign it to a person.
-            <span class="text-gray-400">The work gets done.</span>
+        <div class="max-w-3xl mb-14 text-center mx-auto">
+          <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">The jobs it takes on</p>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-balance">
+            Give VibeControl a job.
+            <span class="block text-gray-400">It already knows how your business works.</span>
           </h2>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed text-pretty">
+            You shouldn’t need one AI for sales, another for support, and
+            another for reports. VibeControl takes on every one of those jobs
+            as the same AI employee. So the sales follow-up knows what support
+            just promised, and Monday’s report already includes both.
+          </p>
         </div>
 
-        <!-- Roles -->
-        <p class="text-center text-gray-300 text-lg mb-3 font-medium">Hand off the jobs that fill your day.</p>
-        <p class="text-center text-gray-500 text-sm mb-10">Same AI employee. A different job title for each one.</p>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-20">
+        <!-- Jobs -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-24">
           {[
-            { icon: Inbox, color: 'brand-blue', role: 'Your AI office manager', desc: 'Reads your inbox, books your meetings, and flags what needs you.' },
-            { icon: PhoneCall, color: 'brand-teal', role: 'Your AI sales assistant', desc: 'Follows up with every lead, books calls, and updates your CRM.' },
-            { icon: HeartHandshake, color: 'brand-orange', role: 'Your AI customer support', desc: 'Handles routine questions and routes the complex ones to you.' },
-            { icon: PenLine, color: 'brand-coral', role: 'Your AI content writer', desc: 'Drafts your emails, newsletters, and follow-up sequences in your voice.' },
-            { icon: BarChart3, color: 'brand-blue', role: 'Your AI reports analyst', desc: 'Pulls your numbers and writes the summary — Monday before you log on.' },
+            { icon: Inbox, color: 'brand-blue', role: 'Office & operations', desc: 'Keeps inboxes, calendars, and recurring tasks moving for everyone. Flags what needs a person.' },
+            { icon: PhoneCall, color: 'brand-teal', role: 'Sales', desc: 'Follows up with every lead, books calls, and keeps the CRM current. No deal dies because someone forgot the next step.' },
+            { icon: HeartHandshake, color: 'brand-orange', role: 'Customer support', desc: 'Answers routine questions using your policies and each customer’s history. Hands the rest to the right person.' },
+            { icon: PenLine, color: 'brand-coral', role: 'Content', desc: 'Drafts emails, newsletters, and posts in the voice your team already uses.' },
+            { icon: BarChart3, color: 'brand-blue', role: 'Reporting', desc: 'Pulls the numbers, summarizes the week, and flags what needs attention before anyone goes looking.' },
           ].map(({ icon: Icon, color, role, desc }) => (
-            <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.06] transition group">
-              <div class={`w-10 h-10 rounded-xl bg-${color}/15 flex items-center justify-center mb-4 group-hover:scale-105 transition`}>
+            <div class="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.06] transition group">
+              <div class={`w-11 h-11 rounded-xl bg-${color}/15 flex items-center justify-center mb-4 group-hover:scale-105 transition`}>
                 <Icon className={`w-5 h-5 text-${color}`} />
               </div>
-              <h3 class="font-semibold text-white mb-2 leading-snug">{role}</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">{desc}</p>
+              <h3 class="text-lg font-semibold text-white mb-2 leading-snug">{role}</h3>
+              <p class="text-base text-gray-400 leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
 
-        <!-- Capability blocks -->
+        <!-- Control -->
+        <h3 class="text-2xl md:text-4xl font-bold text-center mb-12 leading-tight text-balance">
+          It works across your business.
+          <span class="text-gray-400">You decide how.</span>
+        </h3>
+
         <div class="grid md:grid-cols-2 gap-5">
           {[
-            { icon: ClipboardList, color: 'brand-blue', title: 'Every job has a job description.', body: 'What it does, what it doesn’t, how much judgment it’s trusted with. Built specifically for your business — not generic templates.' },
-            { icon: Brain, color: 'brand-teal', title: 'It remembers.', body: 'It learns your customers, your decisions, your way of doing things. The longer it works for you, the better it gets. Bring on a new VA and it brings them up to speed — it’s the one who knows how you do things.' },
-            { icon: Cloud, color: 'brand-orange', title: 'It works while you sleep.', body: 'VibeControl runs in the cloud, on our infrastructure. Nothing to install. It keeps working whether your computer is open or not.' },
-            { icon: Eye, color: 'brand-coral', title: 'You see everything it’s doing.', body: 'Open the app from your phone or laptop and you see exactly what it’s handled, what’s in progress, and what’s waiting for you.' },
-            { icon: ShieldCheck, color: 'brand-blue', title: 'Nothing happens you didn’t authorize.', body: 'You decide what it’s allowed to do on its own and what needs your approval. Email drafts can wait for review. Customer responses can send automatically. You set the rules.' },
-            { icon: Scale, color: 'brand-teal', title: 'You stay in charge of the judgment calls.', body: 'It handles routine work end-to-end. Pricing, strategy, hard customer conversations — those stay with you. Always.' },
+            { icon: ClipboardList, color: 'brand-blue', title: 'Every job has clear boundaries.', body: 'You define what it’s responsible for, what it can do on its own, and what waits for your approval.' },
+            { icon: Brain, color: 'brand-teal', title: 'It remembers how you do things.', body: 'Customers, processes, and decisions don’t disappear when a conversation ends. Bring on a new hire and it can bring them up to speed.' },
+            { icon: Users, color: 'brand-orange', title: 'Your whole team works with it.', body: 'Anyone can ask in plain English, from a browser or their phone. Everyone sees what’s handled, what’s in progress, and what’s waiting on a person.' },
+            { icon: UserCog, color: 'brand-coral', title: 'You decide who can ask for what.', body: 'Your sales team gets sales help, your office staff gets office help, and sensitive work stays with the people you choose.' },
+            { icon: Scale, color: 'brand-blue', title: 'Your people keep the judgment calls.', body: 'It handles the repeatable work. Pricing, strategy, sensitive customer conversations, and exceptions stay with your team.' },
+            { icon: Cloud, color: 'brand-teal', title: 'It keeps working when you’re not.', body: 'VibeControl runs on our servers, so approved recurring work keeps moving whether anyone’s laptop is open or not.' },
           ].map(({ icon: Icon, color, title, body }) => (
             <div class="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md hover:border-white/20 transition">
               <div class="flex items-start gap-4">
@@ -246,32 +255,13 @@ import {
                   <Icon className={`w-5 h-5 text-${color}`} />
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-white mb-2 leading-snug">{title}</h3>
-                  <p class="text-gray-400 leading-relaxed">{body}</p>
+                  <h4 class="text-lg font-semibold text-white mb-2 leading-snug">{title}</h4>
+                  <p class="text-base text-gray-400 leading-relaxed">{body}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        <!-- Product placeholder -->
-        <figure class="mt-16 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.02] p-2 backdrop-blur-md">
-          <div class="aspect-[16/9] rounded-2xl bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 border border-white/5 flex items-center justify-center overflow-hidden relative">
-            <div class="absolute inset-0 bg-[linear-gradient(rgba(74,144,217,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,217,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-            <div class="relative text-center px-6">
-              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-400 mb-4">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
-                Live dashboard preview
-              </div>
-              <p class="text-gray-300 max-w-md mx-auto">
-                What’s handled, what’s in progress, what’s waiting on you. All in one place.
-              </p>
-            </div>
-          </div>
-          <figcaption class="text-center text-xs text-gray-500 pt-3 pb-1">
-            The VibeControl dashboard. Every job, visible.
-          </figcaption>
-        </figure>
       </div>
     </section>
 
