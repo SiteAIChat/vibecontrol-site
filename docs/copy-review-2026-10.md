@@ -161,6 +161,23 @@ with the Blueprint when it opens.
   /sites and /crm still show the Value Promise next to Blueprint buttons. The
   waitlist form's mention is accurate for the Blueprint.
 
+## Section 9: Who this is for (locked, live)
+
+- **Header:** For small teams that want everyone using AI. / Not just the one
+  person who's good at it.
+- **Intro:** list of business types, "What you sell doesn't matter", built for
+  small businesses that want AI across the whole company, not one person's
+  chat.
+- **Checklist (You'll recognize this):** a few people use AI, most don't /
+  same questions bounce between people / business knowledge scattered across
+  inboxes, chats, heads / want the AI advantage without hiring a consultant.
+- **AI person card:** "Already have someone who's good with AI?" VibeControl
+  gives them one place to set it up for the whole team. (Invite the in-house
+  AI champion; don't imply nobody is an expert.)
+- **Honesty block:** kept, plus "Not yet, anyway."
+- **Removed:** industry cards (segmenting by industry) and "Solo founders".
+- **Lesson:** don't drift back to owner-bottleneck messaging; it's retired.
+
 ## Ideas parked for later sections
 
 - **Consultant angle:** used in section 6. Could also support the Blueprint
