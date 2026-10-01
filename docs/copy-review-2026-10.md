@@ -103,9 +103,7 @@ section then.
 - **Workspaces:** "Running a second business or location? Add a workspace."
 - **Buttons:** Start my working interview, to the review form.
 - **Not on the page yet:** hosted Linux VM add-on (not a priced offer).
-- **Follow-ups:** FAQ "What AI does it use" should mention the optional
-  subscription connection. Assist and the $247 vs. $249 conflict go to
-  section 6.
+- **Follow-ups:** done in sections 6 and 10.
 
 ## Section 6: Founder note (locked, live)
 
@@ -177,6 +175,21 @@ with the Blueprint when it opens.
 - **Honesty block:** kept, plus "Not yet, anyway."
 - **Removed:** industry cards (segmenting by industry) and "Solo founders".
 - **Lesson:** don't drift back to owner-bottleneck messaging; it's retired.
+
+## Section 10: FAQ (locked, live)
+
+Ten questions in buyer order: how it works / try before committing (the
+working interview) / does my team need AI skill / who decides what it does /
+install anything / what AI it uses / Standard or Team / cancel anytime /
+help setting it up (Assist, no price; Build3r) / who's behind this.
+
+- Removed the Blueprint question ("What if my Blueprint suggests jobs...");
+  no Blueprint FAQ until it opens.
+- **Apps:** desktop app for Mac, Windows, and Linux exists (full experience,
+  and can run work on the owner's AI subscription). Mobile app is ready but
+  not published; say "coming soon" until launch, then update pricing.
+- Pricing updated in the same pass: "Desktop app, memory, and playbooks.
+  Mobile app coming soon." and the subscription strip now says "desktop app".
 
 ## Ideas parked for later sections
 
