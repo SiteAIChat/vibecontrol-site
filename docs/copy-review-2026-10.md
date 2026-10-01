@@ -107,12 +107,27 @@ section then.
   subscription connection. Assist and the $247 vs. $249 conflict go to
   section 6.
 
+## Section 6: Founder note (locked, live)
+
+- **Header:** The businesses getting the most from AI pay someone like me to
+  set it up. / VibeControl is how you get the same result without hiring me.
+- **Body:** 18 years running IT services for small businesses; fixing what
+  owners were sold, lately AI tools that help one person a little but fall
+  short of helping the business as a whole; VibeControl puts the consultant's
+  setup into the product.
+- **Assist:** "Need help to move even faster?" Monthly program: each month
+  set up or tune the next job, each quarter review what to hand off next;
+  recommend at least six months (a recommendation, not a commitment). No price
+  on the page ($247 copy vs. $249 catalog unresolved). No 48-hour free-month
+  offer on the homepage; that stays in the Working Interview funnel.
+- **Build3r:** one line, custom projects only; Assist first.
+- **Photo:** Dustin's headshot at public/images/founder-dustin.jpg.
+- **Follow-up:** FAQ still says Assist "from $247/mo"; fix in the FAQ pass.
+
 ## Ideas parked for later sections
 
-- **Consultant angle (Blueprint / pricing / founder):** the businesses getting
-  the most from AI pay consultants to implement it. Dustin is that consultant;
-  VibeControl and the $47 Blueprint package that work for owners who would
-  never hire him, and give Assist clients a foundation to build on.
+- **Consultant angle:** used in section 6. Could also support the Blueprint
+  when it opens as the second working interview path.
 - **copy-rules.md follow-ups:** the JTBD table and positioning sentence still
   lead with "does the work" and include the VA row; update once the homepage
   review settles.
