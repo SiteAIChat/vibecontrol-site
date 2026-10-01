@@ -1,6 +1,6 @@
 ---
 import { ArrowRight } from 'lucide-react';
-import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
+import { BLUEPRINT_URL, HANDOFF_CTA_LABEL } from '../lib/cta';
 ---
 <header
   id="site-nav"
@@ -21,14 +21,14 @@ import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
         href={BLUEPRINT_URL}
         class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-sm font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/20"
       >
-        {CTA_LABEL}
+        {HANDOFF_CTA_LABEL}
         <ArrowRight className="w-4 h-4" />
       </a>
       <a
         href={BLUEPRINT_URL}
         class="sm:hidden inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-teal text-xs font-semibold text-white"
       >
-        The Blueprint
+        {HANDOFF_CTA_LABEL}
       </a>
     </div>
   </div>

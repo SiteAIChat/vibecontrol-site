@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyCta from '../components/StickyCta.astro';
-import { BLUEPRINT_URL, CTA_LABEL } from '../lib/cta';
+import { BLUEPRINT_URL, CTA_LABEL, HANDOFF_CTA_LABEL } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -73,7 +73,7 @@ import {
             href={BLUEPRINT_URL}
             class="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
           >
-            See what I can hand off
+            {HANDOFF_CTA_LABEL}
             <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition" />
           </a>
           <p class="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
