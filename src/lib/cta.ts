@@ -8,4 +8,4 @@ export function blueprintUrlForSource(source: string): string {
 }
 
 // Free website review + $47 Working Interview on fire-your-website.com.
-export const REVIEW_URL = 'https://fire-your-website.com';
+export const REVIEW_URL = 'https://fire-your-website.com/#review-form';
