@@ -37,8 +37,8 @@ customer copy.
 - **Rows:** conversation vs. business, one person's chat vs. whole team,
   good-at-AI vs. plain English, automation triggers vs. the whole job inside
   your rules.
-- **Closing line:** One AI employee. A different job for every part of your
-  business.
+- **Closing line:** removed. It floated between sections and repeated the
+  section 3 header.
 - **Dropped:** the VA-vs-$97 row. The page isn't arguing AI vs. a human hire.
 - **Skipped:** "business brain" (second metaphor next to "AI employee").
 
