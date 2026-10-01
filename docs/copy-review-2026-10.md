@@ -191,6 +191,21 @@ help setting it up (Assist, no price; Build3r) / who's behind this.
 - Pricing updated in the same pass: "Desktop app, memory, and playbooks.
   Mobile app coming soon." and the subscription strip now says "desktop app".
 
+## Section 11: Final call to action (locked, live)
+
+- **Header:** Run like a company twice your size. / Start with a working
+  interview.
+- **Body:** give your AI employee your website first; see the work before you
+  commit; then the rest of your business.
+- **Button:** Start my working interview (review form). Small print: Free
+  review first. $47 once. Nothing renews.
+- **Blueprint waitlist saved** as src/components/BlueprintWaitlist.astro (form,
+  CRM gateway script). Restore when the Blueprint opens.
+- The section keeps id "get-on-the-list" so /sites and /crm Blueprint buttons
+  still land somewhere sensible. Footer "The Blueprint" link removed.
+- **Still to do:** /sites and /crm copy and buttons sell the Blueprint; give
+  them their own review pass.
+
 ## Ideas parked for later sections
 
 - **Consultant angle:** used in section 6. Could also support the Blueprint

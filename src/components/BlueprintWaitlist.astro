@@ -1,0 +1,210 @@
+---
+// Saved 2026-10-01: the $47 AI Workforce Blueprint waitlist that closed the
+// homepage before the working interview launched. Not rendered anywhere.
+// To restore, import it in src/pages/index.astro and place <BlueprintWaitlist />
+// above <SiteFooter />. Submissions go to the SiteAI Forms gateway
+// (form key "early-access") and land in the VibeControl CRM workspace.
+// Copy still needs a pass when it returns: em dashes, and "Not sure, show me".
+import { ArrowRight, Check, Inbox, PhoneCall, HeartHandshake, PenLine, BarChart3, Sparkles } from 'lucide-react';
+---
+    <section id="get-on-the-list" class="relative py-24 sm:py-32 px-6 overflow-hidden scroll-mt-20">
+      <!-- ambient glow -->
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[42rem] h-[42rem] bg-brand-blue/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto w-[36rem] h-[36rem] bg-brand-teal/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+
+      <div class="relative max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-xs sm:text-sm text-brand-teal font-semibold mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
+            Launching Soon · Early Access
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-5 leading-tight">
+            Be first in line for the
+            <span class="block bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">$47 Blueprint.</span>
+          </h2>
+          <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            We're opening Blueprint access soon. Drop your details and you'll be
+            invited before public launch — plus locked in at the launch price.
+          </p>
+        </div>
+
+        <div class="rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 backdrop-blur-md p-6 sm:p-10">
+          <form id="cta-form" action="#" class="space-y-5">
+            <input type="hidden" name="source" value="vibecontrol-landing" />
+
+            <!-- Name fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">First name</span>
+                <input
+                  type="text"
+                  name="first_name"
+                  required
+                  autocomplete="given-name"
+                  placeholder="Dustin"
+                  class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+                />
+              </label>
+              <label class="block">
+                <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Last name</span>
+                <input
+                  type="text"
+                  name="last_name"
+                  required
+                  autocomplete="family-name"
+                  placeholder="Randle"
+                  class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+                />
+              </label>
+            </div>
+
+            <!-- Email -->
+            <label class="block">
+              <span class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Work email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@yourbusiness.com"
+                class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-teal/60 focus:border-brand-teal/40 transition"
+              />
+            </label>
+
+            <!-- Interests -->
+            <fieldset>
+              <legend class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                Which job should it start with first? <span class="text-gray-600 normal-case font-normal tracking-normal">(optional)</span>
+              </legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  { value: 'interest-office-manager', icon: Inbox, color: 'brand-blue', label: 'Office Manager' },
+                  { value: 'interest-sales-assistant', icon: PhoneCall, color: 'brand-teal', label: 'Sales Assistant' },
+                  { value: 'interest-customer-support', icon: HeartHandshake, color: 'brand-orange', label: 'Customer Support' },
+                  { value: 'interest-content-writer', icon: PenLine, color: 'brand-coral', label: 'Content Writer' },
+                  { value: 'interest-reports-analyst', icon: BarChart3, color: 'brand-blue', label: 'Reports Analyst' },
+                  { value: 'interest-not-sure', icon: Sparkles, color: 'brand-teal', label: 'Not sure — show me' },
+                ].map(({ value, icon: Icon, color, label }) => (
+                  <label class="group/check flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] hover:border-white/20 has-[:checked]:bg-brand-teal/10 has-[:checked]:border-brand-teal/40 cursor-pointer transition">
+                    <input type="checkbox" name="interests" value={value} class="accent-brand-teal w-4 h-4 shrink-0" />
+                    <Icon className={`w-4 h-4 text-${color} shrink-0`} />
+                    <span class="text-sm text-gray-200">{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="group w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30 text-base"
+            >
+              Get on the list for the $47 Blueprint
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+            </button>
+
+            <p class="text-xs text-gray-500 text-center max-w-md mx-auto leading-relaxed">
+              No spam. We'll email you the moment Blueprint access opens —
+              and you'll be locked in at the $47 launch price with the 14-day Value Promise.
+            </p>
+          </form>
+
+          <!-- Thanks state -->
+          <div id="cta-thanks" class="hidden text-center py-6">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-brand-teal/15 border border-brand-teal/40 flex items-center justify-center">
+              <Check className="w-7 h-7 text-brand-teal" />
+            </div>
+            <h3 class="text-2xl font-bold mb-3">You're on the list.</h3>
+            <p class="text-gray-300 max-w-md mx-auto leading-relaxed">
+              We'll email you the moment the $47 Blueprint opens — you'll be invited first.
+            </p>
+          </div>
+
+          <!-- Error state -->
+          <p id="cta-error" class="hidden mt-4 text-sm text-brand-coral text-center font-medium">
+            Something went wrong. Please try again, or email <a href="mailto:hello@getvibecontrol.com" class="underline hover:text-white">hello@getvibecontrol.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<script>
+    // Override hidden source input from ?source= URL param if present
+    const sourceParam = new URLSearchParams(window.location.search).get('source');
+    if (sourceParam) {
+      const sourceInput = document.querySelector('#cta-form input[name="source"]');
+      if (sourceInput) sourceInput.value = sourceParam;
+    }
+
+    // Form submission → SiteAI Forms gateway
+    // Submissions flow: edge.vibecontrol.app/submit → forms-worker → server dispatch →
+    //   crm_contacts + crm_workspace_contacts (VibeControl workspace) automatically.
+    const FORMS_GATEWAY_URL = 'https://edge.vibecontrol.app';
+    const SITEAI_SITE_ID = '732a4664-405b-46e8-8f83-0bf2bd55a1b4';
+    const FORM_KEY = 'early-access';
+
+    const form = document.getElementById('cta-form');
+    const thanks = document.getElementById('cta-thanks');
+    const errorEl = document.getElementById('cta-error');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalLabel = btn ? btn.innerHTML : '';
+
+        const first_name = form.querySelector('input[name="first_name"]').value.trim();
+        const last_name = form.querySelector('input[name="last_name"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const source = form.querySelector('input[name="source"]').value;
+        const interests = Array.from(
+          form.querySelectorAll('input[name="interests"]:checked'),
+        ).map((cb) => cb.value);
+
+        if (errorEl) errorEl.classList.add('hidden');
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = 'Adding you to the list…';
+        }
+
+        const url = new URL(window.location.href);
+        const utm = {
+          source: url.searchParams.get('utm_source') || undefined,
+          medium: url.searchParams.get('utm_medium') || undefined,
+          campaign: url.searchParams.get('utm_campaign') || undefined,
+          term: url.searchParams.get('utm_term') || undefined,
+          content: url.searchParams.get('utm_content') || undefined,
+        };
+
+        const idempotencyKey =
+          (window.crypto && typeof window.crypto.randomUUID === 'function')
+            ? window.crypto.randomUUID()
+            : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+        try {
+          const res = await fetch(
+            `${FORMS_GATEWAY_URL}/submit/${SITEAI_SITE_ID}/${FORM_KEY}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                data: { email, first_name, last_name, source, interests },
+                idempotency_key: idempotencyKey,
+                referrer: document.referrer || undefined,
+                utm,
+              }),
+            },
+          );
+          if (!res.ok) throw new Error('Request failed');
+          form.classList.add('hidden');
+          if (thanks) thanks.classList.remove('hidden');
+        } catch (err) {
+          if (errorEl) errorEl.classList.remove('hidden');
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = originalLabel;
+          }
+        }
+      });
+    }
+</script>
