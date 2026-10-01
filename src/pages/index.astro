@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyCta from '../components/StickyCta.astro';
-import { BLUEPRINT_URL, CTA_LABEL, HANDOFF_CTA_LABEL, HANDOFF_URL, REVIEW_URL } from '../lib/cta';
+import { HANDOFF_CTA_LABEL, HANDOFF_URL, REVIEW_URL } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -334,13 +334,13 @@ import {
     <!-- =========================
          SECTION 5 — PRICING
          ========================= -->
-    <section id="pricing" class="relative py-24 sm:py-32 px-6">
+    <section class="relative py-24 sm:py-32 px-6">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
+        <div id="pricing" class="text-center mb-16 scroll-mt-24">
           <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Pricing</p>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">What it costs.</h2>
-          <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Everyone starts the same way: a <span class="text-white font-semibold">$47 working interview</span>. When you like the work, hire it on one of these plans.
+          <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed text-pretty">
+            Everyone starts the same way: a <span class="text-white font-semibold">$47 working interview</span>. When you like the work, hire it on one of these plans. Month to month, cancel anytime.
           </p>
         </div>
 
@@ -352,19 +352,23 @@ import {
               <span class="text-5xl font-bold text-white">$97</span>
               <span class="text-gray-400">/mo</span>
             </div>
-            <p class="text-gray-400 text-sm mb-6">One owner. One employee who does the work.</p>
-            <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>5,000 credits a month</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>1 user, 1 workspace, 1 site</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Add seats or workspaces $47/mo, sites $20/mo</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Memory &amp; playbooks</span></li>
+            <p class="text-gray-300 text-base mb-6">One owner. One AI employee that knows your business.</p>
+            <ul class="space-y-3 text-base text-gray-300 mb-6 flex-1">
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span><span class="font-semibold text-white">Any job you want to hand off.</span> No per-job fees.</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Works with your existing AI subscription</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>5,000 credits a month for hosted work. You set the cap.</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>1 user and 1 website</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app, memory, and playbooks</span></li>
             </ul>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Add a user for $47/mo or a website for $20/mo. Running a second
+              business or location? Add a workspace for $47/mo.
+            </p>
             <a
-              href={BLUEPRINT_URL}
-              class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition"
+              href={REVIEW_URL}
+              class="block text-center px-6 py-3.5 rounded-xl border border-white/20 text-base font-semibold text-white hover:bg-white/10 transition"
             >
-              {CTA_LABEL}
+              Start my working interview
             </a>
           </div>
 
@@ -378,25 +382,45 @@ import {
               <span class="text-5xl font-bold text-white">$297</span>
               <span class="text-gray-400">/mo</span>
             </div>
-            <p class="text-gray-400 text-sm mb-6">Your people and your AI employee on the same board.</p>
-            <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-1">
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>15,000 credits a month</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>3 users included, $20/mo each after</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>1 workspace (add more $47/mo), 2 sites</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Seats can be scoped to one department or workspace</span></li>
-              <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app, memory &amp; playbooks</span></li>
+            <p class="text-gray-300 text-base mb-6">Your people and your AI employee on the same board.</p>
+            <ul class="space-y-3 text-base text-gray-300 mb-6 flex-1">
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span><span class="font-semibold text-white">Any job you want to hand off.</span> No per-job fees.</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Decide who on your team can ask it for what</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>3 users included, $20/mo each after</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Works with your existing AI subscription</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>15,000 credits a month for hosted work. You set the cap.</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>2 websites, plus everything in Standard</span></li>
             </ul>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Running a second business or location? Add a workspace for
+              $47/mo.
+            </p>
             <a
-              href={BLUEPRINT_URL}
-              class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+              href={REVIEW_URL}
+              class="block text-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal text-base font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
             >
-              {CTA_LABEL}
+              Start my working interview
             </a>
           </div>
         </div>
 
-        <p class="text-center text-sm text-gray-500 mt-8">
-          The working interview is $47 once and nothing renews. Choose a plan when you’re ready.
+        <!-- Existing AI subscription -->
+        <div class="mt-8 max-w-4xl mx-auto rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+          <h3 class="text-xl md:text-2xl font-bold text-white mb-3 leading-snug">
+            Already pay for an AI subscription?
+            <span class="text-brand-teal">Put it to work.</span>
+          </h3>
+          <p class="text-base md:text-lg text-gray-300 leading-relaxed">
+            Credits work fine on their own. But the most economical way to put
+            your AI employee to work is with the AI subscription you already
+            have. Install our small app on your Mac, PC, or Linux computer, and
+            everyday work runs on your plan with no per-task charges from us.
+            If that computer is off, credits pick up the work.
+          </p>
+        </div>
+
+        <p class="text-center text-base text-gray-400 mt-8">
+          The working interview is $47 once and nothing renews.
         </p>
       </div>
     </section>

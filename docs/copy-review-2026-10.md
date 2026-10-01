@@ -86,6 +86,27 @@ section then.
 - **Confirmed:** the brief offers keep-current-style vs. refresh. Fire Your
   Website funnel copy gets its own review after this site.
 
+## Section 5: Pricing (locked, live)
+
+- **Intro:** everyone starts with a $47 working interview; hire on a plan;
+  month to month, cancel anytime.
+- **Standard tagline:** One owner. One AI employee that knows your business.
+- **First bullet, both plans:** Any job you want to hand off. No per-job fees.
+  (Only credits limit usage.)
+- **Credits:** "5,000/15,000 credits a month for hosted work. You set the cap."
+  Never lead with credits.
+- **Existing AI subscription:** bullet "Works with your existing AI
+  subscription" plus a strip: install our small app on Mac, PC, or Linux and
+  everyday work runs on your plan with no per-task charges; if that computer
+  is off, credits pick up the work. Don't name providers; say "your existing
+  AI subscription". Don't say runtime or self-hosted.
+- **Workspaces:** "Running a second business or location? Add a workspace."
+- **Buttons:** Start my working interview, to the review form.
+- **Not on the page yet:** hosted Linux VM add-on (not a priced offer).
+- **Follow-ups:** FAQ "What AI does it use" should mention the optional
+  subscription connection. Assist and the $247 vs. $249 conflict go to
+  section 6.
+
 ## Ideas parked for later sections
 
 - **Consultant angle (Blueprint / pricing / founder):** the businesses getting
