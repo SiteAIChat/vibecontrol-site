@@ -102,20 +102,24 @@ import {
         <div class="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center mb-16">
           <div>
             <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">What's different about VibeControl</p>
-            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-              You've already tried AI. It still ended up back on your plate.
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-balance">
+              Most AI works for one person.
+              <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">VibeControl works for your whole business.</span>
             </h2>
             <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                ChatGPT for drafting things. Maybe an AI feature inside your CRM.
-                Maybe an automation tool. They help — but the work still ends up
-                back on your plate.
+                Most AI tools start fresh with every person and every chat. Your
+                salesperson uses one, your office manager uses another, and
+                neither one knows what the other learned. The people who are
+                good with AI get a little faster. Everyone else gets nothing. Add
+                more tools and you end up coordinating all of them.
               </p>
               <p>
-                Every AI tool you've used so far has been built to
-                <em class="text-gray-100 not-italic font-medium">help you think</em>
-                about work. VibeControl is built to
-                <em class="text-white not-italic font-semibold">do the work</em>.
+                VibeControl learns how your business actually runs: your
+                customers, your process, your standards, and the decisions
+                you’ve already made. Everyone on your team works with
+                <em class="text-white not-italic font-semibold">the same AI employee and the same understanding of the business</em>,
+                whether they’ve used AI before or not.
               </p>
             </div>
           </div>
@@ -131,11 +135,10 @@ import {
 
         <div class="space-y-4">
           {[
-            { left: 'ChatGPT', leftDoes: 'gives you advice.', right: 'does the work.', sub: 'One drafts emails you still have to send. The other answers them.' },
-            { left: 'Zapier', leftDoes: 'connects your apps.', right: 'runs your business.', sub: 'One moves data between tools. The other makes decisions and takes action.' },
-            { left: 'Your CRM', leftDoes: 'stores your customers.', right: 'talks to them.', sub: 'One is a database. The other is a sales assistant who never forgets to follow up.' },
-            { left: 'Your project tool', leftDoes: 'tracks tasks.', right: 'completes them.', sub: 'One is a list. The other is a team.' },
-            { left: 'A virtual assistant', leftDoes: 'costs $2,000+ a month.', right: 'costs $97.', sub: 'One needs to be hired, trained, managed, and paid. The other shows up already knowing your business.' },
+            { left: 'Typical AI', leftDoes: 'knows the conversation you’re having with it.', right: 'Knows the business the conversation belongs to.', sub: 'One needs the customer explained again. The other already knows them and their history.' },
+            { left: 'Typical AI', leftDoes: 'lives in one person’s chat.', right: 'Works across your team with the same context.', sub: 'One helps whoever is typing. The other takes work from anyone you let ask it.' },
+            { left: 'Typical AI', leftDoes: 'works best for people who are good at AI.', right: 'Takes plain-English requests from anyone.', sub: 'One works only as well as you prompt it. The other works from what it already knows about your business.' },
+            { left: 'Typical automation', leftDoes: 'moves data when a trigger fires.', right: 'Handles the whole job, inside the rules you set.', sub: 'One breaks when something unexpected happens. The other checks with you first on anything you’ve said needs approval.' },
           ].map((row) => (
             <div class="group relative rounded-2xl bg-white/[0.03] border border-white/10 hover:border-brand-teal/30 transition-all overflow-hidden">
               <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-stretch">
@@ -146,7 +149,7 @@ import {
                       <X className="w-4 h-4 text-gray-500" />
                     </div>
                     <div>
-                      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Today</p>
+                      <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Today</p>
                       <p class="text-gray-300 text-lg leading-snug">
                         <span class="font-bold text-white">{row.left}</span>
                         {' '}<span class="text-gray-400">{row.leftDoes}</span>
@@ -170,18 +173,23 @@ import {
                       <Check className="w-4 h-4 text-brand-teal" />
                     </div>
                     <div>
-                      <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-1.5">VibeControl</p>
+                      <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-1.5">VibeControl</p>
                       <p class="text-white text-lg leading-snug font-semibold">{row.right}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="border-t border-white/5 px-6 md:px-8 py-4 bg-black/20">
-                <p class="text-sm text-gray-500 italic leading-relaxed">{row.sub}</p>
+                <p class="text-base text-gray-400 leading-relaxed">{row.sub}</p>
               </div>
             </div>
           ))}
         </div>
+
+        <p class="mt-14 text-center text-2xl md:text-3xl font-semibold text-white text-balance">
+          One AI employee.
+          <span class="text-brand-teal">A different job for every part of your business.</span>
+        </p>
       </div>
     </section>
 

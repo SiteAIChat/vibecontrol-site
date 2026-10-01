@@ -27,10 +27,33 @@ customer copy.
 - **Small print:** Launching soon. Join the list to be first in.
 - **Layout:** drop headline from `md:text-7xl` to `md:text-6xl`.
 
+## Section 2: What's different (locked, live)
+
+- **Header:** Most AI works for one person. / VibeControl works for your whole
+  business.
+- **Body:** personal AI breaks down in a business (separate chats, nothing
+  shared, only the AI-savvy benefit); VibeControl gives everyone the same AI
+  employee and the same understanding of the business.
+- **Rows:** conversation vs. business, one person's chat vs. whole team,
+  good-at-AI vs. plain English, automation triggers vs. the whole job inside
+  your rules.
+- **Closing line:** One AI employee. A different job for every part of your
+  business.
+- **Dropped:** the VA-vs-$97 row. The page isn't arguing AI vs. a human hire.
+- **Skipped:** "business brain" (second metaphor next to "AI employee").
+
+## Ideas parked for later sections
+
+- **Consultant angle (Blueprint / pricing / founder):** the businesses getting
+  the most from AI pay consultants to implement it. Dustin is that consultant;
+  VibeControl and the $47 Blueprint package that work for owners who would
+  never hire him, and give Assist clients a foundation to build on.
+- **copy-rules.md follow-ups:** the JTBD table and positioning sentence still
+  lead with "does the work" and include the VA row; update once the homepage
+  review settles.
+
 ## Placements agreed for later sections
 
-- **Section 2 header:** Every AI assistant works for one person. VibeControl
-  works for your whole business.
 - **Section 3 or Team card:** Your whole team gets an AI employee. Nobody has to
   learn AI.
 - **Final early-access section:** Run like a company twice your size.
