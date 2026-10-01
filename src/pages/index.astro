@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyCta from '../components/StickyCta.astro';
-import { BLUEPRINT_URL, REVIEW_URL, REVIEW_CTA_LABEL } from '../lib/cta';
+import { BLUEPRINT_URL, CTA_LABEL, HANDOFF_CTA_LABEL, REVIEW_URL } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -33,7 +33,7 @@ import {
 ---
 <Layout
   title="VibeControl | Your AI workforce, running your business"
-  description="An AI employee that knows your business and works with everyone in it. Start with a free website review, then judge real work with a $47 working interview."
+  description="Hire an AI employee who runs your inbox, follows up with leads, and answers customer questions. One employee, every job. Starts with a $47 AI Workforce Blueprint that maps out the work to hand off."
 >
   <SiteNav />
 
@@ -50,9 +50,9 @@ import {
       <div class="relative w-full max-w-6xl mx-auto px-6 py-12 sm:py-14 text-center">
         <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm sm:text-base text-gray-200 mb-8">
           <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
-          <span class="text-brand-teal font-semibold whitespace-nowrap">Free website review</span>
-          <span class="hidden sm:inline text-gray-600">·</span>
-          <span class="hidden sm:inline">For owners asking where to start with AI</span>
+          <span class="text-brand-teal font-semibold">Launching Soon</span>
+          <span class="text-gray-600">·</span>
+          For owners asking where to start with AI
         </div>
 
         <h1 class="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-tight mb-8 leading-[1.03] text-balance">
@@ -71,27 +71,26 @@ import {
 
         <div class="flex flex-col items-center gap-5">
           <a
-            href={REVIEW_URL}
-            class="group inline-flex items-center gap-3 px-7 sm:px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold whitespace-nowrap text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
+            href={BLUEPRINT_URL}
+            class="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
           >
-            {REVIEW_CTA_LABEL}
+            {HANDOFF_CTA_LABEL}
             <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition" />
           </a>
           <p class="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
-            Start with a free review of your website. For $47, your AI
-            employee rebuilds your homepage so you can judge real work before
-            you hire.
-            <span class="block mt-2 text-base text-gray-400">The review is free and takes a few minutes.</span>
+            Start with the $47 AI Workforce Blueprint. We’ll map the jobs
+            VibeControl should handle first.
+            <span class="block mt-2 text-base text-gray-400">Launching soon. Join the list to be first in.</span>
           </p>
         </div>
 
         <!-- micro-trust row -->
         <div class="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-gray-400">
-          <span class="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-teal" /> Free review, no credit card</span>
+          <span class="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-teal" /> No credit card to join the list</span>
           <span class="hidden sm:inline text-gray-600">·</span>
-          <span class="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-brand-teal" /> Every homepage reviewed by a person</span>
+          <span class="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-brand-teal" /> 14-day Value Promise at launch</span>
           <span class="hidden sm:inline text-gray-600">·</span>
-          <span class="flex items-center gap-2"><Sparkles className="w-4 h-4 text-brand-teal" /> Your files are yours to keep</span>
+          <span class="flex items-center gap-2"><Sparkles className="w-4 h-4 text-brand-teal" /> First-in-line pricing</span>
         </div>
       </div>
     </section>
@@ -348,7 +347,7 @@ import {
           <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Pricing</p>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">What it costs.</h2>
           <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Most owners start with a free website review and a <span class="text-white font-semibold">$47 working interview</span>. When you like the work, hire it on one of these plans.
+            Everyone starts the same way: a <span class="text-white font-semibold">$47 AI Workforce Blueprint</span> that maps the jobs to hand off. From there, your AI employee runs inside VibeControl.
           </p>
         </div>
 
@@ -369,10 +368,10 @@ import {
               <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Memory &amp; playbooks</span></li>
             </ul>
             <a
-              href={REVIEW_URL}
+              href={BLUEPRINT_URL}
               class="block text-center px-6 py-3 rounded-xl border border-white/20 font-semibold text-white hover:bg-white/10 transition"
             >
-              Start with a free review
+              {CTA_LABEL}
             </a>
           </div>
 
@@ -395,16 +394,16 @@ import {
               <li class="flex items-start gap-2"><Check className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" /><span>Mobile app, memory &amp; playbooks</span></li>
             </ul>
             <a
-              href={REVIEW_URL}
+              href={BLUEPRINT_URL}
               class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
             >
-              Start with a free review
+              {CTA_LABEL}
             </a>
           </div>
         </div>
 
         <p class="text-center text-sm text-gray-500 mt-8">
-          The review is free. The working interview is $47 once. Choose a plan when you’re ready, and cancel anytime.
+          $47 one-time for the Blueprint at launch. Choose your plan when you're ready. Cancel anytime.
         </p>
       </div>
     </section>
@@ -503,7 +502,7 @@ import {
               14-Day Value Promise
             </div>
             <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              How we stand behind the $47 Blueprint.
+              How we stand behind the $47.
             </h2>
             <div class="space-y-4 text-gray-300 leading-relaxed">
               <p>
@@ -587,11 +586,11 @@ import {
 
         <div class="space-y-3">
           {[
-            { q: 'How does this work, exactly?', a: 'Start with a free review of your website: 8 jobs it should be doing, scored out of 80. If you want to see your AI employee work, the $47 working interview rebuilds your homepage. A person on our team reviews it before you see it, and it’s ready within 48 hours of your brief. Like the work? Hire it on Standard ($97/mo) or Team ($297/mo). The $47 AI Workforce Blueprint, which maps every job across your business, opens in the next couple of weeks.' },
+            { q: 'How does this work, exactly?', a: 'You pay $47 for the AI Workforce Blueprint. You have a guided conversation with an AI consultant about your business. It produces a written plan and sets up your AI employee’s jobs inside VibeControl, ready to activate. From there you choose to put it to work inside VibeControl ($97/mo Standard or $297/mo Team) or take what you learned and implement it yourself.' },
             { q: 'Do I have to install anything?', a: 'No. VibeControl runs in the cloud. You log in from a browser or our mobile app. Your AI employee runs on our infrastructure — it keeps working whether your laptop is open or not.' },
             { q: 'What AI does it use under the hood?', a: 'We use leading AI models and route work to the right one for the job. You don’t manage any of that. No API keys to set up, no subscriptions to other AI services required.' },
             { q: 'What if my Blueprint suggests jobs I don’t actually want?', a: 'You’re in control. The Blueprint is a recommendation, not a command. You decide which jobs to activate and which to skip. You can also give it your own jobs anytime.' },
-            { q: 'Can I try VibeControl before committing to a monthly plan?', a: 'Yes. That’s what the $47 working interview is for. You see a finished homepage built for your business, and the files are yours either way. Choose a plan only if you like the work.' },
+            { q: 'Can I try VibeControl before committing to a monthly plan?', a: 'Yes — most owners do. After your Blueprint, you can activate a trial of the Standard plan with starter credits. Details are presented after you complete your Blueprint purchase.' },
             { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your account settings before your billing date to avoid the next charge. We don’t lock you in with annual contracts.' },
             { q: 'Is there a Team plan or just Standard?', a: 'Both. Standard ($97/mo) is for solo operators. Team ($297/mo) is for small businesses that want their people and their AI employee on the same board. You can upgrade from Standard to Team anytime from your account.' },
             { q: 'What if I need help setting this up?', a: 'Most owners don’t. The Blueprint sets up the jobs for you. But if you want hands-on help, that’s VibeControl Assist (from $247/mo) — we sit down with you and build it together. For the rare business with something genuinely custom, our agency Build3r takes on a limited number of one-off projects. Contact us through your account.' },
