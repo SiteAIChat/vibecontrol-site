@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyCta from '../components/StickyCta.astro';
-import { BLUEPRINT_URL, CTA_LABEL, HANDOFF_CTA_LABEL, REVIEW_URL } from '../lib/cta';
+import { BLUEPRINT_URL, CTA_LABEL, HANDOFF_CTA_LABEL, HANDOFF_URL, REVIEW_URL } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -71,16 +71,16 @@ import {
 
         <div class="flex flex-col items-center gap-5">
           <a
-            href={BLUEPRINT_URL}
+            href={HANDOFF_URL}
             class="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
           >
             {HANDOFF_CTA_LABEL}
             <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition" />
           </a>
           <p class="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
-            Start with the $47 AI Workforce Blueprint. We’ll map the jobs
-            VibeControl should handle first.
-            <span class="block mt-2 text-base text-gray-400">Launching soon. Join the list to be first in.</span>
+            Start with a low-risk working interview. See what your AI employee
+            can do before you commit to anything.
+            <span class="block mt-2 text-base text-gray-400">$47 once. Nothing renews.</span>
           </p>
         </div>
 
@@ -265,75 +265,60 @@ import {
          ========================= -->
     <section class="relative py-24 sm:py-32 px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-14">
+        <div id="get-started" class="text-center mb-14 scroll-mt-24">
           <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">How you get started</p>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-balance">
-            Judge it on real work.
-            <span class="text-gray-400">Not promises.</span>
+            Start with a working interview.
+            <span class="text-gray-400">Judge real work before you hire.</span>
           </h2>
           <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto text-pretty">
-            Start with your website. Every customer sees it, and it’s the
-            fastest way to watch your AI employee work on your actual business.
+            We recommend giving your AI employee your website first. It builds
+            your new homepage as a private preview, a person on our team
+            reviews it, and you see the finished work before you commit to
+            anything. Like what it can do? Put it to work across your whole
+            business on one of the plans below.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-5">
-          <!-- Step 1: free review -->
-          <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-brand-teal/30 p-8 backdrop-blur-md flex flex-col">
-            <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Step 1 · Free</p>
-            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">The performance review</h3>
-            <p class="text-base text-gray-300 leading-relaxed mb-6 flex-1">
-              8 jobs your website should be doing, scored out of 80, with
-              evidence quoted from your own pages. Takes a few minutes.
+        <div class="grid md:grid-cols-[1.4fr_1fr] gap-5">
+          <!-- Primary: Working Interview -->
+          <div class="rounded-3xl bg-gradient-to-br from-brand-blue/10 via-white/[0.03] to-brand-teal/10 border border-brand-teal/30 p-8 md:p-10 backdrop-blur-md flex flex-col">
+            <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">$47 once</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">The working interview</h3>
+            <p class="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
+              Enter your website and get a free review in about a minute. Then
+              your AI employee rebuilds your homepage against what the review
+              found. Keep your current look or get a refresh.
             </p>
+            <ul class="space-y-2.5 text-base text-gray-300 mb-8 flex-1">
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Reviewed by a person before you see it</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>Ready within 48 hours of your brief, one revision included</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>The files are yours either way</span></li>
+              <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>$47 once. Nothing renews.</span></li>
+            </ul>
             <a
               href={REVIEW_URL}
-              class="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal text-base font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
+              class="group w-full sm:w-auto sm:self-start inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal text-base md:text-lg font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
             >
-              Get my free review
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
+              Start my working interview
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
             </a>
           </div>
 
-          <!-- Step 2: Working Interview -->
-          <div class="rounded-3xl bg-white/[0.03] border border-white/10 p-8 backdrop-blur-md flex flex-col">
-            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Step 2 · $47 once</p>
-            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">The working interview</h3>
-            <p class="text-base text-gray-300 leading-relaxed flex-1">
-              Your AI employee rebuilds your homepage. Keep your current look
-              or get a refresh. A person on our team reviews it before you see
-              it, and it’s ready within 48 hours of your brief. One revision
-              included, and the files are yours either way.
+          <!-- Then: Hire -->
+          <div class="rounded-3xl bg-white/[0.03] border border-white/10 p-8 md:p-10 backdrop-blur-md flex flex-col">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">From $97/month</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Hire it</h3>
+            <p class="text-base md:text-lg text-gray-300 leading-relaxed flex-1">
+              Like the work? Give it the rest of your business: sales
+              follow-up, customer support, reporting. It already knows your
+              website, and it learns the rest as it goes.
             </p>
-            <p class="mt-6 text-sm text-gray-400">Offered with your review results.</p>
-          </div>
-
-          <!-- Step 3: Hire -->
-          <div class="rounded-3xl bg-white/[0.03] border border-white/10 p-8 backdrop-blur-md flex flex-col">
-            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Step 3 · From $97/month</p>
-            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Hire it</h3>
-            <p class="text-base text-gray-300 leading-relaxed flex-1">
-              Like the work? Put it on the payroll. It keeps your site current
-              and takes on the next job when you’re ready.
-            </p>
-            <a href="#pricing" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal hover:text-white transition">
+            <a href="#pricing" class="mt-8 inline-flex items-center gap-2 text-base font-semibold text-brand-teal hover:text-white transition">
               See plans
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-        </div>
-
-        <!-- Secondary: Blueprint waitlist -->
-        <div class="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-            <span class="font-semibold text-white">Rather start with the rest of your business?</span>
-            The $47 AI Workforce Blueprint maps every job you can hand off.
-            Opening in the next couple of weeks.
-          </p>
-          <a href={BLUEPRINT_URL} class="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/20 text-base font-semibold text-white hover:bg-white/10 transition">
-            Join the list
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </div>
     </section>
@@ -347,7 +332,7 @@ import {
           <p class="text-sm font-semibold text-brand-teal uppercase tracking-wider mb-3">Pricing</p>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">What it costs.</h2>
           <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Everyone starts the same way: a <span class="text-white font-semibold">$47 AI Workforce Blueprint</span> that maps the jobs to hand off. From there, your AI employee runs inside VibeControl.
+            Everyone starts the same way: a <span class="text-white font-semibold">$47 working interview</span>. When you like the work, hire it on one of these plans.
           </p>
         </div>
 
@@ -403,7 +388,7 @@ import {
         </div>
 
         <p class="text-center text-sm text-gray-500 mt-8">
-          $47 one-time for the Blueprint at launch. Choose your plan when you're ready. Cancel anytime.
+          The working interview is $47 once and nothing renews. Choose a plan when you’re ready.
         </p>
       </div>
     </section>

@@ -1,12 +1,12 @@
 ---
 import { ArrowRight } from 'lucide-react';
-import { BLUEPRINT_URL, HANDOFF_CTA_LABEL } from '../lib/cta';
+import { HANDOFF_URL, HANDOFF_CTA_LABEL } from '../lib/cta';
 
 interface Props {
   href?: string;
 }
 
-const { href = BLUEPRINT_URL } = Astro.props;
+const { href = HANDOFF_URL } = Astro.props;
 ---
 <div
   id="sticky-cta"

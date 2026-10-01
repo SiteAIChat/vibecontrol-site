@@ -57,16 +57,30 @@ customer copy.
 - **Removed:** the empty "Live dashboard preview" placeholder. Add a real
   screenshot later.
 
-## Section 4: How you get started (live, still under discussion)
+## Section 4: How you get started (locked, live)
 
-- **Header:** Judge it on real work. / Not promises.
-- **Three steps:** free performance review / $47 Working Interview / hire from
-  $97 a month. Blueprint shown as a secondary waitlist strip.
-- **Name:** keep "Working Interview" (not "Pilot").
-- **Not changed:** hero, nav, sticky CTA, pricing, and FAQ still point to the
-  Blueprint path. Dustin rejected switching them; discuss before touching.
-- **Open item:** confirm the Working Interview brief lets the buyer choose
-  "keep current look" vs. "refresh". The copy promises it.
+The Working Interview is the umbrella offer: a $47 paid trial with no
+automatic billing. The website path is available now. When the Blueprint
+opens it becomes the second $47 working interview path; add it to this
+section then.
+
+- **Header:** Start with a working interview. / Judge real work before you hire.
+- **Body:** recommend giving the AI employee your website first; private
+  preview, reviewed by a person, see it before you commit; then hire.
+- **Primary card:** The working interview, $47 once. Free review in about a
+  minute, then the homepage rebuild. Keep current look or refresh; reviewed by
+  a person; 48 hours from brief, one revision; files yours; nothing renews.
+  Button "Start my working interview" to fire-your-website.com/#review-form.
+- **Second card:** Hire it, from $97/month, links to pricing.
+- **No "risk free":** use "$47 once, nothing renews", "files are yours",
+  "see the work before you commit" instead (no-refund rule).
+- **"See what I can hand off"** buttons (hero, nav, sticky on all pages) scroll
+  to this section (`/#get-started`). Labels unchanged.
+- **Elsewhere:** hero sub-line now "Start with a low-risk working interview..."
+  with "$47 once. Nothing renews."; pricing intro and footnote say working
+  interview. Value Promise heading left for when the Blueprint opens.
+- **Open item:** confirm the brief lets the buyer choose "keep current look"
+  vs. "refresh". The copy promises it.
 
 ## Ideas parked for later sections
 
