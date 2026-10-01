@@ -21,10 +21,8 @@ customer copy.
 - **Subhead:** It learns how your business runs: your customers, your process,
   your way of doing things. Anyone on your team can hand it work in plain
   English. Nothing technical to learn, and you decide what it does on its own.
-- **Button:** See what I can hand off →
-- **Under button:** Start with the $47 AI Workforce Blueprint. We'll map the jobs
-  VibeControl should handle first.
-- **Small print:** Launching soon. Join the list to be first in.
+- **Button / under button / small print:** replaced by the review path; see
+  "Launch path change" below.
 - **Layout:** drop headline from `md:text-7xl` to `md:text-6xl`.
 
 ## Section 2: What's different (locked, live)
@@ -56,6 +54,36 @@ customer copy.
   stay with people, approved recurring work keeps moving.
 - **Removed:** the empty "Live dashboard preview" placeholder. Add a real
   screenshot later.
+
+## Launch path change (2026-10-01)
+
+The free website review (fire-your-website.com) opens Monday 2026-10-05, with
+the $47 Working Interview behind it. The $47 Blueprint opens one to two weeks
+later. The homepage now leads with the review path; the Blueprint is a
+secondary waitlist.
+
+- **Hero:** eyebrow "Free website review"; button "See it work on my website"
+  to fire-your-website.com; line under it explains free review then $47
+  working interview. Trust row: free review, no credit card / every homepage
+  reviewed by a person / your files are yours to keep.
+- **Nav and sticky CTA (all pages):** same label and destination.
+- **Pricing:** intro and both plan buttons point to the free review; footnote
+  states review free, working interview $47 once.
+- **FAQ:** "How does this work" and "Can I try" rewritten for the review path.
+- **Value Promise heading:** now "How we stand behind the $47 Blueprint" so it
+  is not read as covering the Working Interview (no satisfaction refund there).
+- **Name:** keep "Working Interview" (not "Pilot").
+
+## Section 4: How you get started (locked, live)
+
+- **Header:** Judge it on real work. / Not promises.
+- **Three steps:** Free performance review (button) / $47 once working
+  interview (keep current look or refresh, human-reviewed, 48 hours from
+  brief, one revision, files yours) / From $97/month hire it.
+- **Secondary strip:** Blueprint opening in the next couple of weeks, join the
+  list.
+- **Open item:** confirm the Working Interview brief lets the buyer choose
+  "keep current look" vs. "refresh". The copy promises it.
 
 ## Ideas parked for later sections
 
