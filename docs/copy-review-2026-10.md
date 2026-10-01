@@ -67,10 +67,14 @@ section then.
 - **Header:** Start with a working interview. / Judge real work before you hire.
 - **Body:** recommend giving the AI employee your website first; private
   preview, reviewed by a person, see it before you commit; then hire.
-- **Primary card:** The working interview, $47 once. Free review in about a
-  minute, then the homepage rebuild. Keep current look or refresh; reviewed by
-  a person; 48 hours from brief, one revision; files yours; nothing renews.
-  Button "Start my working interview" to fire-your-website.com/#review-form.
+- **Primary card:** The working interview, $47 once. "Your AI employee builds
+  an AI-powered version of your homepage. Keep your current style or ask for a
+  refresh. Your call." Then: same look if you like it, with the review's
+  fixes; the difference is your AI employee can now update it whenever you
+  ask. Handles the "I like my website" objection. Says homepage, not website
+  (the interview rebuilds the homepage only). Checklist: reviewed by a person;
+  48 hours from brief, one revision; files yours; nothing renews. Button
+  "Start my working interview" to fire-your-website.com/#review-form.
 - **Second card:** Hire it, from $97/month, links to pricing.
 - **No "risk free":** use "$47 once, nothing renews", "files are yours",
   "see the work before you commit" instead (no-refund rule).
@@ -79,8 +83,8 @@ section then.
 - **Elsewhere:** hero sub-line now "Start with a low-risk working interview..."
   with "$47 once. Nothing renews."; pricing intro and footnote say working
   interview. Value Promise heading left for when the Blueprint opens.
-- **Open item:** confirm the brief lets the buyer choose "keep current look"
-  vs. "refresh". The copy promises it.
+- **Confirmed:** the brief offers keep-current-style vs. refresh. Fire Your
+  Website funnel copy gets its own review after this site.
 
 ## Ideas parked for later sections
 
