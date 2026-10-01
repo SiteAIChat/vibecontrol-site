@@ -9,5 +9,8 @@ export function blueprintUrlForSource(source: string): string {
   return `${BLUEPRINT_URL}?source=${encodeURIComponent(source)}`;
 }
 
-// Free website review + $47 Working Interview on fire-your-website.com.
-export const REVIEW_URL = 'https://fire-your-website.com/#review-form';
+// Free website review + $47 Working Interview on fire-your-website.com,
+// tagged with this site as the source and which button sent the visitor.
+export function reviewUrlFor(placement: string): string {
+  return `https://fire-your-website.com/?utm_source=getvibecontrol&utm_medium=referral&utm_content=${encodeURIComponent(placement)}#review-form`;
+}

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyCta from '../components/StickyCta.astro';
-import { HANDOFF_CTA_LABEL, HANDOFF_URL, REVIEW_URL } from '../lib/cta';
+import { HANDOFF_CTA_LABEL, HANDOFF_URL, reviewUrlFor } from '../lib/cta';
 import {
   ArrowRight,
   Check,
@@ -299,7 +299,7 @@ import {
               <li class="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" /><span>$47 once. Nothing renews.</span></li>
             </ul>
             <a
-              href={REVIEW_URL}
+              href={reviewUrlFor('get-started')}
               class="group w-full sm:w-auto sm:self-start inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal text-base md:text-lg font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
             >
               Start my working interview
@@ -359,7 +359,7 @@ import {
               business or location? Add a workspace for $47/mo.
             </p>
             <a
-              href={REVIEW_URL}
+              href={reviewUrlFor('pricing-standard')}
               class="block text-center px-6 py-3.5 rounded-xl border border-white/20 text-base font-semibold text-white hover:bg-white/10 transition"
             >
               Start my working interview
@@ -390,7 +390,7 @@ import {
               $47/mo.
             </p>
             <a
-              href={REVIEW_URL}
+              href={reviewUrlFor('pricing-team')}
               class="block text-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal text-base font-semibold text-white hover:opacity-90 transition shadow-lg shadow-brand-blue/25"
             >
               Start my working interview
@@ -698,7 +698,7 @@ import {
         </p>
         <div class="flex flex-col items-center gap-4">
           <a
-            href={REVIEW_URL}
+            href={reviewUrlFor('final-cta')}
             class="group inline-flex items-center gap-3 px-7 sm:px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30 whitespace-nowrap"
           >
             Start my working interview
