@@ -40,56 +40,56 @@ import {
     <!-- =========================
          SECTION 1 — HERO
          ========================= -->
-    <section class="relative overflow-hidden">
+    <section class="relative overflow-hidden min-h-[calc(100svh-4rem)] flex items-center">
       <!-- ambient glow -->
       <div class="absolute top-10 left-1/4 w-[28rem] h-[28rem] bg-brand-blue/20 rounded-full blur-[140px]" aria-hidden="true"></div>
       <div class="absolute bottom-0 right-1/4 w-[26rem] h-[26rem] bg-brand-teal/20 rounded-full blur-[140px]" aria-hidden="true"></div>
       <div class="absolute top-1/3 right-1/3 w-72 h-72 bg-brand-orange/10 rounded-full blur-[120px]" aria-hidden="true"></div>
 
-      <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32 text-center">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 mb-8">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-teal animate-pulse"></span>
+      <div class="relative w-full max-w-6xl mx-auto px-6 py-12 sm:py-14 text-center">
+        <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm sm:text-base text-gray-200 mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
           <span class="text-brand-teal font-semibold">Launching Soon</span>
           <span class="text-gray-600">·</span>
           For owners asking where to start with AI
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05] text-balance">
+        <h1 class="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-tight mb-8 leading-[1.03] text-balance">
           An AI employee that knows your business
           <span class="block bg-gradient-to-r from-brand-blue via-brand-teal to-brand-orange bg-clip-text text-transparent">
             and works with everyone in it.
           </span>
         </h1>
 
-        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed">
           It learns how your business runs: your customers, your process,
           your way of doing things. Anyone on your team can hand it work in
           plain English. Nothing technical to learn, and you decide what it
           does on its own.
         </p>
 
-        <div class="flex flex-col items-center gap-3">
+        <div class="flex flex-col items-center gap-5">
           <a
             href={BLUEPRINT_URL}
-            class="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-teal font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
+            class="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-teal text-lg md:text-xl font-semibold text-white hover:opacity-90 transition shadow-xl shadow-brand-blue/30"
           >
             See what I can hand off
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition" />
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition" />
           </a>
-          <p class="text-sm text-gray-400 max-w-md">
+          <p class="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
             Start with the $47 AI Workforce Blueprint. We’ll map the jobs
             VibeControl should handle first.
-            <span class="block mt-1 text-gray-500">Launching soon. Join the list to be first in.</span>
+            <span class="block mt-2 text-base text-gray-400">Launching soon. Join the list to be first in.</span>
           </p>
         </div>
 
         <!-- micro-trust row -->
-        <div class="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-gray-500">
-          <span class="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> No credit card to join the list</span>
-          <span class="hidden sm:inline">·</span>
-          <span class="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5" /> 14-day Value Promise at launch</span>
-          <span class="hidden sm:inline">·</span>
-          <span class="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" /> First-in-line pricing</span>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-gray-400">
+          <span class="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-teal" /> No credit card to join the list</span>
+          <span class="hidden sm:inline text-gray-600">·</span>
+          <span class="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-brand-teal" /> 14-day Value Promise at launch</span>
+          <span class="hidden sm:inline text-gray-600">·</span>
+          <span class="flex items-center gap-2"><Sparkles className="w-4 h-4 text-brand-teal" /> First-in-line pricing</span>
         </div>
       </div>
     </section>
