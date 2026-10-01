@@ -124,6 +124,18 @@ section then.
 - **Photo:** Dustin's headshot at public/images/founder-dustin.jpg.
 - **Follow-up:** FAQ still says Assist "from $247/mo"; fix in the FAQ pass.
 
+## Section 7: Proof (locked, live)
+
+- **Header:** No testimonials yet. We won't make them up. / Judge the work
+  instead.
+- **Body:** VibeControl is new; we have 18 years of consulting clients but
+  using their results wouldn't be honest (they hired us, not VibeControl); no
+  anonymous quotes, stock photos, or staff as customers. Proof instead: free
+  review of your own site, then your homepage rebuilt before you hire. Named
+  customers only, when they're ready.
+- "VibeControl is new" replaces "just launched" (hero still says Launching
+  Soon).
+
 ## Ideas parked for later sections
 
 - **Consultant angle:** used in section 6. Could also support the Blueprint
