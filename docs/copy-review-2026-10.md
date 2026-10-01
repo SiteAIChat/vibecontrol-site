@@ -145,13 +145,18 @@ Replaced the Blueprint's 14-Day Value Promise, which read as a satisfaction
 promise on the working interview (it has none). Bring the Value Promise back
 with the Blueprint when it opens.
 
-- **Header:** Exactly what your $47 gets you. / And what happens if you don't
-  hire.
-- **Timeline:** 1 free review / 2 $47 and a short brief (keep style or
-  refresh) / 3 new homepage within 48 hours, reviewed by a person, 30-day
-  private preview / 4 one revision in those 30 days / 5 your call: hire from
-  $97 a month, or download the homepage and walk away (files yours, no
-  subscription needed, nothing renews).
+- **Header:** Here's exactly how the working interview goes. / Including what
+  happens if you don't hire.
+- **Timeline (verb titles):** Get your free review (shows what we'd fix
+  first) / Say yes for $47 (pay once, short brief, keep style or refresh) /
+  See your new homepage within 48 hours (built by AI employee, reviewed by a
+  person, 30-day private preview) / Put your AI employee to work on it (ask
+  for changes in plain English; "this is the part you're interviewing it for";
+  someone will help if stuck) / Make your call (hire from $97 and give it the
+  rest of the business, or download and walk away; files yours, nothing
+  renews).
+- **Don't mention "one revision":** owners can ask the AI employee for changes
+  during the preview; the revision limit only covers hands-on help.
 - **Leftovers:** hero trust row still says "14-day Value Promise at launch";
   /sites and /crm still show the Value Promise next to Blueprint buttons. The
   waitlist form's mention is accurate for the Blueprint.
