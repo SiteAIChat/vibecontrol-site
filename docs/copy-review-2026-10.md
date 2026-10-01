@@ -139,6 +139,23 @@ section then.
   Seeing real work should be easier than taking our word for it. (Reason why
   the price is low; avoid "absurdly cheap".)
 
+## Section 8: What happens next (locked, live)
+
+Replaced the Blueprint's 14-Day Value Promise, which read as a satisfaction
+promise on the working interview (it has none). Bring the Value Promise back
+with the Blueprint when it opens.
+
+- **Header:** Exactly what your $47 gets you. / And what happens if you don't
+  hire.
+- **Timeline:** 1 free review / 2 $47 and a short brief (keep style or
+  refresh) / 3 new homepage within 48 hours, reviewed by a person, 30-day
+  private preview / 4 one revision in those 30 days / 5 your call: hire from
+  $97 a month, or download the homepage and walk away (files yours, no
+  subscription needed, nothing renews).
+- **Leftovers:** hero trust row still says "14-day Value Promise at launch";
+  /sites and /crm still show the Value Promise next to Blueprint buttons. The
+  waitlist form's mention is accurate for the Blueprint.
+
 ## Ideas parked for later sections
 
 - **Consultant angle:** used in section 6. Could also support the Blueprint
