@@ -125,7 +125,12 @@ section then.
   recommend at least six months (a recommendation, not a commitment). No price
   on the page ($247 copy vs. $249 catalog unresolved). No 48-hour free-month
   offer on the homepage; that stays in the Working Interview funnel.
-- **Build3r:** one line, custom projects only; Assist first.
+- **BUILD3R:** one line, custom projects only; Assist first. Always BUILD3R in
+  caps (owner preference).
+- **Founder facts (corrected 2026-10-01):** Dustin ran Paragon, a small
+  business IT services company, for 18 years and exited it when he started
+  BUILD3R, his software and AI automation company. Say "I ran Paragon",
+  never "I've run an IT services company"; "Today I run BUILD3R".
 - **Photo:** Dustin's headshot at public/images/founder-dustin.jpg.
 - **Follow-up:** FAQ still says Assist "from $247/mo"; fix in the FAQ pass.
 
